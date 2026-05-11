@@ -176,9 +176,9 @@ function Index() {
       </div>
 
       {/* ── Top chrome ── */}
-      <header className="absolute inset-x-0 top-0 z-30 flex items-center justify-between px-8 py-7 md:px-16 md:py-10">
+      <header className="absolute inset-x-0 top-0 z-30 flex items-center justify-end md:justify-between px-8 py-7 md:px-16 md:py-10">
         <div
-          className="flex items-center gap-3 text-[0.6rem] uppercase"
+          className="hidden items-center gap-3 text-[0.6rem] uppercase md:flex"
           style={{
             letterSpacing: "0.4em",
             color: GOLD_SOFT,
@@ -234,7 +234,7 @@ function Index() {
       </div>
 
       {/* ── Main content ── */}
-      <section className="relative z-20 flex min-h-screen flex-col px-8 pb-12 pt-24 md:px-20 md:pt-28 lg:px-32">
+      <section className="relative z-20 flex min-h-screen flex-col px-8 pb-12 pt-24 md:px-20 md:pb-20 md:pt-28 lg:px-32">
         {/* Seal */}
         <div
           className="flex justify-center md:justify-start"
@@ -247,7 +247,7 @@ function Index() {
           <img
             src={sealImage}
             alt="VESA Atelier monogram seal"
-            className="h-16 w-16 md:h-20 md:w-20"
+            className="h-[9.6rem] w-[9.6rem] md:h-[12rem] md:w-[12rem]"
             style={{
               filter:
                 "drop-shadow(0 0 20px rgba(201, 165, 90, 0.35)) brightness(1.05)",
@@ -257,11 +257,12 @@ function Index() {
           />
         </div>
 
+        <div className="mt-auto flex w-full -translate-y-[30%] flex-col items-center md:translate-y-0 md:items-start">
         {/* Centered wordmark block — pushed left on desktop */}
-        <div className="mt-auto flex flex-col items-center md:items-start">
+        <div className="flex w-full flex-col items-center md:items-start">
           {/* Eyebrow */}
           <div
-            className="flex items-center gap-4"
+            className="hidden items-center gap-4 md:flex"
             style={{
               opacity: mounted ? 1 : 0,
               transform: mounted ? "translateY(0)" : "translateY(-6px)",
@@ -286,11 +287,10 @@ function Index() {
 
           {/* Wordmark */}
           <h1
-            className="mt-6 text-center md:text-left"
+            className="mt-6 text-center text-[clamp(8.8rem,28.8vw,25.6rem)] md:text-left md:text-[clamp(5.5rem,9vw,12rem)] lg:text-[clamp(6rem,8vw,13rem)]"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 300,
-              fontSize: "clamp(5.5rem, 18vw, 16rem)",
               lineHeight: 0.85,
               letterSpacing: "0.02em",
               background:
@@ -345,7 +345,7 @@ function Index() {
 
           {/* Tagline */}
           <p
-            className="mt-10 max-w-md text-center md:text-left"
+            className="mt-10 max-w-md text-center md:max-w-lg md:text-left lg:max-w-xl"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontStyle: "italic",
@@ -366,7 +366,7 @@ function Index() {
 
         {/* Bottom row */}
         <div
-          className="mt-12 flex flex-col items-center gap-6 md:mt-16 md:flex-row md:justify-between md:gap-0"
+          className="mt-12 flex w-full flex-col items-center gap-6 md:mt-14 md:flex-row md:justify-between md:gap-0 lg:mt-16"
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(8px)",
@@ -376,7 +376,7 @@ function Index() {
           {/* Coming soon */}
           <div className="flex items-center gap-4">
             <span
-              className="relative h-1.5 w-1.5 rounded-full"
+              className="relative hidden h-1.5 w-1.5 rounded-full md:block"
               style={{
                 background: GOLD,
                 boxShadow: `0 0 14px ${GOLD}`,
@@ -395,19 +395,6 @@ function Index() {
               }}
             >
               Coming Soon
-            </span>
-            <span className="h-px w-12" style={{ background: GOLD_SOFT }} />
-            <span
-              className="uppercase"
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontStyle: "italic",
-                fontSize: "0.85rem",
-                letterSpacing: "0.3em",
-                color: GOLD_SOFT,
-              }}
-            >
-              Spring · MMXXVI
             </span>
           </div>
 
@@ -428,6 +415,8 @@ function Index() {
             </span>
           </div>
         </div>
+        </div>
+
       </section>
 
       <style>{`
