@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -63,8 +64,18 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  /* VESA Atelier — deep onyx + warm gold luxury palette */
+  --background: oklch(0.16 0.012 60);
+  --foreground: oklch(0.95 0.02 80);
+  --gold: oklch(0.78 0.13 78);
+  --gold-soft: oklch(0.86 0.09 82);
+  --gold-deep: oklch(0.55 0.11 65);
+  --ember: oklch(0.72 0.18 45);
+  --onyx: oklch(0.10 0.008 60);
+  --cream: oklch(0.93 0.025 80);
+  --gradient-gold: linear-gradient(135deg, oklch(0.86 0.09 82), oklch(0.62 0.12 60));
+  --gradient-radial-warm: radial-gradient(ellipse at center, oklch(0.30 0.05 55 / 0.8), oklch(0.10 0.008 60) 70%);
+  --shadow-glow: 0 0 80px -10px oklch(0.78 0.18 55 / 0.55);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
