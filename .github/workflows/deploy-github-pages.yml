@@ -30,14 +30,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Default base is /REPO/ for https://<user>.github.io/REPO/. Custom domains (e.g. vesa.co.in)
-      # are served from the site root — set repo variable GH_PAGES_VITE_BASE_PATH to / and redeploy.
+      # Custom domains (and user/org Pages) are served from /. Default base is / so vesa.co.in works
+      # without repo variables. For project Pages at https://<user>.github.io/<repo>/, set repository
+      # variable GH_PAGES_VITE_BASE_PATH to /<repo>/ (include trailing slash, e.g. /vesa-atelier/).
       - name: Build static site
         env:
           GH_PAGES: "1"
         run: |
           BASE="${{ vars.GH_PAGES_VITE_BASE_PATH }}"
-          if [ -z "$BASE" ]; then BASE="/${{ github.event.repository.name }}/"; fi
+          if [ -z "$BASE" ]; then BASE="/"; fi
           export VITE_BASE_PATH="$BASE"
           npm run build
 
