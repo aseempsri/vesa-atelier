@@ -30,17 +30,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Custom domains (and user/org Pages) are served from /. Default base is / so vesa.co.in works
-      # without repo variables. For project Pages at https://<user>.github.io/<repo>/, set repository
-      # variable GH_PAGES_VITE_BASE_PATH to /<repo>/ (include trailing slash, e.g. /vesa-atelier/).
+      # Asset base must be / for vesa.co.in (custom domain at site root). Set explicitly here so
+      # GitHub Environment / repository variables cannot override with /vesa-atelier/ (that breaks
+      # custom domains). For default https://<user>.github.io/<repo>/ previews, change the value
+      # below to /vesa-atelier/ (with trailing slash) and redeploy.
       - name: Build static site
         env:
           GH_PAGES: "1"
+          VITE_BASE_PATH: /
+        run: npm run build
+
+      - name: Verify HTML does not use repo subpath (custom domain)
         run: |
-          BASE="${{ vars.GH_PAGES_VITE_BASE_PATH }}"
-          if [ -z "$BASE" ]; then BASE="/"; fi
-          export VITE_BASE_PATH="$BASE"
-          npm run build
+          if grep -qF "/vesa-atelier/" dist/client/index.html; then
+            echo "::error::index.html still references /vesa-atelier/ — Vite base was not /"
+            exit 1
+          fi
 
       - name: Add SPA fallback for client-side routing
         run: cp dist/client/index.html dist/client/404.html
