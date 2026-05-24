@@ -2,7 +2,7 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import heroImage from "@/assets/vesa-hero.jpg";
 import marbleTexture from "@/assets/vesa-marble.jpg";
-import sealImage from "@/assets/vesa-seal.png";
+import logoImage from "@/assets/vesa-logo.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -237,138 +237,127 @@ function Index() {
 
       {/* ── Main content ── */}
       <section className="relative z-20 flex min-h-screen flex-col px-8 pb-12 pt-24 md:px-20 md:pb-20 md:pt-28 lg:px-32">
-        {/* Seal */}
-        <div
-          className="flex justify-center md:justify-start"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(-12px)",
-            transition: "opacity 1800ms ease-out 200ms, transform 1800ms ease-out 200ms",
-          }}
-        >
-          <img
-            src={sealImage}
-            alt="VESA Atelier monogram seal"
-            className="h-[9.6rem] w-[9.6rem] md:h-[12rem] md:w-[12rem]"
-            style={{
-              filter:
-                "drop-shadow(0 0 20px rgba(201, 165, 90, 0.35)) brightness(1.05)",
-              opacity: 0.92,
-              animation: "vesa-breathe 6s ease-in-out infinite",
-            }}
-          />
-        </div>
-
         <div className="mt-auto flex w-full -translate-y-[30%] flex-col items-center md:translate-y-0 md:items-start">
-        {/* Centered wordmark block — pushed left on desktop */}
-        <div className="flex w-full flex-col items-center md:items-start">
-          {/* Eyebrow */}
-          <div
-            className="hidden items-center gap-4 md:flex"
-            style={{
-              opacity: mounted ? 1 : 0,
-              transform: mounted ? "translateY(0)" : "translateY(-6px)",
-              transition: "opacity 1800ms ease-out 500ms, transform 1800ms ease-out 500ms",
-            }}
-          >
-            <span className="h-px w-10" style={{ background: GOLD_SOFT }} />
-            <span
-              className="uppercase"
+          {/* Logo + wordmark + tagline — aligned to each other; block sits left on desktop */}
+          <div className="flex w-full flex-col items-center text-center md:w-fit md:max-w-xl">
+            <div
+              className="flex justify-center"
               style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: "0.6rem",
-                letterSpacing: "0.7em",
-                color: CREAM,
-                fontWeight: 300,
-                paddingLeft: "0.7em",
+                opacity: mounted ? 1 : 0,
+                transform: mounted ? "translateY(0)" : "translateY(-12px)",
+                transition: "opacity 1800ms ease-out 200ms, transform 1800ms ease-out 200ms",
               }}
             >
-              Maison de Lumière
-            </span>
-          </div>
+              <img
+                src={logoImage}
+                alt="VESA Atelier emblem"
+                className="h-[12.5rem] w-[12.5rem] object-contain md:h-[15.6rem] md:w-[15.6rem]"
+                style={{
+                  filter:
+                    "drop-shadow(0 0 20px rgba(201, 165, 90, 0.35)) brightness(1.05)",
+                  opacity: 0.95,
+                  animation: "vesa-breathe 6s ease-in-out infinite",
+                }}
+              />
+            </div>
 
-          {/* Wordmark */}
-          <h1
-            className="mt-6 text-center text-[clamp(8.8rem,28.8vw,25.6rem)] md:text-left md:text-[clamp(5.5rem,9vw,12rem)] lg:text-[clamp(6rem,8vw,13rem)]"
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontWeight: 300,
-              lineHeight: 0.85,
-              letterSpacing: "0.02em",
-              background:
-                "linear-gradient(180deg, #f6e6c3 0%, #d8b97f 30%, #b48947 65%, #6e4a23 100%)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-              filter: "drop-shadow(0 4px 40px rgba(201, 165, 90, 0.28))",
-              opacity: mounted ? 1 : 0,
-              transform: mounted ? "translateY(0)" : "translateY(24px)",
-              transition: "opacity 2400ms ease-out 600ms, transform 2400ms ease-out 600ms",
-            }}
-          >
-            VESA
-          </h1>
-
-          {/* Atelier subtitle with split rules */}
-          <div
-            className="mt-4 flex items-center gap-4 md:gap-6"
-            style={{
-              opacity: mounted ? 1 : 0,
-              transition: "opacity 2000ms ease-out 1300ms",
-            }}
-          >
-            <span
-              className="h-px w-12 md:w-20"
-              style={{
-                background: `linear-gradient(90deg, transparent, ${GOLD})`,
-              }}
-            />
-            <span
-              className="uppercase"
+            <h1
+              className="mt-2 text-center text-[clamp(8.8rem,28.8vw,25.6rem)] md:mt-3 md:text-[clamp(5.5rem,9vw,12rem)] lg:text-[clamp(6rem,8vw,13rem)]"
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 400,
-                fontStyle: "italic",
-                fontSize: "clamp(0.95rem, 2vw, 1.4rem)",
-                letterSpacing: "0.55em",
-                color: CREAM,
-                paddingLeft: "0.55em",
+                fontWeight: 300,
+                lineHeight: 0.85,
+                letterSpacing: "0.02em",
+                background:
+                  "linear-gradient(180deg, #f6e6c3 0%, #d8b97f 30%, #b48947 65%, #6e4a23 100%)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+                filter: "drop-shadow(0 4px 40px rgba(201, 165, 90, 0.28))",
+                opacity: mounted ? 1 : 0,
+                transform: mounted ? "translateY(0)" : "translateY(24px)",
+                transition: "opacity 2400ms ease-out 600ms, transform 2400ms ease-out 600ms",
               }}
             >
-              Atelier
-            </span>
-            <span
-              className="h-px w-12 md:w-20"
-              style={{
-                background: `linear-gradient(270deg, transparent, ${GOLD})`,
-              }}
-            />
-          </div>
+              VESA
+            </h1>
 
-          {/* Tagline */}
-          <p
-            className="mt-10 max-w-md text-center md:max-w-lg md:text-left lg:max-w-xl"
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontStyle: "italic",
-              fontWeight: 300,
-              fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
-              letterSpacing: "0.03em",
-              lineHeight: 1.7,
-              color: "rgba(232, 220, 198, 0.78)",
-              opacity: mounted ? 1 : 0,
-              transition: "opacity 2200ms ease-out 1600ms",
-            }}
-          >
-            A house of hand-poured candles —
-            <br />
-            composed in shadow, finished in light.
-          </p>
-        </div>
+            <div
+              className="mt-4 flex flex-col items-center"
+              style={{
+                opacity: mounted ? 1 : 0,
+                transition: "opacity 2000ms ease-out 1300ms",
+              }}
+            >
+              <div className="flex items-center justify-center gap-4 md:gap-6">
+                <span
+                  className="h-px w-12 md:w-20"
+                  style={{
+                    background: `linear-gradient(90deg, transparent, ${GOLD})`,
+                  }}
+                />
+                <div className="flex flex-col items-center">
+                  <span
+                    className="uppercase"
+                    style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontWeight: 400,
+                      fontStyle: "italic",
+                      fontSize: "clamp(0.95rem, 2vw, 1.4rem)",
+                      letterSpacing: "0.55em",
+                      color: CREAM,
+                      paddingLeft: "0.55em",
+                    }}
+                  >
+                    Atelier
+                  </span>
+                  <p
+                    className="mt-2 uppercase"
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: "0.55rem",
+                      letterSpacing: "0.45em",
+                      color: GOLD_SOFT,
+                      fontWeight: 400,
+                      paddingLeft: "0.45em",
+                    }}
+                  >
+                    Crafted Elegance
+                  </p>
+                </div>
+                <span
+                  className="h-px w-12 md:w-20"
+                  style={{
+                    background: `linear-gradient(270deg, transparent, ${GOLD})`,
+                  }}
+                />
+              </div>
+            </div>
+
+            <p
+              className="mt-10 max-w-md text-center md:max-w-none md:whitespace-nowrap"
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontStyle: "italic",
+                fontWeight: 300,
+                fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
+                letterSpacing: "0.03em",
+                lineHeight: 1.7,
+                color: "rgba(232, 220, 198, 0.78)",
+                opacity: mounted ? 1 : 0,
+                transition: "opacity 2200ms ease-out 1600ms",
+              }}
+            >
+              A house of hand-poured candles —
+              <br className="md:hidden" />
+              {" "}
+              composed in shadow, finished in light.
+            </p>
+          </div>
 
         {/* Bottom row */}
         <div
-          className="mt-12 flex w-full flex-col items-center gap-6 md:mt-14 md:flex-row md:justify-between md:gap-0 lg:mt-16"
+          className="mt-12 flex w-full flex-col items-center gap-6 md:mt-14 md:flex-row md:items-end md:justify-between md:gap-0 lg:mt-16"
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(8px)",

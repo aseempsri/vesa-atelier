@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import marbleTexture from "@/assets/vesa-marble.jpg";
-import sealImage from "@/assets/vesa-seal.png";
+import logoImage from "@/assets/vesa-logo.png";
 import {
   VESA_BG,
   VESA_BODY,
@@ -47,25 +47,13 @@ export function VesaLayout({ children, activeNav }: VesaLayoutProps) {
       />
 
       <header className="relative z-30 flex items-center justify-between px-6 py-6 md:px-12 md:py-8">
-        <Link to="/" className="flex items-center gap-3 transition-opacity hover:opacity-80">
+        <Link to="/" className="transition-opacity hover:opacity-80">
           <img
-            src={sealImage}
-            alt=""
-            aria-hidden
-            className="h-10 w-10 md:h-11 md:w-11"
+            src={logoImage}
+            alt="VESA Atelier"
+            className="h-10 w-10 object-contain md:h-11 md:w-11"
             style={{ filter: "drop-shadow(0 0 12px rgba(201, 165, 90, 0.35))" }}
           />
-          <span
-            className="hidden uppercase sm:inline"
-            style={{
-              fontFamily: vesaSans,
-              fontSize: "0.6rem",
-              letterSpacing: "0.35em",
-              color: VESA_GOLD_SOFT,
-            }}
-          >
-            VESA Atelier
-          </span>
         </Link>
 
         <nav className="flex items-center gap-6 md:gap-8">
