@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import heroImage from "@/assets/vesa-hero.jpg";
 import marbleTexture from "@/assets/vesa-marble.jpg";
@@ -176,7 +176,7 @@ function Index() {
       </div>
 
       {/* ── Top chrome ── */}
-      <header className="absolute inset-x-0 top-0 z-30 flex items-center justify-end md:justify-between px-8 py-7 md:px-16 md:py-10">
+      <header className="absolute inset-x-0 top-0 z-30 flex items-center justify-between px-8 py-7 md:px-16 md:py-10">
         <div
           className="hidden items-center gap-3 text-[0.6rem] uppercase md:flex"
           style={{
@@ -189,15 +189,29 @@ function Index() {
           <span style={{ color: GOLD }}>◆</span>
           <span style={{ paddingLeft: "0.4em" }}>Maison · Bombay</span>
         </div>
-        <div
-          className="text-[0.6rem] uppercase"
-          style={{
-            letterSpacing: "0.4em",
-            color: GOLD_SOFT,
-            fontFamily: "'Inter', sans-serif",
-          }}
-        >
-          MMXXVI
+        <div className="flex items-center gap-6 md:gap-8">
+          <Link
+            to="/about"
+            className="text-[0.6rem] uppercase transition-opacity hover:opacity-80"
+            style={{
+              letterSpacing: "0.4em",
+              color: GOLD_SOFT,
+              fontFamily: "'Inter', sans-serif",
+              paddingLeft: "0.4em",
+            }}
+          >
+            About
+          </Link>
+          <div
+            className="text-[0.6rem] uppercase"
+            style={{
+              letterSpacing: "0.4em",
+              color: GOLD_SOFT,
+              fontFamily: "'Inter', sans-serif",
+            }}
+          >
+            MMXXVI
+          </div>
         </div>
       </header>
 
