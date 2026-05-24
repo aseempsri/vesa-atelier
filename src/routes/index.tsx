@@ -2,7 +2,8 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import heroImage from "@/assets/vesa-hero.jpg";
 import marbleTexture from "@/assets/vesa-marble.jpg";
-import logoImage from "@/assets/vesa-logo.png";
+import { VesaLogo } from "@/components/vesa-logo";
+import { VESA_WORDMARK_GRADIENT } from "@/lib/vesa-brand";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -239,48 +240,38 @@ function Index() {
       <section className="relative z-20 flex min-h-screen flex-col px-8 pb-12 pt-24 md:px-20 md:pb-20 md:pt-28 lg:px-32">
         <div className="mt-auto flex w-full -translate-y-[30%] flex-col items-center md:translate-y-0 md:items-start">
           {/* Logo + wordmark + tagline — aligned to each other; block sits left on desktop */}
-          <div className="flex w-full flex-col items-center text-center md:w-fit md:max-w-xl">
+          <div className="flex w-full translate-x-[10%] -translate-y-[10%] flex-col items-center text-center md:w-fit md:max-w-xl">
+            {/* Logo + VESA — locked on one center axis */}
             <div
-              className="flex justify-center"
+              className="flex flex-col items-center"
               style={{
                 opacity: mounted ? 1 : 0,
                 transform: mounted ? "translateY(0)" : "translateY(-12px)",
                 transition: "opacity 1800ms ease-out 200ms, transform 1800ms ease-out 200ms",
               }}
             >
-              <img
-                src={logoImage}
-                alt="VESA Atelier emblem"
-                className="h-[12.5rem] w-[12.5rem] object-contain md:h-[15.6rem] md:w-[15.6rem]"
-                style={{
-                  filter:
-                    "drop-shadow(0 0 20px rgba(201, 165, 90, 0.35)) brightness(1.05)",
-                  opacity: 0.95,
-                  animation: "vesa-breathe 6s ease-in-out infinite",
-                }}
+              <VesaLogo
+                animated
+                className="h-[12.5rem] w-[12.5rem] md:h-[15.6rem] md:w-[15.6rem]"
               />
-            </div>
-
             <h1
-              className="mt-2 text-center text-[clamp(8.8rem,28.8vw,25.6rem)] md:mt-3 md:text-[clamp(5.5rem,9vw,12rem)] lg:text-[clamp(6rem,8vw,13rem)]"
+              className="mt-2 w-fit text-center text-[clamp(8.8rem,28.8vw,25.6rem)] md:mt-3 md:text-[clamp(5.5rem,9vw,12rem)] lg:text-[clamp(6rem,8vw,13rem)]"
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 300,
                 lineHeight: 0.85,
                 letterSpacing: "0.02em",
-                background:
-                  "linear-gradient(180deg, #f6e6c3 0%, #d8b97f 30%, #b48947 65%, #6e4a23 100%)",
+                background: VESA_WORDMARK_GRADIENT,
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
                 color: "transparent",
                 filter: "drop-shadow(0 4px 40px rgba(201, 165, 90, 0.28))",
-                opacity: mounted ? 1 : 0,
-                transform: mounted ? "translateY(0)" : "translateY(24px)",
                 transition: "opacity 2400ms ease-out 600ms, transform 2400ms ease-out 600ms",
               }}
             >
               VESA
             </h1>
+            </div>
 
             <div
               className="mt-4 flex flex-col items-center"
@@ -414,10 +405,6 @@ function Index() {
         @keyframes vesa-pulse {
           0%, 100% { opacity: 1; transform: scale(1); }
           50% { opacity: 0.4; transform: scale(1.6); }
-        }
-        @keyframes vesa-breathe {
-          0%, 100% { opacity: 0.92; filter: drop-shadow(0 0 20px rgba(201, 165, 90, 0.35)) brightness(1.05); }
-          50% { opacity: 1; filter: drop-shadow(0 0 32px rgba(201, 165, 90, 0.55)) brightness(1.15); }
         }
         @keyframes vesa-ember {
           0% { transform: translate(0, 0) scale(0.6); opacity: 0; }
