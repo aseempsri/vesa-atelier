@@ -17,13 +17,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Learn about VESA Atelier — handcrafted candles founded by Sandhya, blending luxurious fragrances with timeless aesthetics.",
+          "Learn about VESA Atelier — handcrafted candles founded by Sandhya Srivastava, blending luxurious fragrances with timeless aesthetics.",
       },
       { property: "og:title", content: "About VESA Atelier" },
       {
         property: "og:description",
         content:
-          "Handcrafted candles for calm, elegance, and meaningful moments. Founded by Sandhya in Bombay.",
+          "Handcrafted candles for calm, elegance, and meaningful moments. Founded by Sandhya Srivastava in Bombay.",
       },
     ],
   }),
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/about")({
 
 const paragraphs = [
   "At VESA Atelier, we believe that the smallest moments often become the most meaningful ones — the quiet evenings, the warm conversations, the soft glow that turns a space into a feeling.",
-  "Founded by Sandhya, VESA Atelier was born from a deep love for elegant interiors, calming fragrances, and the beauty of handcrafted artistry. What began as a personal passion slowly transformed into a dream of creating products that bring warmth, comfort, and sophistication into everyday living.",
+  "Founded by Sandhya Srivastava, VESA Atelier was born from a deep love for elegant interiors, calming fragrances, and the beauty of handcrafted artistry. What began as a personal passion slowly transformed into a dream of creating products that bring warmth, comfort, and sophistication into everyday living.",
   "Every candle at VESA Atelier is thoughtfully handcrafted with care, blending luxurious fragrances with timeless aesthetics. Inspired by modern minimalism and traditional warmth, our creations are designed not just as candles, but as experiences — pieces that elevate your home, soothe your senses, and create moments worth remembering.",
   "From rich sandalwood notes to soft floral blends, every fragrance is carefully chosen to evoke emotion, calmness, and connection. Our collections are created for people who appreciate beauty in simplicity and find joy in meaningful details.",
   "More than a brand, VESA Atelier is a reflection of intentional living — where luxury feels personal, and every product carries a touch of soul.",
@@ -120,7 +120,7 @@ function AboutPage() {
               paddingLeft: "0.55em",
             }}
           >
-            Founded by Sandhya
+            Founded by Sandhya Srivastava
           </p>
         </div>
       </article>
