@@ -14,7 +14,7 @@ import {
 
 type VesaLayoutProps = {
   children: React.ReactNode;
-  activeNav?: "home" | "about";
+  activeNav?: "home" | "about" | "blog";
 };
 
 export function VesaLayout({ children, activeNav }: VesaLayoutProps) {
@@ -77,6 +77,19 @@ export function VesaLayout({ children, activeNav }: VesaLayoutProps) {
             }}
           >
             About
+          </Link>
+          <Link
+            to="/blog"
+            className="uppercase transition-colors"
+            style={{
+              fontFamily: vesaSans,
+              fontSize: "0.6rem",
+              letterSpacing: "0.4em",
+              color: activeNav === "blog" ? VESA_CREAM : VESA_GOLD_SOFT,
+              paddingLeft: "0.4em",
+            }}
+          >
+            Blog
           </Link>
         </nav>
       </header>
