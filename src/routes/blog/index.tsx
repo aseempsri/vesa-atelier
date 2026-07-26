@@ -141,7 +141,7 @@ function BlogPage() {
               </h2>
 
               <div className="mt-6 space-y-3">
-                {post.excerptLines.map((line, i) => (
+                {post.excerptLines.slice(0, 3).map((line, i) => (
                   <p
                     key={i}
                     style={{
@@ -159,7 +159,7 @@ function BlogPage() {
               </div>
 
               <p
-                className="mt-2"
+                className="mt-2 flex flex-wrap items-baseline gap-x-3"
                 style={{
                   fontFamily: vesaSerif,
                   fontWeight: 300,
@@ -168,23 +168,22 @@ function BlogPage() {
                   color: VESA_GOLD_SOFT,
                 }}
               >
-                …
+                <span>…</span>
+                <Link
+                  to="/blog/$slug"
+                  params={{ slug: post.slug }}
+                  className="uppercase transition-opacity hover:opacity-80"
+                  style={{
+                    fontFamily: vesaSans,
+                    fontSize: "0.75rem",
+                    letterSpacing: "0.35em",
+                    color: VESA_GOLD,
+                    paddingLeft: "0.35em",
+                  }}
+                >
+                  Read more
+                </Link>
               </p>
-
-              <Link
-                to="/blog/$slug"
-                params={{ slug: post.slug }}
-                className="mt-6 inline-block uppercase transition-opacity hover:opacity-80"
-                style={{
-                  fontFamily: vesaSans,
-                  fontSize: "0.75rem",
-                  letterSpacing: "0.35em",
-                  color: VESA_GOLD,
-                  paddingLeft: "0.35em",
-                }}
-              >
-                Read more
-              </Link>
             </article>
           ))}
         </section>

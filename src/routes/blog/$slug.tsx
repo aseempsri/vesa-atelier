@@ -75,21 +75,41 @@ function BlogBlockView({ block }: { block: BlogBlock }) {
 
 function BlogSectionView({ section }: { section: BlogSection }) {
   return (
-    <section className="space-y-5">
+    <section className="space-y-6">
       {section.heading ? (
-        <h2
-          className="pt-2"
-          style={{
-            fontFamily: vesaSerif,
-            fontWeight: 400,
-            fontSize: "clamp(1.7rem, 3vw, 2.15rem)",
-            lineHeight: 1.3,
-            letterSpacing: "0.03em",
-            color: VESA_CREAM,
-          }}
-        >
-          {section.heading}
-        </h2>
+        <div className="pt-4">
+          <div className="mb-4 flex items-center gap-3">
+            <span
+              aria-hidden
+              style={{ color: VESA_GOLD, fontSize: "0.4rem" }}
+            >
+              ◆
+            </span>
+            <span
+              className="h-px flex-1"
+              style={{
+                background: `linear-gradient(90deg, ${VESA_GOLD}, transparent)`,
+                maxWidth: "4.5rem",
+                opacity: 0.7,
+              }}
+            />
+          </div>
+          <h2
+            style={{
+              fontFamily: vesaSerif,
+              fontWeight: 500,
+              fontSize: "clamp(1.9rem, 3.4vw, 2.4rem)",
+              lineHeight: 1.25,
+              letterSpacing: "0.03em",
+              background: VESA_WORDMARK_GRADIENT,
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+            }}
+          >
+            {section.heading}
+          </h2>
+        </div>
       ) : null}
       <div className="space-y-5">
         {section.blocks.map((block, i) => (
@@ -166,7 +186,7 @@ function BlogPostPage() {
 
         <VesaGoldRule />
 
-        <div className="space-y-12">
+        <div className="space-y-14 md:space-y-16">
           {post.sections.map((section, i) => (
             <BlogSectionView key={i} section={section} />
           ))}
@@ -185,7 +205,7 @@ function BlogPostPage() {
               color: VESA_CREAM,
             }}
           >
-            You already have it.
+            {post.closingThought}
           </p>
           <Link
             to="/blog"
