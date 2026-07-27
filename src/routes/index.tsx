@@ -190,7 +190,7 @@ function Index() {
           <span style={{ color: GOLD }}>◆</span>
           <span style={{ paddingLeft: "0.4em" }}>Maison · Bombay</span>
         </div>
-        <div className="flex items-center gap-6 md:gap-8">
+        <div className="ml-auto flex items-center gap-6 md:gap-8">
           <Link
             to="/about"
             className="text-[0.6rem] uppercase transition-opacity hover:opacity-80"
@@ -251,8 +251,8 @@ function Index() {
       </div>
 
       {/* ── Main content ── */}
-      <section className="relative z-20 flex min-h-screen flex-col px-8 pb-12 pt-24 md:px-20 md:pb-20 md:pt-28 lg:px-32">
-        <div className="mt-auto flex w-full -translate-y-[30%] flex-col items-center md:translate-y-0 md:items-start">
+      <section className="relative z-20 flex min-h-screen flex-col justify-center px-8 pb-10 pt-20 md:justify-start md:px-20 md:pb-20 md:pt-28 lg:px-32">
+        <div className="flex w-full flex-col items-center md:mt-auto md:items-start">
           {/* Logo + wordmark + tagline — aligned to each other; block sits left on desktop */}
           <div className="flex w-full flex-col items-center text-center md:w-fit md:max-w-xl md:translate-x-[10%] md:-translate-y-[10%]">
             {/* Logo + VESA — locked on one center axis */}
