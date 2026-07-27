@@ -8,25 +8,27 @@ import {
   vesaSans,
   vesaSerif,
 } from "@/lib/vesa-brand";
+import { breadcrumbJsonLd, buildPageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
-  head: () => ({
-    meta: [
-      { title: "About — VESA Atelier" },
-      {
-        name: "description",
-        content:
-          "Learn about VESA Atelier — handcrafted candles founded by Sandhya Srivastava, blending luxurious fragrances with timeless aesthetics.",
-      },
-      { property: "og:title", content: "About VESA Atelier" },
-      {
-        property: "og:description",
-        content:
-          "Handcrafted candles for calm, elegance, and meaningful moments. Founded by Sandhya Srivastava in Bombay.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "About",
+      description:
+        "Learn about VESA Atelier — handcrafted candles founded by Sandhya Srivastava, blending luxurious fragrances with timeless aesthetics.",
+      path: "/about",
+      keywords: [
+        "about VESA Atelier",
+        "Sandhya Srivastava",
+        "handcrafted candles",
+        "Bombay atelier",
+      ],
+      jsonLd: breadcrumbJsonLd([
+        { name: "Home", path: "/" },
+        { name: "About", path: "/about" },
+      ]),
+    }),
 });
 
 const paragraphs = [

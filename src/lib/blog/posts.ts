@@ -13,6 +13,9 @@ export type BlogPost = {
   subtitle: string;
   eyebrow: string;
   description: string;
+  publishedAt: string;
+  updatedAt?: string;
+  keywords?: string[];
   excerptLines: string[];
   closingThought: string;
   sections: BlogSection[];
@@ -26,6 +29,13 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On validation, the approval trap, and learning to offer yourself the kindness you freely give others.",
+    publishedAt: "2026-07-20",
+    keywords: [
+      "self validation",
+      "seeking approval",
+      "self worth",
+      "emotional wellness",
+    ],
     excerptLines: [
       "You finish a presentation at work.",
       "You don’t immediately ask yourself, “Did I do my best?”",
@@ -346,6 +356,8 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On overthinking, the search for certainty, and learning to notice your thoughts without being trapped by them.",
+    publishedAt: "2026-07-22",
+    keywords: ["overthinking", "anxiety", "self trust", "mental clarity"],
     excerptLines: [
       "A conversation ends, but it doesn’t really end.",
       "On your way home, you’re replaying every word you said.",
@@ -741,6 +753,8 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On the fear of saying no, the cost of always saying yes, and learning that healthy boundaries are an act of self-respect.",
+    publishedAt: "2026-07-24",
+    keywords: ["boundaries", "saying no", "people pleasing", "self respect"],
     excerptLines: [
       "We’ve all been there.",
       "A colleague asks you to take on one more task.",
@@ -1132,6 +1146,13 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On comparison, the illusion of highlight reels, and learning to measure growth against who you were yesterday.",
+    publishedAt: "2026-07-26",
+    keywords: [
+      "comparison",
+      "social media",
+      "self worth",
+      "personal growth",
+    ],
     excerptLines: [
       "It usually begins with something small.",
       "You’re scrolling through your phone while waiting for your coffee.",
@@ -1584,6 +1605,13 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On the inner critic, self-compassion, and learning to respond to fear with curiosity instead of judgment.",
+    publishedAt: "2026-07-27",
+    keywords: [
+      "inner critic",
+      "self compassion",
+      "self talk",
+      "emotional healing",
+    ],
     excerptLines: [
       "Imagine you’ve just finished something you’ve worked hard on.",
       "Maybe it was a presentation.",

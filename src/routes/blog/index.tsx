@@ -12,25 +12,30 @@ import {
   vesaSans,
   vesaSerif,
 } from "@/lib/vesa-brand";
+import { blogJsonLd, breadcrumbJsonLd, buildPageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/blog/")({
   component: BlogPage,
-  head: () => ({
-    meta: [
-      { title: "Blog — VESA Atelier" },
-      {
-        name: "description",
-        content:
-          "Reflections from VESA Atelier — thoughts on calm, self-worth, and living with intention.",
-      },
-      { property: "og:title", content: "Blog — VESA Atelier" },
-      {
-        property: "og:description",
-        content:
-          "Reflections from VESA Atelier — thoughts on calm, self-worth, and living with intention.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "Blog",
+      description:
+        "Reflections from VESA Atelier — thoughts on calm, self-worth, boundaries, and living with intention.",
+      path: "/blog",
+      keywords: [
+        "VESA Atelier blog",
+        "self worth",
+        "mindfulness reflections",
+        "intentional living",
+      ],
+      jsonLd: [
+        blogJsonLd(),
+        breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+        ]),
+      ],
+    }),
 });
 
 function BlogPage() {

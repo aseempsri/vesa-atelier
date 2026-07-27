@@ -12,6 +12,11 @@ import {
   vesaSans,
   vesaSerif,
 } from "@/lib/vesa-brand";
+import {
+  blogPostingJsonLd,
+  breadcrumbJsonLd,
+  buildPageHead,
+} from "@/lib/seo";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -24,16 +29,31 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData }) => {
     const post = loaderData?.post;
     if (!post) {
-      return { meta: [{ title: "Post not found — VESA Atelier" }] };
+      return buildPageHead({
+        title: "Post not found",
+        description: "This reflection could not be found.",
+        path: "/blog",
+        noIndex: true,
+      });
     }
-    return {
-      meta: [
-        { title: `${post.title} — VESA Atelier` },
-        { name: "description", content: post.description },
-        { property: "og:title", content: post.title },
-        { property: "og:description", content: post.description },
+    return buildPageHead({
+      title: post.title,
+      description: post.description,
+      path: `/blog/${post.slug}`,
+      type: "article",
+      publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt ?? post.publishedAt,
+      keywords: post.keywords,
+      imageAlt: post.title,
+      jsonLd: [
+        blogPostingJsonLd(post),
+        breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ]),
       ],
-    };
+    });
   },
   component: BlogPostPage,
 });

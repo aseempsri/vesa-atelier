@@ -4,24 +4,23 @@ import heroImage from "@/assets/vesa-hero.jpg";
 import marbleTexture from "@/assets/vesa-marble.jpg";
 import { VesaLogo } from "@/components/vesa-logo";
 import { VESA_WORDMARK_GRADIENT } from "@/lib/vesa-brand";
+import { buildPageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   component: Index,
-  head: () => ({
-    meta: [
-      { title: "VESA Atelier — A House of Hand-Poured Light" },
-      {
-        name: "description",
-        content:
-          "VESA Atelier — a house of hand-poured candles. The first collection arrives soon at vesa.co.in",
-      },
-      { property: "og:title", content: "VESA Atelier — Coming Soon" },
-      {
-        property: "og:description",
-        content: "A house of hand-poured candles. The first collection arrives soon.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "A House of Hand-Poured Light",
+      description:
+        "VESA Atelier — a house of hand-poured candles. The first collection arrives soon at vesa.co.in.",
+      path: "/",
+      keywords: [
+        "VESA Atelier",
+        "hand-poured candles",
+        "luxury candles India",
+        "Bombay candles",
+      ],
+    }),
 });
 
 const GOLD = "#c9a55a";
