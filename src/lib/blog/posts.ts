@@ -1125,6 +1125,458 @@ const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "comparison",
+    title: "Why Do We Compare Ourselves to Others?",
+    subtitle: "Have You Ever Felt Like Everyone Else Is Ahead?",
+    eyebrow: "Reflections",
+    description:
+      "On comparison, the illusion of highlight reels, and learning to measure growth against who you were yesterday.",
+    excerptLines: [
+      "It usually begins with something small.",
+      "You’re scrolling through your phone while waiting for your coffee.",
+      "A former classmate announces a promotion.",
+    ],
+    closingThought: "You are not behind. You are becoming.",
+    sections: [
+      {
+        blocks: [
+          {
+            type: "paragraph",
+            text: "It usually begins with something small.",
+          },
+          {
+            type: "paragraph",
+            text: "You’re scrolling through your phone while waiting for your coffee.",
+          },
+          {
+            type: "paragraph",
+            text: "A former classmate announces a promotion.",
+          },
+          {
+            type: "paragraph",
+            text: "A friend shares photos from their dream vacation.",
+          },
+          {
+            type: "paragraph",
+            text: "Someone you know has started a successful business.",
+          },
+          {
+            type: "paragraph",
+            text: "Another friend posts about buying their first home.",
+          },
+          {
+            type: "paragraph",
+            text: "You smile. You genuinely feel happy for them.",
+          },
+          {
+            type: "paragraph",
+            text: "But then, almost without warning, another thought quietly slips in.",
+          },
+          {
+            type: "paragraph",
+            text: "“What am I doing with my life?”",
+          },
+          {
+            type: "paragraph",
+            text: "Suddenly, your own achievements don’t seem as meaningful.",
+          },
+          {
+            type: "paragraph",
+            text: "The goals you’ve been working toward feel smaller.",
+          },
+          {
+            type: "paragraph",
+            text: "The progress you’ve made feels invisible.",
+          },
+          {
+            type: "paragraph",
+            text: "And before you know it, someone else’s story has become the measuring stick for your own.",
+          },
+          {
+            type: "paragraph",
+            text: "If you’ve ever felt this way, I want you to know something important.",
+          },
+          { type: "paragraph", text: "You’re not failing." },
+          {
+            type: "paragraph",
+            text: "You’re experiencing something deeply human.",
+          },
+        ],
+      },
+      {
+        heading: "Why Do We Compare Ourselves?",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Comparison is part of being human.",
+          },
+          {
+            type: "paragraph",
+            text: "Long before social media existed, people naturally looked to those around them to understand where they stood.",
+          },
+          {
+            type: "paragraph",
+            text: "Psychologists call this Social Comparison Theory, introduced by Leon Festinger in 1954. The idea is simple: when we don’t have an objective way to measure ourselves, we often compare ourselves with others to evaluate our progress.",
+          },
+          {
+            type: "paragraph",
+            text: "In moderation, comparison can even be helpful.",
+          },
+          { type: "paragraph", text: "It can inspire us." },
+          { type: "paragraph", text: "Teach us." },
+          { type: "paragraph", text: "Motivate us." },
+          {
+            type: "paragraph",
+            text: "The problem isn’t comparison itself.",
+          },
+          {
+            type: "paragraph",
+            text: "The problem begins when comparison becomes the way we decide whether we’re enough.",
+          },
+        ],
+      },
+      {
+        heading: "The Illusion We See Online",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Think about your favorite movie.",
+          },
+          {
+            type: "paragraph",
+            text: "Imagine watching only the best five minutes.",
+          },
+          { type: "paragraph", text: "The exciting scenes." },
+          { type: "paragraph", text: "The victories." },
+          { type: "paragraph", text: "The happy ending." },
+          {
+            type: "paragraph",
+            text: "It would look like a perfect story.",
+          },
+          {
+            type: "paragraph",
+            text: "But you would miss everything that made those moments meaningful.",
+          },
+          { type: "paragraph", text: "The struggles." },
+          { type: "paragraph", text: "The setbacks." },
+          { type: "paragraph", text: "The uncertainty." },
+          {
+            type: "paragraph",
+            text: "Social media works in much the same way.",
+          },
+          {
+            type: "paragraph",
+            text: "Most people don’t post their sleepless nights, difficult conversations, financial worries, or moments of self-doubt.",
+          },
+          { type: "paragraph", text: "They share the milestones." },
+          { type: "paragraph", text: "The celebrations." },
+          { type: "paragraph", text: "The highlights." },
+          {
+            type: "paragraph",
+            text: "Then we compare those highlights to our ordinary Tuesday afternoon.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s an unfair comparison from the very beginning.",
+          },
+        ],
+      },
+      {
+        heading: "When Comparison Stops Inspiring and Starts Hurting",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "There’s a healthy kind of comparison.",
+          },
+          {
+            type: "paragraph",
+            text: "You see someone achieve something and think,",
+          },
+          {
+            type: "paragraph",
+            text: "“If they can do it, maybe I can too.”",
+          },
+          { type: "paragraph", text: "That’s inspiration." },
+          {
+            type: "paragraph",
+            text: "Then there’s another kind.",
+          },
+          {
+            type: "paragraph",
+            text: "“They’re doing better than me… maybe I’ll never be enough.”",
+          },
+          {
+            type: "paragraph",
+            text: "That’s comparison turning into self-judgment.",
+          },
+          {
+            type: "paragraph",
+            text: "Notice the difference?",
+          },
+          {
+            type: "paragraph",
+            text: "One encourages growth.",
+          },
+          {
+            type: "paragraph",
+            text: "The other quietly steals it.",
+          },
+        ],
+      },
+      {
+        heading: "You’re Measuring Different Journeys",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "One of the biggest mistakes we make is assuming everyone starts from the same place.",
+          },
+          {
+            type: "paragraph",
+            text: "But every person’s life is shaped by different circumstances.",
+          },
+          {
+            type: "paragraph",
+            text: "Different opportunities.",
+          },
+          {
+            type: "paragraph",
+            text: "Different responsibilities.",
+          },
+          {
+            type: "paragraph",
+            text: "Different struggles.",
+          },
+          {
+            type: "paragraph",
+            text: "Different timelines.",
+          },
+          {
+            type: "paragraph",
+            text: "Imagine two people climbing different mountains.",
+          },
+          {
+            type: "paragraph",
+            text: "One mountain is steep and rocky.",
+          },
+          {
+            type: "paragraph",
+            text: "The other has a gentler path.",
+          },
+          {
+            type: "paragraph",
+            text: "Would it make sense to compare how quickly they’re climbing?",
+          },
+          { type: "paragraph", text: "Of course not." },
+          {
+            type: "paragraph",
+            text: "Yet that’s exactly what we often do with our lives.",
+          },
+          {
+            type: "paragraph",
+            text: "We compare our beginning to someone else’s middle.",
+          },
+          {
+            type: "paragraph",
+            text: "Our behind-the-scenes to someone else’s polished result.",
+          },
+          {
+            type: "paragraph",
+            text: "Our chapter three to someone else’s chapter fifteen.",
+          },
+        ],
+      },
+      {
+        heading: "The Question That Changes Everything",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The next time comparison creeps in, pause and ask yourself:",
+          },
+          {
+            type: "paragraph",
+            text: "“Am I comparing lives… or just moments?”",
+          },
+          {
+            type: "paragraph",
+            text: "Because a moment never tells the whole story.",
+          },
+          {
+            type: "paragraph",
+            text: "One photograph can’t capture years of effort.",
+          },
+          {
+            type: "paragraph",
+            text: "One achievement doesn’t define an entire life.",
+          },
+          {
+            type: "paragraph",
+            text: "And one setback certainly doesn’t define yours.",
+          },
+        ],
+      },
+      {
+        heading: "Measuring Growth the Right Way",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Instead of comparing yourself with someone else, compare yourself with who you were yesterday.",
+          },
+          {
+            type: "paragraph",
+            text: "Have you become kinder?",
+          },
+          { type: "paragraph", text: "More patient?" },
+          {
+            type: "paragraph",
+            text: "More emotionally aware?",
+          },
+          {
+            type: "paragraph",
+            text: "More willing to try again after failing?",
+          },
+          {
+            type: "paragraph",
+            text: "These victories may never go viral.",
+          },
+          {
+            type: "paragraph",
+            text: "But they are the ones that quietly change your life.",
+          },
+          {
+            type: "paragraph",
+            text: "Progress isn’t always loud.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes it’s simply choosing not to give up.",
+          },
+        ],
+      },
+      {
+        heading: "One Small Step You Can Try Today",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Today, write down three things you’ve accomplished in the past year.",
+          },
+          {
+            type: "paragraph",
+            text: "Not things that impressed other people.",
+          },
+          {
+            type: "paragraph",
+            text: "Things that made you grow.",
+          },
+          {
+            type: "paragraph",
+            text: "Maybe you learned to manage your emotions better.",
+          },
+          {
+            type: "paragraph",
+            text: "Maybe you finally stood up for yourself.",
+          },
+          {
+            type: "paragraph",
+            text: "Maybe you began healing from something that once felt impossible.",
+          },
+          {
+            type: "paragraph",
+            text: "Those achievements deserve to be celebrated too.",
+          },
+        ],
+      },
+      {
+        heading: "Take a Moment",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Before you move on, sit with these questions:",
+          },
+          {
+            type: "list",
+            items: [
+              "Whose life do you compare yourself to most often?",
+              "What do you think they have that you don’t?",
+              "Is it possible you’re only seeing one chapter of their story?",
+              "What is one area where you’ve grown that deserves more recognition?",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Be honest with yourself.",
+          },
+          {
+            type: "paragraph",
+            text: "Growth begins with awareness.",
+          },
+        ],
+      },
+      {
+        heading: "A Thought to Carry With You",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "There will always be someone ahead of you.",
+          },
+          {
+            type: "paragraph",
+            text: "And there will always be someone looking at your journey, hoping to reach where you are.",
+          },
+          {
+            type: "paragraph",
+            text: "Life was never meant to be a race against other people.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s an invitation to become more fully yourself.",
+          },
+        ],
+      },
+      {
+        heading: "Before You Leave…",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "If you remember only one thing from this conversation, let it be this:",
+          },
+          {
+            type: "paragraph",
+            text: "Someone else’s success is not evidence of your failure.",
+          },
+          {
+            type: "paragraph",
+            text: "There is room for more than one person to grow.",
+          },
+          {
+            type: "paragraph",
+            text: "More than one person to succeed.",
+          },
+          {
+            type: "paragraph",
+            text: "More than one person to shine.",
+          },
+          {
+            type: "paragraph",
+            text: "Walk your path with patience.",
+          },
+          { type: "paragraph", text: "Trust your timing." },
+          {
+            type: "paragraph",
+            text: "And whenever comparison begins to whisper that you’re behind, gently remind yourself:",
+          },
+          {
+            type: "paragraph",
+            text: "You are not behind. You are becoming.",
+          },
+          {
+            type: "paragraph",
+            text: "Until our next conversation, be kind to yourself. Growth isn’t always visible—but that doesn’t mean it isn’t happening.",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export function getAllPosts(): BlogPost[] {
