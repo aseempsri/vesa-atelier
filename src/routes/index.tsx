@@ -84,7 +84,7 @@ function Index() {
 
   return (
     <main
-      className="relative min-h-screen w-full overflow-hidden"
+      className="relative h-dvh max-h-dvh w-full overflow-hidden"
       style={{ backgroundColor: "#08070a" }}
     >
       {/* ── Marble base ── */}
@@ -251,7 +251,7 @@ function Index() {
       </div>
 
       {/* ── Main content ── */}
-      <section className="relative z-20 flex min-h-screen flex-col justify-center px-8 pb-10 pt-20 md:justify-start md:px-20 md:pb-20 md:pt-28 lg:px-32">
+      <section className="relative z-20 flex h-full flex-col justify-center px-8 pb-8 pt-16 md:justify-start md:px-20 md:pb-20 md:pt-28 lg:px-32">
         <div className="flex w-full flex-col items-center md:mt-auto md:items-start">
           {/* Logo + wordmark + tagline — aligned to each other; block sits left on desktop */}
           <div className="flex w-full flex-col items-center text-center md:w-fit md:max-w-xl md:translate-x-[10%] md:-translate-y-[10%]">
@@ -266,10 +266,10 @@ function Index() {
             >
               <VesaLogo
                 animated
-                className="h-[12.5rem] w-[12.5rem] md:h-[15.6rem] md:w-[15.6rem]"
+                className="h-[8.5rem] w-[8.5rem] md:h-[15.6rem] md:w-[15.6rem]"
               />
             <h1
-              className="mt-2 w-fit text-center text-[clamp(8.8rem,28.8vw,25.6rem)] md:mt-3 md:text-[clamp(5.5rem,9vw,12rem)] lg:text-[clamp(6rem,8vw,13rem)]"
+              className="mt-1 w-fit text-center text-[clamp(5rem,18vw,7.25rem)] md:mt-3 md:text-[clamp(5.5rem,9vw,12rem)] lg:text-[clamp(6rem,8vw,13rem)]"
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 300,
@@ -288,7 +288,7 @@ function Index() {
             </div>
 
             <div
-              className="mt-4 flex flex-col items-center"
+              className="mt-3 flex flex-col items-center md:mt-4"
               style={{
                 opacity: mounted ? 1 : 0,
                 transition: "opacity 2000ms ease-out 1300ms",
@@ -340,7 +340,7 @@ function Index() {
             </div>
 
             <p
-              className="mt-10 max-w-md text-center md:max-w-none md:whitespace-nowrap"
+              className="mt-6 max-w-md text-center md:mt-10 md:max-w-none md:whitespace-nowrap"
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontStyle: "italic",
@@ -362,7 +362,7 @@ function Index() {
 
         {/* Bottom row */}
         <div
-          className="mt-12 flex w-full flex-col items-center gap-6 md:mt-14 md:flex-row md:items-end md:justify-between md:gap-0 lg:mt-16"
+          className="mt-8 flex w-full flex-col items-center gap-3 md:mt-14 md:flex-row md:items-end md:justify-between md:gap-0 lg:mt-16"
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(8px)",
