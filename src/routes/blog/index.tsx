@@ -53,12 +53,12 @@ function BlogPage() {
           </p>
 
           <h1
-            className="mt-5"
+            className="mt-5 overflow-visible pb-1"
             style={{
               fontFamily: vesaSerif,
               fontWeight: 300,
               fontSize: "clamp(2.85rem, 6.5vw, 4.25rem)",
-              lineHeight: 1.1,
+              lineHeight: 1.25,
               letterSpacing: "0.02em",
               background: VESA_WORDMARK_GRADIENT,
               WebkitBackgroundClip: "text",
@@ -127,18 +127,51 @@ function BlogPage() {
               </p>
 
               <h2
-                className="mt-4"
+                className="mt-4 overflow-visible pb-1"
                 style={{
                   fontFamily: vesaSerif,
                   fontWeight: 400,
                   fontSize: "clamp(1.75rem, 3.5vw, 2.35rem)",
-                  lineHeight: 1.25,
+                  lineHeight: 1.3,
                   letterSpacing: "0.02em",
                   color: VESA_CREAM,
                 }}
               >
                 {post.title}
               </h2>
+
+              <div className="mt-6">
+                <p
+                  className="overflow-visible pb-1"
+                  style={{
+                    fontFamily: vesaSerif,
+                    fontWeight: 400,
+                    fontStyle: "italic",
+                    fontSize: "clamp(1.25rem, 2.4vw, 1.55rem)",
+                    lineHeight: 1.4,
+                    letterSpacing: "0.01em",
+                    color: VESA_CREAM,
+                  }}
+                >
+                  {post.subtitle}
+                </p>
+                <div className="mt-3 flex items-center gap-3">
+                  <span
+                    aria-hidden
+                    style={{ color: VESA_GOLD, fontSize: "0.4rem" }}
+                  >
+                    ◆
+                  </span>
+                  <span
+                    className="h-px flex-1"
+                    style={{
+                      background: `linear-gradient(90deg, ${VESA_GOLD}, transparent)`,
+                      maxWidth: "4.5rem",
+                      opacity: 0.7,
+                    }}
+                  />
+                </div>
+              </div>
 
               <div className="mt-6 space-y-3">
                 {post.excerptLines.slice(0, 3).map((line, i) => (

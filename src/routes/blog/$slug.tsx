@@ -46,6 +46,16 @@ const bodyStyle = {
   color: VESA_BODY,
 } as const;
 
+const subheaderStyle = {
+  fontFamily: vesaSerif,
+  fontWeight: 400,
+  fontStyle: "italic" as const,
+  fontSize: "clamp(1.45rem, 2.8vw, 1.85rem)",
+  lineHeight: 1.4,
+  letterSpacing: "0.01em",
+  color: VESA_CREAM,
+};
+
 function BlogBlockView({ block }: { block: BlogBlock }) {
   if (block.type === "list") {
     return (
@@ -73,42 +83,43 @@ function BlogBlockView({ block }: { block: BlogBlock }) {
   return <p style={bodyStyle}>{block.text}</p>;
 }
 
+function BlogHeadingAccent({ children }: { children: React.ReactNode }) {
+  return (
+    <div>
+      {children}
+      <div className="mt-4 flex items-center gap-3">
+        <span
+          aria-hidden
+          style={{ color: VESA_GOLD, fontSize: "0.4rem" }}
+        >
+          ◆
+        </span>
+        <span
+          className="h-px flex-1"
+          style={{
+            background: `linear-gradient(90deg, ${VESA_GOLD}, transparent)`,
+            maxWidth: "4.5rem",
+            opacity: 0.7,
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
 function BlogSectionView({ section }: { section: BlogSection }) {
   return (
     <section className="space-y-6">
       {section.heading ? (
         <div className="pt-4">
-          <div className="mb-4 flex items-center gap-3">
-            <span
-              aria-hidden
-              style={{ color: VESA_GOLD, fontSize: "0.4rem" }}
+          <BlogHeadingAccent>
+            <h2
+              className="overflow-visible pb-1"
+              style={subheaderStyle}
             >
-              ◆
-            </span>
-            <span
-              className="h-px flex-1"
-              style={{
-                background: `linear-gradient(90deg, ${VESA_GOLD}, transparent)`,
-                maxWidth: "4.5rem",
-                opacity: 0.7,
-              }}
-            />
-          </div>
-          <h2
-            style={{
-              fontFamily: vesaSerif,
-              fontWeight: 500,
-              fontSize: "clamp(1.9rem, 3.4vw, 2.4rem)",
-              lineHeight: 1.25,
-              letterSpacing: "0.03em",
-              background: VESA_WORDMARK_GRADIENT,
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            {section.heading}
-          </h2>
+              {section.heading}
+            </h2>
+          </BlogHeadingAccent>
         </div>
       ) : null}
       <div className="space-y-5">
@@ -167,12 +178,12 @@ function BlogPostPage() {
         </p>
 
         <h1
-          className="mt-5"
+          className="mt-5 overflow-visible pb-1"
           style={{
             fontFamily: vesaSerif,
             fontWeight: 300,
             fontSize: "clamp(2.35rem, 5.5vw, 3.5rem)",
-            lineHeight: 1.15,
+            lineHeight: 1.25,
             letterSpacing: "0.02em",
             background: VESA_WORDMARK_GRADIENT,
             WebkitBackgroundClip: "text",
@@ -186,7 +197,18 @@ function BlogPostPage() {
 
         <VesaGoldRule />
 
-        <div className="space-y-14 md:space-y-16">
+        <div>
+          <BlogHeadingAccent>
+            <p
+              className="overflow-visible pb-1"
+              style={subheaderStyle}
+            >
+              {post.subtitle}
+            </p>
+          </BlogHeadingAccent>
+        </div>
+
+        <div className="mt-10 space-y-14 md:mt-12 md:space-y-16">
           {post.sections.map((section, i) => (
             <BlogSectionView key={i} section={section} />
           ))}

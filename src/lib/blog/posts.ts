@@ -10,6 +10,7 @@ export type BlogSection = {
 export type BlogPost = {
   slug: string;
   title: string;
+  subtitle: string;
   eyebrow: string;
   description: string;
   excerptLines: string[];
@@ -20,7 +21,8 @@ export type BlogPost = {
 const posts: BlogPost[] = [
   {
     slug: "self-validation",
-    title: "Have You Ever Waited for Someone Else to Decide How You Should Feel?",
+    title: "The Hidden Reason We Keep Seeking Validation",
+    subtitle: "Have You Ever Waited for Someone Else to Decide How You Should Feel?",
     eyebrow: "Reflections",
     description:
       "On validation, the approval trap, and learning to offer yourself the kindness you freely give others.",
@@ -339,7 +341,8 @@ const posts: BlogPost[] = [
   },
   {
     slug: "overthinking",
-    title: "Have You Ever Replayed the Same Moment a Hundred Times?",
+    title: "Why Do We Overthink Everything?",
+    subtitle: "Have You Ever Replayed the Same Moment a Hundred Times?",
     eyebrow: "Reflections",
     description:
       "On overthinking, the search for certainty, and learning to notice your thoughts without being trapped by them.",
@@ -733,7 +736,8 @@ const posts: BlogPost[] = [
   },
   {
     slug: "saying-no",
-    title: "I Didn’t Want To… But I Said Yes Anyway.",
+    title: "Why Is It So Hard to Say No?",
+    subtitle: "I Didn’t Want To… But I Said Yes Anyway.",
     eyebrow: "Reflections",
     description:
       "On the fear of saying no, the cost of always saying yes, and learning that healthy boundaries are an act of self-respect.",
