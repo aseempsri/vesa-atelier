@@ -74,18 +74,35 @@ function Index() {
 
   useEffect(() => {
     const t = setTimeout(() => setMounted(true), 80);
+
+    // Hard-lock document scroll on the landing page (iOS Safari included)
+    const html = document.documentElement;
+    const body = document.body;
+    const prev = {
+      htmlOverflow: html.style.overflow,
+      bodyOverflow: body.style.overflow,
+      bodyOverscroll: body.style.overscrollBehavior,
+    };
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+    body.style.overscrollBehavior = "none";
+
     const onScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => {
       clearTimeout(t);
       window.removeEventListener("scroll", onScroll);
+      html.style.overflow = prev.htmlOverflow;
+      body.style.overflow = prev.bodyOverflow;
+      body.style.overscrollBehavior = prev.bodyOverscroll;
     };
   }, []);
 
   return (
     <main
-      className="relative h-dvh max-h-dvh w-full overflow-hidden"
-      style={{ backgroundColor: "#08070a" }}
+      className="fixed inset-0 z-0 w-full overflow-hidden overscroll-none"
+      style={{ backgroundColor: "#08070a", height: "100svh", maxHeight: "100svh" }}
     >
       {/* ── Marble base ── */}
       <div
@@ -251,11 +268,11 @@ function Index() {
       </div>
 
       {/* ── Main content ── */}
-      <section className="relative z-20 flex h-full flex-col px-7 pb-7 pt-[4.25rem] md:justify-start md:px-20 md:pb-20 md:pt-28 lg:px-32">
-        {/* Brand stage — fills the vertical space on mobile, left-weighted on desktop */}
+      <section className="relative z-20 flex h-full min-h-0 flex-col overflow-hidden px-6 pb-6 pt-[4rem] md:justify-start md:px-20 md:pb-20 md:pt-28 lg:px-32">
+        {/* Brand stage */}
         <div className="flex min-h-0 flex-1 flex-col items-center justify-center md:mt-auto md:flex-none md:items-start md:justify-start">
-          <div className="flex w-full flex-col items-center text-center md:w-fit md:max-w-xl md:translate-x-[10%] md:-translate-y-[10%]">
-            {/* Crest + wordmark */}
+          <div className="flex w-full max-w-full flex-col items-center text-center md:w-fit md:max-w-xl md:translate-x-[10%] md:-translate-y-[10%]">
+            {/* Crest + wordmark — sized to own the viewport on mobile */}
             <div
               className="flex flex-col items-center"
               style={{
@@ -266,10 +283,10 @@ function Index() {
             >
               <VesaLogo
                 animated
-                className="h-[min(42vw,20dvh)] w-[min(42vw,20dvh)] md:h-[15.6rem] md:w-[15.6rem]"
+                className="h-[min(56vw,26svh)] w-[min(56vw,26svh)] md:h-[15.6rem] md:w-[15.6rem]"
               />
               <h1
-                className="-mt-1 w-fit text-center text-[min(30vw,14dvh)] leading-[0.82] md:mt-3 md:text-[clamp(5.5rem,9vw,12rem)] md:leading-[0.85] lg:text-[clamp(6rem,8vw,13rem)]"
+                className="-mt-2 w-fit text-center text-[min(46vw,18svh)] leading-[0.8] md:mt-3 md:text-[clamp(5.5rem,9vw,12rem)] md:leading-[0.85] lg:text-[clamp(6rem,8vw,13rem)]"
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
                   fontWeight: 300,
@@ -287,7 +304,7 @@ function Index() {
             </div>
 
             <div
-              className="mt-[1.4dvh] flex flex-col items-center md:mt-4"
+              className="mt-[1.2svh] flex flex-col items-center md:mt-4"
               style={{
                 opacity: mounted ? 1 : 0,
                 transition: "opacity 2000ms ease-out 1300ms",
@@ -302,7 +319,7 @@ function Index() {
                 />
                 <div className="flex flex-col items-center">
                   <span
-                    className="uppercase text-[clamp(1.05rem,2.8vw,1.4rem)]"
+                    className="uppercase text-[clamp(1.1rem,3vw,1.4rem)]"
                     style={{
                       fontFamily: "'Cormorant Garamond', serif",
                       fontWeight: 400,
@@ -338,13 +355,13 @@ function Index() {
             </div>
 
             <p
-              className="mt-[3.2dvh] max-w-[17rem] text-center text-[clamp(1.05rem,2.6vw,1.2rem)] md:mt-10 md:max-w-none md:whitespace-nowrap md:text-[clamp(1rem,1.4vw,1.2rem)]"
+              className="mt-[2.2svh] max-w-[18rem] text-center text-[clamp(1.05rem,2.6vw,1.2rem)] md:mt-10 md:max-w-none md:whitespace-nowrap md:text-[clamp(1rem,1.4vw,1.2rem)]"
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontStyle: "italic",
                 fontWeight: 300,
                 letterSpacing: "0.03em",
-                lineHeight: 1.55,
+                lineHeight: 1.5,
                 color: "rgba(232, 220, 198, 0.78)",
                 opacity: mounted ? 1 : 0,
                 transition: "opacity 2200ms ease-out 1600ms",
@@ -357,9 +374,9 @@ function Index() {
             </p>
           </div>
 
-          {/* Desktop bottom row */}
+          {/* Desktop stacked status — Coming Soon above domain */}
           <div
-            className="mt-14 hidden w-full items-end justify-between md:flex lg:mt-16"
+            className="mt-14 hidden flex-col items-start gap-3 md:flex lg:mt-16"
             style={{
               opacity: mounted ? 1 : 0,
               transform: mounted ? "translateY(0)" : "translateY(8px)",
@@ -405,9 +422,9 @@ function Index() {
           </div>
         </div>
 
-        {/* Mobile footer rail — keeps the brand stage free to breathe */}
+        {/* Mobile status — Coming Soon above domain */}
         <div
-          className="flex shrink-0 items-center justify-center gap-3 pt-2 md:hidden"
+          className="flex shrink-0 flex-col items-center gap-2.5 pt-1 md:hidden"
           style={{
             opacity: mounted ? 1 : 0,
             transition: "opacity 2200ms ease-out 1900ms",
@@ -418,16 +435,13 @@ function Index() {
             style={{
               fontFamily: "'Inter', sans-serif",
               fontWeight: 400,
-              fontSize: "0.62rem",
-              letterSpacing: "0.45em",
+              fontSize: "0.65rem",
+              letterSpacing: "0.5em",
               color: CREAM,
-              paddingLeft: "0.45em",
+              paddingLeft: "0.5em",
             }}
           >
             Coming Soon
-          </span>
-          <span aria-hidden style={{ color: GOLD, fontSize: "0.35rem" }}>
-            ◆
           </span>
           <span
             className="uppercase"
@@ -435,9 +449,9 @@ function Index() {
               fontFamily: "'Inter', sans-serif",
               fontWeight: 300,
               fontSize: "0.58rem",
-              letterSpacing: "0.4em",
+              letterSpacing: "0.45em",
               color: GOLD_SOFT,
-              paddingLeft: "0.4em",
+              paddingLeft: "0.45em",
             }}
           >
             vesa.co.in
