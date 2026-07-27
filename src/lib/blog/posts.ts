@@ -1577,6 +1577,427 @@ const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "inner-critic",
+    title: "Understanding Your Inner Critic",
+    subtitle: "Have You Ever Been Your Own Worst Critic?",
+    eyebrow: "Reflections",
+    description:
+      "On the inner critic, self-compassion, and learning to respond to fear with curiosity instead of judgment.",
+    excerptLines: [
+      "Imagine you’ve just finished something you’ve worked hard on.",
+      "Maybe it was a presentation.",
+      "An interview.",
+    ],
+    closingThought: "I'm worthy of kindness—even from myself.",
+    sections: [
+      {
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Imagine you’ve just finished something you’ve worked hard on.",
+          },
+          { type: "paragraph", text: "Maybe it was a presentation." },
+          { type: "paragraph", text: "An interview." },
+          { type: "paragraph", text: "A creative project." },
+          {
+            type: "paragraph",
+            text: "Or simply trying something new.",
+          },
+          {
+            type: "paragraph",
+            text: "Before anyone else has a chance to say a word, your mind begins its own review.",
+          },
+          {
+            type: "paragraph",
+            text: "“You could have done better.”",
+          },
+          { type: "paragraph", text: "“That wasn’t good enough.”" },
+          {
+            type: "paragraph",
+            text: "“You should’ve known the answer.”",
+          },
+          {
+            type: "paragraph",
+            text: "“Why do you always make mistakes?”",
+          },
+          { type: "paragraph", text: "Sound familiar?" },
+          {
+            type: "paragraph",
+            text: "What’s interesting is that these thoughts often arrive so quickly that we don’t even notice them.",
+          },
+          {
+            type: "paragraph",
+            text: "We simply accept them as facts.",
+          },
+          {
+            type: "paragraph",
+            text: "But here’s something worth asking:",
+          },
+          {
+            type: "paragraph",
+            text: "What if that voice isn’t telling you the truth?",
+          },
+        ],
+      },
+      {
+        heading: "Meet Your Inner Critic",
+        blocks: [
+          { type: "paragraph", text: "We all have an inner voice." },
+          { type: "paragraph", text: "Sometimes it encourages us." },
+          {
+            type: "paragraph",
+            text: "Sometimes it reminds us to be careful.",
+          },
+          {
+            type: "paragraph",
+            text: "And sometimes it becomes our harshest judge.",
+          },
+          {
+            type: "paragraph",
+            text: "This is what psychologists often call the inner critic.",
+          },
+          {
+            type: "paragraph",
+            text: "It isn’t a separate part of you.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s a pattern of thinking that has developed over years of experiences, beliefs, and expectations.",
+          },
+          {
+            type: "paragraph",
+            text: "The inner critic usually has good intentions.",
+          },
+          { type: "paragraph", text: "It wants to protect you." },
+          { type: "paragraph", text: "From embarrassment." },
+          { type: "paragraph", text: "From rejection." },
+          { type: "paragraph", text: "From failure." },
+          {
+            type: "paragraph",
+            text: "Its logic is simple:",
+          },
+          {
+            type: "paragraph",
+            text: "“If I criticize myself first, maybe no one else will.”",
+          },
+          {
+            type: "paragraph",
+            text: "But while its intention may be protection, its method often causes pain.",
+          },
+        ],
+      },
+      {
+        heading: "Where Does This Voice Come From?",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The inner critic doesn’t appear overnight.",
+          },
+          { type: "paragraph", text: "It grows quietly." },
+          {
+            type: "paragraph",
+            text: "Sometimes it begins with repeated criticism during childhood.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes it develops after a painful failure.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes it comes from unrealistic expectations placed on us by society, school, work, or even ourselves.",
+          },
+          {
+            type: "paragraph",
+            text: "Over time, those external voices slowly become internal ones.",
+          },
+          {
+            type: "paragraph",
+            text: "Eventually, you no longer need someone else to criticize you.",
+          },
+          {
+            type: "paragraph",
+            text: "Your own mind has learned how to do it automatically.",
+          },
+        ],
+      },
+      {
+        heading: "The Problem With Believing Every Thought",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Imagine wearing glasses with scratched lenses.",
+          },
+          {
+            type: "paragraph",
+            text: "Everything you see would appear distorted.",
+          },
+          {
+            type: "paragraph",
+            text: "Not because the world is broken.",
+          },
+          { type: "paragraph", text: "But because the lens is." },
+          {
+            type: "paragraph",
+            text: "Your inner critic works in a similar way.",
+          },
+          {
+            type: "paragraph",
+            text: "It filters experiences through fear.",
+          },
+          {
+            type: "paragraph",
+            text: "One mistake becomes:",
+          },
+          { type: "paragraph", text: "“I’m a failure.”" },
+          {
+            type: "paragraph",
+            text: "One rejection becomes:",
+          },
+          { type: "paragraph", text: "“Nobody likes me.”" },
+          {
+            type: "paragraph",
+            text: "One difficult day becomes:",
+          },
+          {
+            type: "paragraph",
+            text: "“I’ll never get this right.”",
+          },
+          {
+            type: "paragraph",
+            text: "Notice how quickly it jumps from a single event to a conclusion about your entire identity.",
+          },
+          { type: "paragraph", text: "That’s not reality." },
+          {
+            type: "paragraph",
+            text: "That’s fear wearing the disguise of certainty.",
+          },
+        ],
+      },
+      {
+        heading: "The Voice You’d Never Use With Someone You Love",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Here’s a simple exercise.",
+          },
+          {
+            type: "paragraph",
+            text: "Imagine your closest friend came to you after making a mistake.",
+          },
+          { type: "paragraph", text: "Would you say," },
+          { type: "paragraph", text: "“You’re hopeless.”" },
+          { type: "paragraph", text: "“You’ll never succeed.”" },
+          {
+            type: "paragraph",
+            text: "“Why do you always ruin everything?”",
+          },
+          { type: "paragraph", text: "Probably not." },
+          {
+            type: "paragraph",
+            text: "You’d offer understanding.",
+          },
+          { type: "paragraph", text: "Perspective." },
+          { type: "paragraph", text: "Encouragement." },
+          {
+            type: "paragraph",
+            text: "So why is your own heart deserving of less kindness than someone else’s?",
+          },
+          {
+            type: "paragraph",
+            text: "Self-compassion isn’t lowering your standards.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s changing the way you speak to yourself while you continue to grow.",
+          },
+        ],
+      },
+      {
+        heading: "You Don’t Have to Fight Your Inner Critic",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Many people believe they need to silence that voice.",
+          },
+          {
+            type: "paragraph",
+            text: "But the more we fight our thoughts, the louder they often become.",
+          },
+          {
+            type: "paragraph",
+            text: "Instead, try listening with curiosity.",
+          },
+          {
+            type: "paragraph",
+            text: "The next time your inner critic says,",
+          },
+          {
+            type: "paragraph",
+            text: "“You’re not good enough.”",
+          },
+          { type: "paragraph", text: "Pause." },
+          {
+            type: "paragraph",
+            text: "Ask yourself:",
+          },
+          {
+            type: "paragraph",
+            text: "“What is this part of me afraid of?”",
+          },
+          {
+            type: "paragraph",
+            text: "Often, underneath criticism lies something much softer.",
+          },
+          { type: "paragraph", text: "A fear of rejection." },
+          {
+            type: "paragraph",
+            text: "A fear of disappointing others.",
+          },
+          { type: "paragraph", text: "A fear of not belonging." },
+          {
+            type: "paragraph",
+            text: "When we understand the fear, we no longer have to battle the voice.",
+          },
+          {
+            type: "paragraph",
+            text: "We can respond to it with compassion instead.",
+          },
+        ],
+      },
+      {
+        heading: "One Small Step You Can Try Today",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Take a piece of paper and draw two columns.",
+          },
+          {
+            type: "paragraph",
+            text: "In the first column, write down one critical thought you’ve had about yourself today.",
+          },
+          {
+            type: "paragraph",
+            text: "In the second column, rewrite it as if you were speaking to someone you deeply care about.",
+          },
+          { type: "paragraph", text: "For example:" },
+          {
+            type: "paragraph",
+            text: "Inner Critic: “I always mess things up.”",
+          },
+          {
+            type: "paragraph",
+            text: "Compassionate Voice: “You made a mistake today, but one mistake doesn’t define who you are. What can you learn from it?”",
+          },
+          {
+            type: "paragraph",
+            text: "Notice how different those two voices feel.",
+          },
+          {
+            type: "paragraph",
+            text: "Both acknowledge reality.",
+          },
+          {
+            type: "paragraph",
+            text: "Only one creates room for growth.",
+          },
+        ],
+      },
+      {
+        heading: "Take a Moment",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Before you leave, reflect on these questions:",
+          },
+          {
+            type: "list",
+            items: [
+              "What sentence does your inner critic repeat most often?",
+              "When do you notice it becoming the loudest?",
+              "Whose voice does it remind you of?",
+              "What would change if you responded with curiosity instead of criticism?",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "There are no perfect answers.",
+          },
+          { type: "paragraph", text: "Only honest ones." },
+          {
+            type: "paragraph",
+            text: "And honesty is where healing begins.",
+          },
+        ],
+      },
+      {
+        heading: "A Thought to Carry With You",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Your inner critic may have been trying to protect you for years.",
+          },
+          {
+            type: "paragraph",
+            text: "But protection isn’t supposed to become a prison.",
+          },
+          {
+            type: "paragraph",
+            text: "You deserve a voice inside your own mind that challenges you with kindness—not fear.",
+          },
+          {
+            type: "paragraph",
+            text: "Growth doesn’t come from constantly proving you’re enough.",
+          },
+          {
+            type: "paragraph",
+            text: "It comes from believing you’re worthy of growing, even while you’re still learning.",
+          },
+        ],
+      },
+      {
+        heading: "Before You Leave…",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The next time your inner critic speaks, don’t ask,",
+          },
+          {
+            type: "paragraph",
+            text: "“Why am I like this?”",
+          },
+          {
+            type: "paragraph",
+            text: "Instead, gently ask,",
+          },
+          {
+            type: "paragraph",
+            text: "“What part of me is asking for understanding right now?”",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes the greatest transformation doesn’t happen because the critical voice disappears.",
+          },
+          {
+            type: "paragraph",
+            text: "It happens because another voice finally becomes stronger.",
+          },
+          {
+            type: "paragraph",
+            text: "The one that says,",
+          },
+          {
+            type: "paragraph",
+            text: "“I’m learning. I’m growing. And I’m worthy of kindness—even from myself.”",
+          },
+          {
+            type: "paragraph",
+            text: "Until our next conversation, speak to yourself with the same patience you would offer someone you love. Your mind is listening.",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export function getAllPosts(): BlogPost[] {
