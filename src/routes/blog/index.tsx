@@ -90,9 +90,11 @@ function BlogPage() {
 
         <section className="space-y-10">
           {posts.map((post) => (
-            <article
+            <Link
               key={post.slug}
-              className="relative px-6 py-8 md:px-10 md:py-10"
+              to="/blog/$slug"
+              params={{ slug: post.slug }}
+              className="relative block px-6 py-8 transition-opacity hover:opacity-90 md:px-10 md:py-10"
               style={{ border: `1px solid ${VESA_GOLD_FAINT}` }}
             >
               {[
@@ -202,10 +204,8 @@ function BlogPage() {
                 }}
               >
                 <span>…</span>
-                <Link
-                  to="/blog/$slug"
-                  params={{ slug: post.slug }}
-                  className="uppercase transition-opacity hover:opacity-80"
+                <span
+                  className="uppercase"
                   style={{
                     fontFamily: vesaSans,
                     fontSize: "0.75rem",
@@ -215,9 +215,9 @@ function BlogPage() {
                   }}
                 >
                   Read more
-                </Link>
+                </span>
               </p>
-            </article>
+            </Link>
           ))}
         </section>
       </div>
