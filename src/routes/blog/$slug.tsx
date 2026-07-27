@@ -1,5 +1,6 @@
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { BlogScrollToTop } from "@/components/blog-scroll-to-top";
 import { VesaGoldRule, VesaLayout } from "@/components/vesa-layout";
 import { getPostBySlug, type BlogBlock, type BlogSection } from "@/lib/blog/posts";
 import {
@@ -244,6 +245,7 @@ function BlogPostPage() {
           </Link>
         </div>
       </article>
+      <BlogScrollToTop />
     </VesaLayout>
   );
 }
