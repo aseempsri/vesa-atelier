@@ -251,11 +251,11 @@ function Index() {
       </div>
 
       {/* ── Main content ── */}
-      <section className="relative z-20 flex h-full flex-col justify-center px-8 pb-8 pt-16 md:justify-start md:px-20 md:pb-20 md:pt-28 lg:px-32">
-        <div className="flex w-full flex-col items-center md:mt-auto md:items-start">
-          {/* Logo + wordmark + tagline — aligned to each other; block sits left on desktop */}
+      <section className="relative z-20 flex h-full flex-col px-7 pb-7 pt-[4.25rem] md:justify-start md:px-20 md:pb-20 md:pt-28 lg:px-32">
+        {/* Brand stage — fills the vertical space on mobile, left-weighted on desktop */}
+        <div className="flex min-h-0 flex-1 flex-col items-center justify-center md:mt-auto md:flex-none md:items-start md:justify-start">
           <div className="flex w-full flex-col items-center text-center md:w-fit md:max-w-xl md:translate-x-[10%] md:-translate-y-[10%]">
-            {/* Logo + VESA — locked on one center axis */}
+            {/* Crest + wordmark */}
             <div
               className="flex flex-col items-center"
               style={{
@@ -266,49 +266,47 @@ function Index() {
             >
               <VesaLogo
                 animated
-                className="h-[8.5rem] w-[8.5rem] md:h-[15.6rem] md:w-[15.6rem]"
+                className="h-[min(42vw,20dvh)] w-[min(42vw,20dvh)] md:h-[15.6rem] md:w-[15.6rem]"
               />
-            <h1
-              className="mt-1 w-fit text-center text-[clamp(5rem,18vw,7.25rem)] md:mt-3 md:text-[clamp(5.5rem,9vw,12rem)] lg:text-[clamp(6rem,8vw,13rem)]"
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 300,
-                lineHeight: 0.85,
-                letterSpacing: "0.02em",
-                background: VESA_WORDMARK_GRADIENT,
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-                color: "transparent",
-                filter: "drop-shadow(0 4px 40px rgba(201, 165, 90, 0.28))",
-                transition: "opacity 2400ms ease-out 600ms, transform 2400ms ease-out 600ms",
-              }}
-            >
-              VESA
-            </h1>
+              <h1
+                className="-mt-1 w-fit text-center text-[min(30vw,14dvh)] leading-[0.82] md:mt-3 md:text-[clamp(5.5rem,9vw,12rem)] md:leading-[0.85] lg:text-[clamp(6rem,8vw,13rem)]"
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 300,
+                  letterSpacing: "0.02em",
+                  background: VESA_WORDMARK_GRADIENT,
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                  filter: "drop-shadow(0 4px 40px rgba(201, 165, 90, 0.28))",
+                  transition: "opacity 2400ms ease-out 600ms, transform 2400ms ease-out 600ms",
+                }}
+              >
+                VESA
+              </h1>
             </div>
 
             <div
-              className="mt-3 flex flex-col items-center md:mt-4"
+              className="mt-[1.4dvh] flex flex-col items-center md:mt-4"
               style={{
                 opacity: mounted ? 1 : 0,
                 transition: "opacity 2000ms ease-out 1300ms",
               }}
             >
-              <div className="flex items-center justify-center gap-4 md:gap-6">
+              <div className="flex items-center justify-center gap-3 md:gap-6">
                 <span
-                  className="h-px w-12 md:w-20"
+                  className="h-px w-10 md:w-20"
                   style={{
                     background: `linear-gradient(90deg, transparent, ${GOLD})`,
                   }}
                 />
                 <div className="flex flex-col items-center">
                   <span
-                    className="uppercase"
+                    className="uppercase text-[clamp(1.05rem,2.8vw,1.4rem)]"
                     style={{
                       fontFamily: "'Cormorant Garamond', serif",
                       fontWeight: 400,
                       fontStyle: "italic",
-                      fontSize: "clamp(0.95rem, 2vw, 1.4rem)",
                       letterSpacing: "0.55em",
                       color: CREAM,
                       paddingLeft: "0.55em",
@@ -317,10 +315,10 @@ function Index() {
                     Atelier
                   </span>
                   <p
-                    className="mt-2 uppercase"
+                    className="mt-1.5 uppercase md:mt-2"
                     style={{
                       fontFamily: "'Inter', sans-serif",
-                      fontSize: "0.55rem",
+                      fontSize: "0.58rem",
                       letterSpacing: "0.45em",
                       color: GOLD_SOFT,
                       fontWeight: 400,
@@ -331,7 +329,7 @@ function Index() {
                   </p>
                 </div>
                 <span
-                  className="h-px w-12 md:w-20"
+                  className="h-px w-10 md:w-20"
                   style={{
                     background: `linear-gradient(270deg, transparent, ${GOLD})`,
                   }}
@@ -340,14 +338,13 @@ function Index() {
             </div>
 
             <p
-              className="mt-6 max-w-md text-center md:mt-10 md:max-w-none md:whitespace-nowrap"
+              className="mt-[3.2dvh] max-w-[17rem] text-center text-[clamp(1.05rem,2.6vw,1.2rem)] md:mt-10 md:max-w-none md:whitespace-nowrap md:text-[clamp(1rem,1.4vw,1.2rem)]"
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontStyle: "italic",
                 fontWeight: 300,
-                fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
                 letterSpacing: "0.03em",
-                lineHeight: 1.7,
+                lineHeight: 1.55,
                 color: "rgba(232, 220, 198, 0.78)",
                 opacity: mounted ? 1 : 0,
                 transition: "opacity 2200ms ease-out 1600ms",
@@ -360,42 +357,38 @@ function Index() {
             </p>
           </div>
 
-        {/* Bottom row */}
-        <div
-          className="mt-8 flex w-full flex-col items-center gap-3 md:mt-14 md:flex-row md:items-end md:justify-between md:gap-0 lg:mt-16"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(8px)",
-            transition: "opacity 2200ms ease-out 1900ms, transform 2200ms ease-out 1900ms",
-          }}
-        >
-          {/* Coming soon */}
-          <div className="flex items-center gap-4">
-            <span
-              className="relative hidden h-1.5 w-1.5 rounded-full md:block"
-              style={{
-                background: GOLD,
-                boxShadow: `0 0 14px ${GOLD}`,
-                animation: "vesa-pulse 2.4s ease-in-out infinite",
-              }}
-            />
-            <span
-              className="uppercase"
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 400,
-                fontSize: "0.65rem",
-                letterSpacing: "0.55em",
-                color: CREAM,
-                paddingLeft: "0.55em",
-              }}
-            >
-              Coming Soon
-            </span>
-          </div>
-
-          {/* Domain */}
-          <div className="flex items-center gap-3">
+          {/* Desktop bottom row */}
+          <div
+            className="mt-14 hidden w-full items-end justify-between md:flex lg:mt-16"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "translateY(0)" : "translateY(8px)",
+              transition: "opacity 2200ms ease-out 1900ms, transform 2200ms ease-out 1900ms",
+            }}
+          >
+            <div className="flex items-center gap-4">
+              <span
+                className="relative h-1.5 w-1.5 rounded-full"
+                style={{
+                  background: GOLD,
+                  boxShadow: `0 0 14px ${GOLD}`,
+                  animation: "vesa-pulse 2.4s ease-in-out infinite",
+                }}
+              />
+              <span
+                className="uppercase"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "0.65rem",
+                  letterSpacing: "0.55em",
+                  color: CREAM,
+                  paddingLeft: "0.55em",
+                }}
+              >
+                Coming Soon
+              </span>
+            </div>
             <span
               className="uppercase"
               style={{
@@ -411,8 +404,45 @@ function Index() {
             </span>
           </div>
         </div>
-        </div>
 
+        {/* Mobile footer rail — keeps the brand stage free to breathe */}
+        <div
+          className="flex shrink-0 items-center justify-center gap-3 pt-2 md:hidden"
+          style={{
+            opacity: mounted ? 1 : 0,
+            transition: "opacity 2200ms ease-out 1900ms",
+          }}
+        >
+          <span
+            className="uppercase"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 400,
+              fontSize: "0.62rem",
+              letterSpacing: "0.45em",
+              color: CREAM,
+              paddingLeft: "0.45em",
+            }}
+          >
+            Coming Soon
+          </span>
+          <span aria-hidden style={{ color: GOLD, fontSize: "0.35rem" }}>
+            ◆
+          </span>
+          <span
+            className="uppercase"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 300,
+              fontSize: "0.58rem",
+              letterSpacing: "0.4em",
+              color: GOLD_SOFT,
+              paddingLeft: "0.4em",
+            }}
+          >
+            vesa.co.in
+          </span>
+        </div>
       </section>
 
       <style>{`
