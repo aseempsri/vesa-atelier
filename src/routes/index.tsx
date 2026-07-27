@@ -271,7 +271,7 @@ function Index() {
       <section className="relative z-20 flex h-full min-h-0 flex-col overflow-hidden px-6 pb-6 pt-[4rem] md:justify-start md:px-20 md:pb-20 md:pt-28 lg:px-32">
         {/* Brand stage */}
         <div className="flex min-h-0 flex-1 flex-col items-center justify-center md:mt-auto md:flex-none md:items-start md:justify-start">
-          <div className="flex w-full max-w-full flex-col items-center text-center md:w-fit md:max-w-xl md:translate-x-[10%] md:-translate-y-[10%]">
+          <div className="flex w-full max-w-full -translate-y-[5svh] flex-col items-center text-center md:w-fit md:max-w-xl md:translate-x-[10%] md:-translate-y-[10%]">
             {/* Crest + wordmark — sized to own the viewport on mobile */}
             <div
               className="flex flex-col items-center"
