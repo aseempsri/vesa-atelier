@@ -2,49 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://vesa.co.in/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://vesa.co.in/about</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vesa.co.in/blog</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://vesa.co.in/blog/self-validation</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vesa.co.in/blog/overthinking</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vesa.co.in/blog/saying-no</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vesa.co.in/blog/comparison</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vesa.co.in/blog/inner-critic</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vesa.co.in/blog/unnecessary-guilt</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vesa.co.in/blog/self-awareness</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vesa.co.in/blog/fear-of-being-alone</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vesa.co.in/blog/repeating-mistakes</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vesa.co.in/blog/trust-yourself</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

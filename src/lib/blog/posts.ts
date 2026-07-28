@@ -2026,6 +2026,2283 @@ const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "unnecessary-guilt",
+    title: "Why Do We Feel Guilty Even When We’ve Done Nothing Wrong?",
+    subtitle: "Have You Ever Apologised for Something That Didn’t Need an Apology?",
+    eyebrow: "Reflections",
+    description:
+      "On unnecessary guilt, people-pleasing, and learning to tell the difference between responsibility and the discomfort of setting a boundary.",
+    publishedAt: "2026-07-28",
+    keywords: [
+      "unnecessary guilt",
+      "people pleasing",
+      "boundaries",
+      "self compassion",
+      "apologising",
+    ],
+    excerptLines: [
+      "“I’m sorry.”",
+      "Two simple words.",
+      "Words we use so often that we rarely stop to think about them.",
+    ],
+    closingThought:
+      "Your heart deserves the same compassion you so freely offer everyone else.",
+    sections: [
+      {
+        blocks: [
+          { type: "paragraph", text: "“I’m sorry.”" },
+          { type: "paragraph", text: "Two simple words." },
+          {
+            type: "paragraph",
+            text: "Words we use so often that we rarely stop to think about them.",
+          },
+          { type: "paragraph", text: "“I’m sorry I’m late.”" },
+          { type: "paragraph", text: "“I’m sorry I bothered you.”" },
+          { type: "paragraph", text: "“I’m sorry for asking.”" },
+          { type: "paragraph", text: "“I’m sorry, but I can’t make it.”" },
+          {
+            type: "paragraph",
+            text: "Sometimes we apologise because we’ve genuinely made a mistake.",
+          },
+          {
+            type: "paragraph",
+            text: "But sometimes, we apologise simply for existing.",
+          },
+          { type: "paragraph", text: "For taking up space." },
+          { type: "paragraph", text: "For having needs." },
+          { type: "paragraph", text: "For protecting our time." },
+          { type: "paragraph", text: "For choosing ourselves." },
+          { type: "paragraph", text: "Have you ever noticed that?" },
+          {
+            type: "paragraph",
+            text: "You decline an invitation because you’re exhausted.",
+          },
+          {
+            type: "paragraph",
+            text: "Almost immediately, guilt appears.",
+          },
+          {
+            type: "paragraph",
+            text: "You decide not to answer work messages after office hours.",
+          },
+          { type: "paragraph", text: "Guilt." },
+          {
+            type: "paragraph",
+            text: "You finally say “no” after saying “yes” for years.",
+          },
+          { type: "paragraph", text: "Guilt." },
+          {
+            type: "paragraph",
+            text: "You haven’t done anything wrong.",
+          },
+          { type: "paragraph", text: "Yet it feels as though you have." },
+          { type: "paragraph", text: "Why?" },
+        ],
+      },
+      {
+        heading: "What Is Guilt Supposed to Do?",
+        blocks: [
+          { type: "paragraph", text: "Guilt isn’t the enemy." },
+          {
+            type: "paragraph",
+            text: "In fact, healthy guilt has an important purpose.",
+          },
+          {
+            type: "paragraph",
+            text: "It helps us recognise when our actions have hurt someone.",
+          },
+          {
+            type: "paragraph",
+            text: "It encourages us to apologise, make amends, and grow.",
+          },
+          {
+            type: "paragraph",
+            text: "Without guilt, relationships would be much harder to repair.",
+          },
+          {
+            type: "paragraph",
+            text: "Healthy guilt says,",
+          },
+          { type: "paragraph", text: "“I made a mistake.”" },
+          { type: "paragraph", text: "And that’s useful." },
+          {
+            type: "paragraph",
+            text: "Because mistakes are part of being human.",
+          },
+        ],
+      },
+      {
+        heading: "When Guilt Loses Its Way",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The problem begins when guilt shows up without a mistake.",
+          },
+          {
+            type: "paragraph",
+            text: "This is often called unnecessary guilt.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s the feeling that you’ve done something wrong when, in reality, you’ve simply disappointed an expectation—someone else’s or your own.",
+          },
+          {
+            type: "paragraph",
+            text: "You say no to a favour because you’re overwhelmed.",
+          },
+          { type: "paragraph", text: "You feel guilty." },
+          {
+            type: "paragraph",
+            text: "You take a weekend to rest instead of being productive.",
+          },
+          { type: "paragraph", text: "You feel guilty." },
+          {
+            type: "paragraph",
+            text: "You choose a path that others don’t understand.",
+          },
+          { type: "paragraph", text: "You feel guilty." },
+          { type: "paragraph", text: "The emotion feels real." },
+          {
+            type: "paragraph",
+            text: "But that doesn’t mean it’s telling the truth.",
+          },
+        ],
+      },
+      {
+        heading: "Where Does Unnecessary Guilt Come From?",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Many of us grow up receiving messages like:",
+          },
+          {
+            type: "list",
+            items: [
+              "“Don’t be selfish.”",
+              "“Think about everyone else first.”",
+              "“Good people always help.”",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "These are well-intentioned lessons.",
+          },
+          { type: "paragraph", text: "Kindness matters." },
+          { type: "paragraph", text: "Generosity matters." },
+          {
+            type: "paragraph",
+            text: "But sometimes, without meaning to, we absorb another message:",
+          },
+          {
+            type: "paragraph",
+            text: "“If I put myself first, I’m doing something wrong.”",
+          },
+          {
+            type: "paragraph",
+            text: "Over time, we stop asking what we need.",
+          },
+          {
+            type: "paragraph",
+            text: "Instead, we ask what everyone else expects.",
+          },
+          {
+            type: "paragraph",
+            text: "And whenever those two answers don’t match, guilt quietly steps in.",
+          },
+        ],
+      },
+      {
+        heading: "The Difference Between Responsibility and People-Pleasing",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Let’s imagine two situations.",
+          },
+          {
+            type: "paragraph",
+            text: "In the first, you forget a close friend’s birthday.",
+          },
+          {
+            type: "paragraph",
+            text: "You realise it later, apologise sincerely, and make an effort to celebrate them.",
+          },
+          { type: "paragraph", text: "That’s responsibility." },
+          {
+            type: "paragraph",
+            text: "Now imagine another situation.",
+          },
+          {
+            type: "paragraph",
+            text: "A colleague asks you to stay late again.",
+          },
+          {
+            type: "paragraph",
+            text: "You’ve already worked beyond your hours all week.",
+          },
+          {
+            type: "paragraph",
+            text: "You politely say no because you need rest.",
+          },
+          {
+            type: "paragraph",
+            text: "Yet you spend the entire evening feeling guilty.",
+          },
+          {
+            type: "paragraph",
+            text: "That’s not responsibility.",
+          },
+          {
+            type: "paragraph",
+            text: "That’s the discomfort of setting a boundary.",
+          },
+          {
+            type: "paragraph",
+            text: "The feeling may be similar.",
+          },
+          {
+            type: "paragraph",
+            text: "The reason behind it is completely different.",
+          },
+          {
+            type: "paragraph",
+            text: "Learning to tell the difference is one of the most important emotional skills you can develop.",
+          },
+        ],
+      },
+      {
+        heading: "Ask Yourself This One Question",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The next time guilt appears, don’t rush to apologise.",
+          },
+          { type: "paragraph", text: "Pause." },
+          { type: "paragraph", text: "Take a slow breath." },
+          {
+            type: "paragraph",
+            text: "Then ask yourself:",
+          },
+          {
+            type: "paragraph",
+            text: "“Have I violated my values… or have I simply disappointed someone’s expectations?”",
+          },
+          {
+            type: "paragraph",
+            text: "If you’ve acted unkindly, take responsibility.",
+          },
+          {
+            type: "paragraph",
+            text: "If you’ve acted honestly and respectfully, perhaps what you’re feeling isn’t guilt at all.",
+          },
+          {
+            type: "paragraph",
+            text: "Perhaps it’s unfamiliarity.",
+          },
+          {
+            type: "paragraph",
+            text: "Because doing something new—especially something healthier—often feels uncomfortable before it feels natural.",
+          },
+        ],
+      },
+      {
+        heading: "One Small Step You Can Try Today",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Think about one situation you’ve been feeling guilty about recently.",
+          },
+          { type: "paragraph", text: "Write down:" },
+          {
+            type: "list",
+            items: [
+              "What happened?",
+              "Why do I feel guilty?",
+              "Did I actually do something wrong?",
+              "If a close friend told me this story, would I think they should feel guilty?",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "You’ll often discover that the compassion you offer others is exactly what you’ve been denying yourself.",
+          },
+        ],
+      },
+      {
+        heading: "Take a Moment",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Spend a few quiet minutes reflecting.",
+          },
+          {
+            type: "list",
+            items: [
+              "When do you feel guilty most often?",
+              "Is your guilt helping you grow, or is it stopping you from honouring your needs?",
+              "Are you apologising for your actions—or for your existence?",
+              "What would change if you believed that your needs mattered too?",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "These questions aren’t here to remove guilt completely.",
+          },
+          {
+            type: "paragraph",
+            text: "They’re here to help you understand it.",
+          },
+        ],
+      },
+      {
+        heading: "A Thought to Carry With You",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Not every uncomfortable feeling is a sign that you’re on the wrong path.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes it’s simply the feeling of outgrowing old beliefs.",
+          },
+          {
+            type: "paragraph",
+            text: "Choosing yourself after years of people-pleasing can feel unfamiliar.",
+          },
+          {
+            type: "paragraph",
+            text: "Resting after years of overworking can feel uncomfortable.",
+          },
+          {
+            type: "paragraph",
+            text: "Setting boundaries after years of saying yes can feel selfish.",
+          },
+          {
+            type: "paragraph",
+            text: "But unfamiliar doesn’t mean wrong.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes it means you’re finally becoming honest with yourself.",
+          },
+        ],
+      },
+      {
+        heading: "Before You Leave…",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The next time guilt quietly whispers,",
+          },
+          {
+            type: "paragraph",
+            text: "“You’re being selfish.”",
+          },
+          {
+            type: "paragraph",
+            text: "Pause for a moment.",
+          },
+          {
+            type: "paragraph",
+            text: "Then gently ask,",
+          },
+          {
+            type: "paragraph",
+            text: "“Or am I simply learning to take care of myself?”",
+          },
+          {
+            type: "paragraph",
+            text: "You don’t have to earn the right to rest.",
+          },
+          {
+            type: "paragraph",
+            text: "You don’t have to apologise for having limits.",
+          },
+          {
+            type: "paragraph",
+            text: "And you certainly don’t have to carry guilt for choices that honour your well-being while respecting others.",
+          },
+          {
+            type: "paragraph",
+            text: "Real kindness includes the way you treat yourself.",
+          },
+          {
+            type: "paragraph",
+            text: "Until our next conversation, remember this: your heart deserves the same compassion you so freely offer everyone else.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "self-awareness",
+    title: "What Does Self-Awareness Really Mean?",
+    subtitle: "Have You Ever Wondered Why You React the Way You Do?",
+    eyebrow: "Reflections",
+    description:
+      "On self-awareness, emotional autopilot, and learning to meet yourself with curiosity instead of judgment.",
+    publishedAt: "2026-07-28",
+    keywords: [
+      "self awareness",
+      "emotional intelligence",
+      "personal growth",
+      "mindfulness",
+      "self reflection",
+    ],
+    excerptLines: [
+      "Someone interrupts you during a meeting.",
+      "You feel irritated.",
+      "A loved one forgets something important.",
+    ],
+    closingThought:
+      "The most important relationship you’ll ever build is the one you have with yourself.",
+    sections: [
+      {
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Someone interrupts you during a meeting.",
+          },
+          { type: "paragraph", text: "You feel irritated." },
+          {
+            type: "paragraph",
+            text: "A loved one forgets something important.",
+          },
+          { type: "paragraph", text: "You become distant." },
+          {
+            type: "paragraph",
+            text: "A small criticism stays in your mind for days.",
+          },
+          {
+            type: "paragraph",
+            text: "A compliment is forgotten within minutes.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes we surprise ourselves with our own reactions.",
+          },
+          { type: "paragraph", text: "We ask," },
+          { type: "paragraph", text: "“Why did I get so angry?”" },
+          { type: "paragraph", text: "“Why did that hurt so much?”" },
+          {
+            type: "paragraph",
+            text: "“Why do I keep repeating the same patterns?”",
+          },
+          {
+            type: "paragraph",
+            text: "Most of us spend years trying to understand the people around us.",
+          },
+          {
+            type: "paragraph",
+            text: "But very few of us spend time understanding the person we live with every single day—ourselves.",
+          },
+          {
+            type: "paragraph",
+            text: "And that’s where self-awareness begins.",
+          },
+        ],
+      },
+      {
+        heading: "Self-Awareness Isn’t About Being Perfect",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "There’s a common misunderstanding that self-awareness means having everything figured out.",
+          },
+          { type: "paragraph", text: "It doesn’t." },
+          {
+            type: "paragraph",
+            text: "Self-awareness isn’t knowing all the answers.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s being willing to ask honest questions.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s noticing your thoughts without immediately believing them.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s recognising your emotions without letting them control every decision.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s understanding your patterns without judging yourself for having them.",
+          },
+          {
+            type: "paragraph",
+            text: "Self-awareness doesn’t make you perfect.",
+          },
+          {
+            type: "paragraph",
+            text: "It makes you present.",
+          },
+        ],
+      },
+      {
+        heading: "Why Most of Us Live on Autopilot",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Think about brushing your teeth.",
+          },
+          {
+            type: "paragraph",
+            text: "You probably don’t think about every movement.",
+          },
+          {
+            type: "paragraph",
+            text: "Your brain has learned the routine.",
+          },
+          {
+            type: "paragraph",
+            text: "Many of our emotional responses work the same way.",
+          },
+          { type: "paragraph", text: "Someone criticises us." },
+          { type: "paragraph", text: "We become defensive." },
+          { type: "paragraph", text: "Someone disagrees with us." },
+          { type: "paragraph", text: "We shut down." },
+          {
+            type: "paragraph",
+            text: "Someone ignores our message.",
+          },
+          {
+            type: "paragraph",
+            text: "We assume we’ve done something wrong.",
+          },
+          {
+            type: "paragraph",
+            text: "These reactions often happen so quickly that we don’t even realise we’re having them.",
+          },
+          {
+            type: "paragraph",
+            text: "That’s emotional autopilot.",
+          },
+          {
+            type: "paragraph",
+            text: "Self-awareness is the moment you notice it.",
+          },
+          {
+            type: "paragraph",
+            text: "Instead of automatically reacting, you pause and think,",
+          },
+          {
+            type: "paragraph",
+            text: "“Why did this affect me so deeply?”",
+          },
+          {
+            type: "paragraph",
+            text: "That pause changes everything.",
+          },
+        ],
+      },
+      {
+        heading: "Awareness Comes Before Change",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Imagine you’re driving somewhere unfamiliar.",
+          },
+          {
+            type: "paragraph",
+            text: "If you don’t know where you are, it’s difficult to know where to go next.",
+          },
+          {
+            type: "paragraph",
+            text: "Personal growth works in exactly the same way.",
+          },
+          {
+            type: "paragraph",
+            text: "You can’t change a pattern you don’t recognise.",
+          },
+          {
+            type: "paragraph",
+            text: "You can’t heal a wound you refuse to acknowledge.",
+          },
+          {
+            type: "paragraph",
+            text: "You can’t improve a habit you don’t notice.",
+          },
+          {
+            type: "paragraph",
+            text: "Awareness isn’t the final step.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s the first one.",
+          },
+          {
+            type: "paragraph",
+            text: "And often, it’s the most important.",
+          },
+        ],
+      },
+      {
+        heading: "The Questions That Changed My Perspective",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "There are moments in life when asking yourself one honest question can change everything.",
+          },
+          {
+            type: "paragraph",
+            text: "Instead of asking:",
+          },
+          {
+            type: "paragraph",
+            text: "“Why does this always happen to me?”",
+          },
+          { type: "paragraph", text: "Try asking:" },
+          {
+            type: "paragraph",
+            text: "“Why does this situation affect me so deeply?”",
+          },
+          { type: "paragraph", text: "Instead of:" },
+          {
+            type: "paragraph",
+            text: "“Why am I like this?”",
+          },
+          { type: "paragraph", text: "Try:" },
+          {
+            type: "paragraph",
+            text: "“What experience might have taught me to respond this way?”",
+          },
+          {
+            type: "paragraph",
+            text: "These questions don’t invite blame.",
+          },
+          {
+            type: "paragraph",
+            text: "They invite understanding.",
+          },
+          {
+            type: "paragraph",
+            text: "And understanding creates space for growth.",
+          },
+        ],
+      },
+      {
+        heading: "The Mirror We Often Avoid",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Looking in a mirror can be uncomfortable.",
+          },
+          {
+            type: "paragraph",
+            text: "Not because mirrors judge us.",
+          },
+          {
+            type: "paragraph",
+            text: "But because they show us what already exists.",
+          },
+          {
+            type: "paragraph",
+            text: "Self-awareness works in much the same way.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes we discover qualities we love.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes we notice habits we’d rather ignore.",
+          },
+          { type: "paragraph", text: "Both are valuable." },
+          {
+            type: "paragraph",
+            text: "Growth isn’t about pretending the difficult parts don’t exist.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s about acknowledging them with compassion.",
+          },
+          {
+            type: "paragraph",
+            text: "Because awareness without kindness becomes self-criticism.",
+          },
+          {
+            type: "paragraph",
+            text: "But awareness with kindness becomes transformation.",
+          },
+        ],
+      },
+      {
+        heading: "How to Become More Self-Aware",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "You don’t need hours of meditation or a perfect morning routine.",
+          },
+          { type: "paragraph", text: "Start small." },
+          {
+            type: "paragraph",
+            text: "At the end of each day, ask yourself:",
+          },
+          {
+            type: "list",
+            items: [
+              "What made me smile today?",
+              "What frustrated me?",
+              "When did I feel most like myself?",
+              "What triggered a strong emotional reaction?",
+              "What did I need in that moment?",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Don’t rush to fix anything.",
+          },
+          { type: "paragraph", text: "Just notice." },
+          {
+            type: "paragraph",
+            text: "The goal isn’t to become a different person overnight.",
+          },
+          {
+            type: "paragraph",
+            text: "The goal is to become more familiar with the person you already are.",
+          },
+        ],
+      },
+      {
+        heading: "One Small Step You Can Try Today",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "For the next seven days, set aside just five minutes before bed.",
+          },
+          {
+            type: "paragraph",
+            text: "Write down three things:",
+          },
+          {
+            type: "list",
+            items: [
+              "What emotion did I feel most strongly today?",
+              "What triggered that emotion?",
+              "What do I think that emotion was trying to tell me?",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "You may begin to notice patterns you’ve never seen before.",
+          },
+          {
+            type: "paragraph",
+            text: "And once you notice them, you have the power to respond differently.",
+          },
+        ],
+      },
+      {
+        heading: "Take a Moment",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Before you leave, spend a few quiet minutes reflecting.",
+          },
+          {
+            type: "list",
+            items: [
+              "What situations bring out the best version of you?",
+              "What situations bring out the version of you that you’re still learning to understand?",
+              "Are your reactions based on the present—or are they echoes of the past?",
+              "What’s one thing you’ve learned about yourself this year?",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "There are no right or wrong answers.",
+          },
+          {
+            type: "paragraph",
+            text: "Only opportunities to know yourself a little better.",
+          },
+        ],
+      },
+      {
+        heading: "A Thought to Carry With You",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Self-awareness isn’t about becoming someone new.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s about remembering who you are beneath the noise.",
+          },
+          {
+            type: "paragraph",
+            text: "The more you understand yourself, the less you need approval, comparison, perfection, or constant certainty to define your worth.",
+          },
+          {
+            type: "paragraph",
+            text: "Because when you know yourself, you stop searching for your identity in places it was never meant to be found.",
+          },
+        ],
+      },
+      {
+        heading: "Before You Leave…",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "If there’s one thing I hope you carry with you today, it’s this:",
+          },
+          {
+            type: "paragraph",
+            text: "The quality of your life is shaped by the quality of your awareness.",
+          },
+          {
+            type: "paragraph",
+            text: "Not because awareness solves every problem.",
+          },
+          {
+            type: "paragraph",
+            text: "But because it helps you meet every problem with greater wisdom, patience, and compassion.",
+          },
+          {
+            type: "paragraph",
+            text: "You don’t have to know everything about yourself today.",
+          },
+          { type: "paragraph", text: "Just stay curious." },
+          {
+            type: "paragraph",
+            text: "Growth begins the moment you stop asking,",
+          },
+          {
+            type: "paragraph",
+            text: "“What’s wrong with me?”",
+          },
+          {
+            type: "paragraph",
+            text: "And start asking,",
+          },
+          {
+            type: "paragraph",
+            text: "“What is this moment trying to teach me about myself?”",
+          },
+          {
+            type: "paragraph",
+            text: "Until our next conversation, remember this: the most important relationship you’ll ever build is the one you have with yourself. Get to know that person with patience, honesty, and kindness.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "fear-of-being-alone",
+    title: "Why Do Some People Fear Being Alone?",
+    subtitle: "Have You Ever Felt the Need to Keep Yourself Busy?",
+    eyebrow: "Reflections",
+    description:
+      "On solitude, silence, and learning to feel at peace in your own company without fear of what quiet might reveal.",
+    publishedAt: "2026-07-28",
+    keywords: [
+      "fear of being alone",
+      "solitude",
+      "loneliness",
+      "self relationship",
+      "silence",
+    ],
+    excerptLines: [
+      "The day finally comes to an end.",
+      "Your work is done.",
+      "The house is quiet.",
+    ],
+    closingThought:
+      "You deserve to feel at peace in your own presence.",
+    sections: [
+      {
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The day finally comes to an end.",
+          },
+          { type: "paragraph", text: "Your work is done." },
+          { type: "paragraph", text: "The house is quiet." },
+          {
+            type: "paragraph",
+            text: "For the first time all day, there’s nothing demanding your attention.",
+          },
+          {
+            type: "paragraph",
+            text: "Yet instead of feeling relaxed, you instinctively reach for your phone.",
+          },
+          { type: "paragraph", text: "You scroll." },
+          {
+            type: "paragraph",
+            text: "You switch on the television.",
+          },
+          { type: "paragraph", text: "You message someone." },
+          {
+            type: "paragraph",
+            text: "You look for something—anything—to fill the silence.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s almost automatic.",
+          },
+          {
+            type: "paragraph",
+            text: "But have you ever wondered why?",
+          },
+          {
+            type: "paragraph",
+            text: "Why does an empty room sometimes feel heavier than a crowded one?",
+          },
+          {
+            type: "paragraph",
+            text: "Why can an evening alone feel uncomfortable, even when we’ve been craving rest all day?",
+          },
+          {
+            type: "paragraph",
+            text: "The answer isn’t always loneliness.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes, it’s something much deeper.",
+          },
+        ],
+      },
+      {
+        heading: "Alone and Lonely Are Not the Same Thing",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "These two words are often used as if they mean the same thing.",
+          },
+          { type: "paragraph", text: "But they don’t." },
+          {
+            type: "paragraph",
+            text: "Being alone describes a situation.",
+          },
+          {
+            type: "paragraph",
+            text: "Feeling lonely describes an emotion.",
+          },
+          {
+            type: "paragraph",
+            text: "You can spend an afternoon by yourself, reading a book with a cup of tea, and feel completely at peace.",
+          },
+          {
+            type: "paragraph",
+            text: "You can also sit at a table surrounded by friends and still feel unseen.",
+          },
+          {
+            type: "paragraph",
+            text: "The difference isn’t the number of people around you.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s the quality of your relationship with yourself and the people in your life.",
+          },
+          {
+            type: "paragraph",
+            text: "That’s why learning to enjoy your own company isn’t about isolating yourself.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s about creating a place within yourself that feels safe to return to.",
+          },
+        ],
+      },
+      {
+        heading: "Why Silence Feels So Loud",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Imagine a lake on a windy day.",
+          },
+          {
+            type: "paragraph",
+            text: "The surface is constantly moving.",
+          },
+          {
+            type: "paragraph",
+            text: "The waves make it difficult to see what’s beneath.",
+          },
+          {
+            type: "paragraph",
+            text: "Now imagine the wind slowly disappears.",
+          },
+          {
+            type: "paragraph",
+            text: "The water becomes still.",
+          },
+          {
+            type: "paragraph",
+            text: "Suddenly, everything underneath becomes visible.",
+          },
+          {
+            type: "paragraph",
+            text: "Our minds work the same way.",
+          },
+          {
+            type: "paragraph",
+            text: "When life is busy, our thoughts stay hidden beneath the noise.",
+          },
+          {
+            type: "paragraph",
+            text: "But when everything becomes quiet, they rise to the surface.",
+          },
+          { type: "paragraph", text: "Old worries." },
+          { type: "paragraph", text: "Unanswered questions." },
+          { type: "paragraph", text: "Grief." },
+          { type: "paragraph", text: "Regret." },
+          { type: "paragraph", text: "Self-doubt." },
+          {
+            type: "paragraph",
+            text: "The silence didn’t create them.",
+          },
+          {
+            type: "paragraph",
+            text: "It simply gave us the chance to notice them.",
+          },
+          {
+            type: "paragraph",
+            text: "And that’s why many people fear being alone.",
+          },
+          {
+            type: "paragraph",
+            text: "Not because solitude is dangerous.",
+          },
+          {
+            type: "paragraph",
+            text: "Because it introduces them to parts of themselves they’ve been avoiding.",
+          },
+        ],
+      },
+      {
+        heading: "The Need to Be Needed",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Sometimes the fear of being alone isn’t about solitude at all.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s about identity.",
+          },
+          {
+            type: "paragraph",
+            text: "If you’ve spent years taking care of everyone else…",
+          },
+          {
+            type: "paragraph",
+            text: "Being the dependable friend.",
+          },
+          {
+            type: "paragraph",
+            text: "The responsible colleague.",
+          },
+          {
+            type: "paragraph",
+            text: "The person who always says yes.",
+          },
+          {
+            type: "paragraph",
+            text: "Then quiet moments can feel unsettling.",
+          },
+          {
+            type: "paragraph",
+            text: "Because when no one needs you…",
+          },
+          {
+            type: "paragraph",
+            text: "You’re left asking,",
+          },
+          {
+            type: "paragraph",
+            text: "“Who am I when I’m not helping someone else?”",
+          },
+          {
+            type: "paragraph",
+            text: "That’s not an easy question.",
+          },
+          {
+            type: "paragraph",
+            text: "But it’s an important one.",
+          },
+          {
+            type: "paragraph",
+            text: "Your worth has never depended on how useful you are.",
+          },
+          {
+            type: "paragraph",
+            text: "You are worthy simply because you exist.",
+          },
+        ],
+      },
+      {
+        heading: "Solitude Is Where We Meet Ourselves",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "There’s a beautiful difference between escaping from yourself and spending time with yourself.",
+          },
+          {
+            type: "paragraph",
+            text: "One leaves you exhausted.",
+          },
+          {
+            type: "paragraph",
+            text: "The other leaves you grounded.",
+          },
+          {
+            type: "paragraph",
+            text: "Solitude gives you something the world rarely offers.",
+          },
+          { type: "paragraph", text: "Space." },
+          { type: "paragraph", text: "Space to think." },
+          { type: "paragraph", text: "Space to notice." },
+          { type: "paragraph", text: "Space to breathe." },
+          {
+            type: "paragraph",
+            text: "Space to ask questions you normally rush past.",
+          },
+          {
+            type: "paragraph",
+            text: "It may feel uncomfortable at first.",
+          },
+          {
+            type: "paragraph",
+            text: "Not because you’re doing it wrong.",
+          },
+          {
+            type: "paragraph",
+            text: "But because you’re building a relationship that may have been neglected for years.",
+          },
+          {
+            type: "paragraph",
+            text: "The relationship with yourself.",
+          },
+        ],
+      },
+      {
+        heading: "Learning to Enjoy Your Own Company",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "You don’t need to begin with a weekend retreat or hours of meditation.",
+          },
+          {
+            type: "paragraph",
+            text: "Start with ten quiet minutes.",
+          },
+          {
+            type: "paragraph",
+            text: "Take a walk without headphones.",
+          },
+          {
+            type: "paragraph",
+            text: "Drink your morning tea without scrolling.",
+          },
+          {
+            type: "paragraph",
+            text: "Sit by a window and simply watch the world.",
+          },
+          {
+            type: "paragraph",
+            text: "Notice what your mind wants to talk about.",
+          },
+          {
+            type: "paragraph",
+            text: "You don’t have to solve every thought.",
+          },
+          { type: "paragraph", text: "Just listen." },
+          {
+            type: "paragraph",
+            text: "Like getting to know a friend you haven’t spent enough time with.",
+          },
+          {
+            type: "paragraph",
+            text: "Because that’s exactly what you’re doing.",
+          },
+        ],
+      },
+      {
+        heading: "One Small Step You Can Try Today",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "This week, schedule one hour with yourself.",
+          },
+          {
+            type: "paragraph",
+            text: "Not because no one else is available.",
+          },
+          {
+            type: "paragraph",
+            text: "Because you are.",
+          },
+          { type: "paragraph", text: "Go to a park." },
+          { type: "paragraph", text: "Visit a café." },
+          {
+            type: "paragraph",
+            text: "Read a few pages of a book.",
+          },
+          {
+            type: "paragraph",
+            text: "Write in your journal.",
+          },
+          {
+            type: "paragraph",
+            text: "Or simply sit somewhere peaceful.",
+          },
+          {
+            type: "paragraph",
+            text: "As you do, notice how often you feel the urge to reach for a distraction.",
+          },
+          {
+            type: "paragraph",
+            text: "Instead of judging yourself, gently ask,",
+          },
+          {
+            type: "paragraph",
+            text: "“What am I trying not to feel right now?”",
+          },
+          {
+            type: "paragraph",
+            text: "You might be surprised by the answer.",
+          },
+        ],
+      },
+      {
+        heading: "Take a Moment",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Before you leave, reflect on these questions.",
+          },
+          {
+            type: "list",
+            items: [
+              "What does being alone mean to you?",
+              "Do you fear solitude… or do you fear what silence might reveal?",
+              "When was the last time you genuinely enjoyed your own company?",
+              "If you treated yourself like someone worth spending time with, what would you do differently?",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "There are no perfect answers.",
+          },
+          {
+            type: "paragraph",
+            text: "Only opportunities to become more familiar with yourself.",
+          },
+        ],
+      },
+      {
+        heading: "A Thought to Carry With You",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "One day, the relationship that stays with you through every success, every failure, every celebration, and every loss…",
+          },
+          {
+            type: "paragraph",
+            text: "Will still be the one you have with yourself.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s worth investing in.",
+          },
+          {
+            type: "paragraph",
+            text: "Not because you’ll never need other people.",
+          },
+          {
+            type: "paragraph",
+            text: "But because no relationship can replace the peace that comes from feeling at home within your own heart.",
+          },
+        ],
+      },
+      {
+        heading: "Before You Leave…",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "If today’s conversation has stayed with you, I hope you’ll remember this:",
+          },
+          {
+            type: "paragraph",
+            text: "Learning to enjoy your own company isn’t about pushing people away.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s about making sure your happiness doesn’t disappear the moment everyone else leaves the room.",
+          },
+          {
+            type: "paragraph",
+            text: "You deserve to feel at peace in your own presence.",
+          },
+          {
+            type: "paragraph",
+            text: "And that peace doesn’t arrive all at once.",
+          },
+          {
+            type: "paragraph",
+            text: "It grows—one quiet moment at a time.",
+          },
+          {
+            type: "paragraph",
+            text: "Until our next conversation, don’t be afraid of silence. Sometimes it’s the place where you finally hear the parts of yourself that have been waiting to be understood.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "repeating-mistakes",
+    title: "Why Do We Keep Repeating the Same Mistakes?",
+    subtitle: "Have You Ever Promised Yourself, “This Time Will Be Different”?",
+    eyebrow: "Reflections",
+    description:
+      "On repeated patterns, emotional autopilot, and learning to break familiar cycles with awareness instead of shame.",
+    publishedAt: "2026-07-28",
+    keywords: [
+      "repeating mistakes",
+      "patterns",
+      "habits",
+      "self awareness",
+      "personal growth",
+    ],
+    excerptLines: [
+      "It usually happens after a difficult moment.",
+      "A relationship ends.",
+      "You lose your temper.",
+    ],
+    closingThought:
+      "Mistakes may repeat, but so can courage. Every new choice begins with noticing the old one.",
+    sections: [
+      {
+        blocks: [
+          {
+            type: "paragraph",
+            text: "It usually happens after a difficult moment.",
+          },
+          { type: "paragraph", text: "A relationship ends." },
+          { type: "paragraph", text: "You lose your temper." },
+          {
+            type: "paragraph",
+            text: "You put off an important task until the last minute.",
+          },
+          {
+            type: "paragraph",
+            text: "You trust the wrong person.",
+          },
+          { type: "paragraph", text: "Again." },
+          {
+            type: "paragraph",
+            text: "You sit quietly and make yourself a promise.",
+          },
+          {
+            type: "paragraph",
+            text: "“I’ll never do this again.”",
+          },
+          {
+            type: "paragraph",
+            text: "For a while, everything feels different.",
+          },
+          { type: "paragraph", text: "You’re more careful." },
+          { type: "paragraph", text: "More determined." },
+          { type: "paragraph", text: "More aware." },
+          {
+            type: "paragraph",
+            text: "Then, weeks or months later…",
+          },
+          {
+            type: "paragraph",
+            text: "You find yourself in a strangely familiar situation.",
+          },
+          {
+            type: "paragraph",
+            text: "And the question arrives almost immediately.",
+          },
+          {
+            type: "paragraph",
+            text: "“Why do I keep doing this?”",
+          },
+          {
+            type: "paragraph",
+            text: "It’s a painful question.",
+          },
+          {
+            type: "paragraph",
+            text: "Not because it has no answer.",
+          },
+          {
+            type: "paragraph",
+            text: "But because we often look for the answer in the wrong place.",
+          },
+        ],
+      },
+      {
+        heading: "Mistakes Are Rarely Random",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Most repeated mistakes aren’t random events.",
+          },
+          { type: "paragraph", text: "They’re patterns." },
+          {
+            type: "paragraph",
+            text: "And patterns have roots.",
+          },
+          {
+            type: "paragraph",
+            text: "Think about walking through a forest.",
+          },
+          {
+            type: "paragraph",
+            text: "The first time you walk, you create a faint path.",
+          },
+          {
+            type: "paragraph",
+            text: "The second time, it’s easier to follow.",
+          },
+          {
+            type: "paragraph",
+            text: "The third time, it becomes familiar.",
+          },
+          {
+            type: "paragraph",
+            text: "Eventually, your feet naturally choose that path without much thought.",
+          },
+          {
+            type: "paragraph",
+            text: "Our minds work in a similar way.",
+          },
+          {
+            type: "paragraph",
+            text: "The thoughts we repeat become beliefs.",
+          },
+          {
+            type: "paragraph",
+            text: "The choices we repeat become habits.",
+          },
+          {
+            type: "paragraph",
+            text: "The reactions we repeat become part of our emotional autopilot.",
+          },
+          {
+            type: "paragraph",
+            text: "That’s why determination alone often isn’t enough.",
+          },
+          {
+            type: "paragraph",
+            text: "You aren’t just changing a decision.",
+          },
+          {
+            type: "paragraph",
+            text: "You’re trying to change a well-worn path.",
+          },
+        ],
+      },
+      {
+        heading: "The Pattern Beneath the Problem",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Imagine someone who keeps saying yes to everyone.",
+          },
+          {
+            type: "paragraph",
+            text: "Each time they feel exhausted, they promise to set better boundaries.",
+          },
+          {
+            type: "paragraph",
+            text: "Yet the next request comes, and they agree again.",
+          },
+          {
+            type: "paragraph",
+            text: "Is the real problem saying yes?",
+          },
+          {
+            type: "paragraph",
+            text: "Or is it the deeper fear of disappointing people?",
+          },
+          {
+            type: "paragraph",
+            text: "Someone else repeatedly stays in unhealthy relationships.",
+          },
+          {
+            type: "paragraph",
+            text: "Is the mistake choosing the wrong partner?",
+          },
+          {
+            type: "paragraph",
+            text: "Or is it the belief that being alone is worse than being unhappy?",
+          },
+          { type: "paragraph", text: "The event changes." },
+          {
+            type: "paragraph",
+            text: "The pattern stays the same.",
+          },
+          {
+            type: "paragraph",
+            text: "And until we understand the pattern, we’ll keep meeting it in different forms.",
+          },
+        ],
+      },
+      {
+        heading: "We Learn What Feels Familiar",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "One of the hardest truths to accept is this:",
+          },
+          {
+            type: "paragraph",
+            text: "Human beings often choose what’s familiar over what’s healthy.",
+          },
+          {
+            type: "paragraph",
+            text: "Not because we enjoy suffering.",
+          },
+          {
+            type: "paragraph",
+            text: "Because familiar feels safe.",
+          },
+          {
+            type: "paragraph",
+            text: "Even when it hurts.",
+          },
+          {
+            type: "paragraph",
+            text: "If you’ve spent years doubting yourself, self-confidence can feel uncomfortable.",
+          },
+          {
+            type: "paragraph",
+            text: "If you’ve spent years putting everyone else first, healthy boundaries may feel selfish.",
+          },
+          {
+            type: "paragraph",
+            text: "If you’ve spent years expecting rejection, genuine kindness may feel suspicious.",
+          },
+          {
+            type: "paragraph",
+            text: "We don’t just repeat behaviours.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes we repeat emotional environments because they’re the ones we know best.",
+          },
+        ],
+      },
+      {
+        heading: "Awareness Breaks the Cycle",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Imagine reading the same book over and over.",
+          },
+          {
+            type: "paragraph",
+            text: "Each time you hope the ending will change.",
+          },
+          { type: "paragraph", text: "It never does." },
+          {
+            type: "paragraph",
+            text: "The only way to experience a different ending is to choose a different story.",
+          },
+          {
+            type: "paragraph",
+            text: "Life is similar.",
+          },
+          {
+            type: "paragraph",
+            text: "Repeating the same reaction usually creates the same result.",
+          },
+          {
+            type: "paragraph",
+            text: "But the moment you notice the pattern…",
+          },
+          {
+            type: "paragraph",
+            text: "You create a choice.",
+          },
+          {
+            type: "paragraph",
+            text: "That pause between the trigger and your response is where change begins.",
+          },
+          {
+            type: "paragraph",
+            text: "It may only last a few seconds.",
+          },
+          {
+            type: "paragraph",
+            text: "But those few seconds can quietly reshape years of habit.",
+          },
+        ],
+      },
+      {
+        heading: "Stop Asking, “Why Am I Like This?”",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Many of us ask ourselves harsh questions.",
+          },
+          {
+            type: "paragraph",
+            text: "“What’s wrong with me?”",
+          },
+          {
+            type: "paragraph",
+            text: "“Why can’t I get it together?”",
+          },
+          {
+            type: "paragraph",
+            text: "Those questions usually lead to shame.",
+          },
+          {
+            type: "paragraph",
+            text: "Instead, try asking:",
+          },
+          {
+            type: "paragraph",
+            text: "“What need was I trying to meet?”",
+          },
+          {
+            type: "paragraph",
+            text: "“What fear was driving this decision?”",
+          },
+          {
+            type: "paragraph",
+            text: "“What does this pattern protect me from?”",
+          },
+          {
+            type: "paragraph",
+            text: "These questions don’t excuse our mistakes.",
+          },
+          {
+            type: "paragraph",
+            text: "They explain them.",
+          },
+          {
+            type: "paragraph",
+            text: "And understanding is what makes change possible.",
+          },
+        ],
+      },
+      {
+        heading: "One Small Step You Can Try Today",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Think of one mistake you’ve repeated more than once.",
+          },
+          {
+            type: "paragraph",
+            text: "Now complete these three sentences:",
+          },
+          {
+            type: "list",
+            items: [
+              "This situation keeps happening when…",
+              "Before it happens, I usually feel…",
+              "Next time, instead of reacting immediately, I will pause and…",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Don’t aim for perfection.",
+          },
+          {
+            type: "paragraph",
+            text: "Aim for awareness.",
+          },
+          {
+            type: "paragraph",
+            text: "Because awareness gives you the opportunity to choose differently.",
+          },
+        ],
+      },
+      {
+        heading: "Take a Moment",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Before you move on, spend a few minutes with these questions.",
+          },
+          {
+            type: "list",
+            items: [
+              "What pattern keeps showing up in different areas of your life?",
+              "What emotion usually appears just before that pattern begins?",
+              "What need are you trying to meet through that behaviour?",
+              "What would it look like to meet that need in a healthier way?",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes the answers won’t arrive immediately.",
+          },
+          { type: "paragraph", text: "That’s okay." },
+          {
+            type: "paragraph",
+            text: "The questions themselves are part of the healing.",
+          },
+        ],
+      },
+      {
+        heading: "A Thought to Carry With You",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "You are not defined by the mistakes you’ve repeated.",
+          },
+          {
+            type: "paragraph",
+            text: "You are defined by your willingness to understand them.",
+          },
+          {
+            type: "paragraph",
+            text: "Every pattern you’ve ever learned…",
+          },
+          {
+            type: "paragraph",
+            text: "Can also be unlearned.",
+          },
+          {
+            type: "paragraph",
+            text: "Not through shame.",
+          },
+          {
+            type: "paragraph",
+            text: "Not through punishment.",
+          },
+          {
+            type: "paragraph",
+            text: "But through awareness, patience, and practice.",
+          },
+          {
+            type: "paragraph",
+            text: "Real growth isn’t waking up one day as a completely different person.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s noticing one familiar moment…",
+          },
+          {
+            type: "paragraph",
+            text: "And making one slightly different choice.",
+          },
+          { type: "paragraph", text: "Again and again." },
+          {
+            type: "paragraph",
+            text: "Until the new path becomes the familiar one.",
+          },
+        ],
+      },
+      {
+        heading: "Before You Leave…",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The next time you catch yourself saying,",
+          },
+          {
+            type: "paragraph",
+            text: "“I can’t believe I did it again,”",
+          },
+          {
+            type: "paragraph",
+            text: "Pause before judging yourself.",
+          },
+          {
+            type: "paragraph",
+            text: "Instead, gently ask,",
+          },
+          {
+            type: "paragraph",
+            text: "“What is this pattern trying to show me that I haven’t fully understood yet?”",
+          },
+          {
+            type: "paragraph",
+            text: "Life has a gentle way of repeating lessons until we’re ready to learn them.",
+          },
+          {
+            type: "paragraph",
+            text: "Not because it’s trying to punish us.",
+          },
+          {
+            type: "paragraph",
+            text: "Because it’s quietly inviting us to grow.",
+          },
+          {
+            type: "paragraph",
+            text: "And every moment of awareness is proof that you’re already moving in that direction.",
+          },
+          {
+            type: "paragraph",
+            text: "Until our next conversation, remember this: mistakes may repeat, but so can courage. Every new choice begins with noticing the old one.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "trust-yourself",
+    title: "Learning to Trust Yourself Again",
+    subtitle: "Have You Ever Stopped Believing Your Own Voice?",
+    eyebrow: "Reflections",
+    description:
+      "On rebuilding self-trust, quiet promises, and learning to listen to your own voice again after doubt has taken hold.",
+    publishedAt: "2026-07-28",
+    keywords: [
+      "self trust",
+      "intuition",
+      "self confidence",
+      "personal growth",
+      "decision making",
+    ],
+    excerptLines: [
+      "Imagine standing at a crossroads.",
+      "Two paths lie ahead.",
+      "Neither one comes with a guarantee.",
+    ],
+    closingThought:
+      "The strongest foundation you can build isn’t certainty—it’s trust in the person you’re becoming.",
+    sections: [
+      {
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Imagine standing at a crossroads.",
+          },
+          { type: "paragraph", text: "Two paths lie ahead." },
+          {
+            type: "paragraph",
+            text: "Neither one comes with a guarantee.",
+          },
+          {
+            type: "paragraph",
+            text: "You know that eventually you’ll have to choose.",
+          },
+          {
+            type: "paragraph",
+            text: "But instead of listening to yourself, you begin searching for answers everywhere else.",
+          },
+          { type: "paragraph", text: "You ask friends." },
+          { type: "paragraph", text: "You read articles." },
+          { type: "paragraph", text: "You watch videos." },
+          {
+            type: "paragraph",
+            text: "You hope someone else will tell you which direction is right.",
+          },
+          {
+            type: "paragraph",
+            text: "Not because advice is bad.",
+          },
+          {
+            type: "paragraph",
+            text: "But because somewhere along the way, you’ve stopped believing that your own voice is enough.",
+          },
+          {
+            type: "paragraph",
+            text: "If you’ve ever felt this way, you’re not alone.",
+          },
+          {
+            type: "paragraph",
+            text: "Many of us don’t lose self-trust overnight.",
+          },
+          {
+            type: "paragraph",
+            text: "We lose it one small moment at a time.",
+          },
+        ],
+      },
+      {
+        heading: "How Self-Trust Quietly Slips Away",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Self-trust rarely disappears after one mistake.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s often built—or broken—through repeated experiences.",
+          },
+          {
+            type: "paragraph",
+            text: "Perhaps you ignored your intuition because you wanted to keep someone happy.",
+          },
+          {
+            type: "paragraph",
+            text: "Perhaps you stayed in a situation that no longer felt right because you were afraid of change.",
+          },
+          {
+            type: "paragraph",
+            text: "Perhaps you made a decision that didn’t work out and convinced yourself,",
+          },
+          {
+            type: "paragraph",
+            text: "“I can’t trust my judgment anymore.”",
+          },
+          {
+            type: "paragraph",
+            text: "Over time, those moments become a story.",
+          },
+          {
+            type: "paragraph",
+            text: "A story that says,",
+          },
+          {
+            type: "paragraph",
+            text: "“Other people know better than I do.”",
+          },
+          {
+            type: "paragraph",
+            text: "The more often we repeat that story, the quieter our own voice becomes.",
+          },
+        ],
+      },
+      {
+        heading: "The Difference Between Being Wrong and Being Unworthy",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "One of the biggest misunderstandings about self-trust is believing that making a mistake means you can’t trust yourself.",
+          },
+          {
+            type: "paragraph",
+            text: "But think about someone you deeply trust.",
+          },
+          {
+            type: "paragraph",
+            text: "Have they ever made a mistake?",
+          },
+          {
+            type: "paragraph",
+            text: "Of course they have.",
+          },
+          {
+            type: "paragraph",
+            text: "Trust isn’t built on perfection.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s built on consistency, honesty, and the willingness to learn.",
+          },
+          {
+            type: "paragraph",
+            text: "The same is true for your relationship with yourself.",
+          },
+          {
+            type: "paragraph",
+            text: "Making one poor decision doesn’t mean your judgment is broken.",
+          },
+          {
+            type: "paragraph",
+            text: "It means you’re human.",
+          },
+          {
+            type: "paragraph",
+            text: "Growth comes from learning—not from expecting yourself to never stumble.",
+          },
+        ],
+      },
+      {
+        heading: "Imagine a Child Learning to Walk",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "A child takes their first steps.",
+          },
+          { type: "paragraph", text: "They wobble." },
+          { type: "paragraph", text: "They fall." },
+          {
+            type: "paragraph",
+            text: "Then they try again.",
+          },
+          {
+            type: "paragraph",
+            text: "No one looks at that child and says,",
+          },
+          {
+            type: "paragraph",
+            text: "“Maybe walking just isn’t for you.”",
+          },
+          {
+            type: "paragraph",
+            text: "We understand that falling is part of learning.",
+          },
+          {
+            type: "paragraph",
+            text: "Yet somewhere along the way, we stop offering ourselves that same patience.",
+          },
+          { type: "paragraph", text: "One failed attempt." },
+          { type: "paragraph", text: "One wrong decision." },
+          { type: "paragraph", text: "One disappointment." },
+          {
+            type: "paragraph",
+            text: "And suddenly we question everything about ourselves.",
+          },
+          {
+            type: "paragraph",
+            text: "What if you treated your own growth with the same compassion you’d offer that child?",
+          },
+          {
+            type: "paragraph",
+            text: "How different would your journey feel?",
+          },
+        ],
+      },
+      {
+        heading: "Trust Is Built Through Small Promises",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "We often think confidence comes from achieving something extraordinary.",
+          },
+          {
+            type: "paragraph",
+            text: "But self-trust grows much more quietly.",
+          },
+          {
+            type: "paragraph",
+            text: "It grows every time you keep a promise to yourself.",
+          },
+          {
+            type: "paragraph",
+            text: "You said you’d go for a walk—and you did.",
+          },
+          {
+            type: "paragraph",
+            text: "You said you’d rest instead of overworking—and you honoured that need.",
+          },
+          {
+            type: "paragraph",
+            text: "You said you’d speak honestly—and you followed through.",
+          },
+          {
+            type: "paragraph",
+            text: "These moments may seem small.",
+          },
+          {
+            type: "paragraph",
+            text: "But each one sends your mind the same message:",
+          },
+          {
+            type: "paragraph",
+            text: "“I can rely on myself.”",
+          },
+          {
+            type: "paragraph",
+            text: "Over time, those small promises become the foundation of something much bigger.",
+          },
+        ],
+      },
+      {
+        heading: "Your Intuition Deserves a Seat at the Table",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Listening to yourself doesn’t mean ignoring everyone else’s advice.",
+          },
+          {
+            type: "paragraph",
+            text: "It means allowing your own wisdom to have a voice in the conversation.",
+          },
+          { type: "paragraph", text: "Seek guidance." },
+          { type: "paragraph", text: "Ask questions." },
+          {
+            type: "paragraph",
+            text: "Learn from others.",
+          },
+          { type: "paragraph", text: "Then pause." },
+          {
+            type: "paragraph",
+            text: "Before making your decision, ask yourself:",
+          },
+          {
+            type: "paragraph",
+            text: "“What feels true to me?”",
+          },
+          {
+            type: "paragraph",
+            text: "That question isn’t about certainty.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s about respect.",
+          },
+          {
+            type: "paragraph",
+            text: "Respecting the person who has lived your experiences, felt your emotions, and carries your values.",
+          },
+          {
+            type: "paragraph",
+            text: "No one knows your life more intimately than you do.",
+          },
+        ],
+      },
+      {
+        heading: "One Small Step You Can Try Today",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Think of one promise you’ve been postponing.",
+          },
+          {
+            type: "paragraph",
+            text: "Perhaps it’s getting more rest.",
+          },
+          {
+            type: "paragraph",
+            text: "Applying for that opportunity.",
+          },
+          {
+            type: "paragraph",
+            text: "Having an honest conversation.",
+          },
+          {
+            type: "paragraph",
+            text: "Starting something you’ve been dreaming about.",
+          },
+          { type: "paragraph", text: "Choose just one." },
+          {
+            type: "paragraph",
+            text: "Not because it’s life-changing.",
+          },
+          {
+            type: "paragraph",
+            text: "But because every promise you keep to yourself strengthens your self-trust.",
+          },
+          {
+            type: "paragraph",
+            text: "You don’t need ten dramatic changes.",
+          },
+          {
+            type: "paragraph",
+            text: "You need one honest step.",
+          },
+        ],
+      },
+      {
+        heading: "Take a Moment",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Before you move on, spend a little time reflecting.",
+          },
+          {
+            type: "list",
+            items: [
+              "When did you first begin doubting yourself?",
+              "Was there a moment that made you stop trusting your own judgment?",
+              "How often do you ask for reassurance before making a decision?",
+              "What’s one promise you can keep to yourself this week?",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "These questions aren’t here to judge your past.",
+          },
+          {
+            type: "paragraph",
+            text: "They’re here to help you rebuild your future.",
+          },
+        ],
+      },
+      {
+        heading: "A Thought to Carry With You",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Self-trust isn’t the belief that life will always go your way.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s the quiet confidence that whatever life brings, you’ll meet it with honesty, courage, and compassion.",
+          },
+          {
+            type: "paragraph",
+            text: "You don’t have to know every answer.",
+          },
+          {
+            type: "paragraph",
+            text: "You only have to believe that you’re capable of finding your way.",
+          },
+          {
+            type: "paragraph",
+            text: "That belief changes everything.",
+          },
+        ],
+      },
+      {
+        heading: "Before You Leave…",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "If there’s one thing I hope stays with you after today’s conversation, it’s this:",
+          },
+          {
+            type: "paragraph",
+            text: "Trust isn’t something you only give to other people.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s something you build with yourself, one choice at a time.",
+          },
+          {
+            type: "paragraph",
+            text: "Every time you listen to your values instead of your fears…",
+          },
+          {
+            type: "paragraph",
+            text: "Every time you honour your needs instead of ignoring them…",
+          },
+          {
+            type: "paragraph",
+            text: "Every time you forgive yourself instead of punishing yourself…",
+          },
+          {
+            type: "paragraph",
+            text: "You strengthen the relationship that matters most.",
+          },
+          {
+            type: "paragraph",
+            text: "And one day, without even noticing exactly when it happened, you’ll find yourself standing at another crossroads.",
+          },
+          {
+            type: "paragraph",
+            text: "This time, you’ll still welcome advice.",
+          },
+          {
+            type: "paragraph",
+            text: "But before looking anywhere else, you’ll pause…",
+          },
+          {
+            type: "paragraph",
+            text: "Smile gently…",
+          },
+          {
+            type: "paragraph",
+            text: "And ask yourself,",
+          },
+          {
+            type: "paragraph",
+            text: "“What do I believe is right?”",
+          },
+          {
+            type: "paragraph",
+            text: "Because the voice you’ve been searching for was never lost.",
+          },
+          {
+            type: "paragraph",
+            text: "It was patiently waiting for you to trust it again.",
+          },
+          {
+            type: "paragraph",
+            text: "Until our next conversation, remember this: the strongest foundation you can build isn’t certainty—it’s trust in the person you’re becoming.",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export function getAllPosts(): BlogPost[] {
