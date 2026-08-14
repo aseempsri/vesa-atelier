@@ -34,17 +34,14 @@ export const Route = createFileRoute("/about")({
 
 const pillars = [
   {
-    number: "01",
     title: "Handcrafted",
     text: "Every candle is thoughtfully made with care, balancing modern minimalism with traditional warmth.",
   },
   {
-    number: "02",
     title: "Evocative",
     text: "From rich sandalwood to soft florals, each fragrance is chosen to evoke emotion, calmness, and connection.",
   },
   {
-    number: "03",
     title: "Intentional",
     text: "Not simply candles, but pieces that elevate a home, soothe the senses, and make a moment memorable.",
   },
@@ -64,14 +61,15 @@ function AboutPage() {
               <br />
               <em>quiet moments.</em>
             </h1>
-            <p className="about-intro">
-              We believe the smallest moments often become the most meaningful—the quiet evenings,
-              warm conversations, and soft glow that turns a space into a feeling.
-            </p>
-
-            <div className="about-scroll-note" aria-hidden>
-              <span />
-              Our philosophy
+            <div className="about-intro-row">
+              <div className="about-scroll-note" aria-hidden>
+                <span />
+                Our philosophy
+              </div>
+              <p className="about-intro">
+                We believe the smallest moments often become the most meaningful—the quiet evenings,
+                warm conversations, and soft glow that turns a space into a feeling.
+              </p>
             </div>
           </header>
 
@@ -105,8 +103,7 @@ function AboutPage() {
 
             <div className="grid gap-5 md:grid-cols-3">
               {pillars.map((pillar) => (
-                <div key={pillar.number} className="about-pillar">
-                  <span className="about-pillar-number">{pillar.number}</span>
+                <div key={pillar.title} className="about-pillar">
                   <h3>{pillar.title}</h3>
                   <p>{pillar.text}</p>
                 </div>
@@ -135,7 +132,7 @@ function AboutPage() {
           <section className="py-24 text-center md:py-32">
             <p className="about-kicker">From our hands to your home</p>
             <h2
-              className="mx-auto mt-5 max-w-3xl"
+              className="about-closing-title mx-auto mt-5 max-w-3xl"
               style={{
                 fontFamily: vesaSerif,
                 fontSize: "clamp(2.25rem, 6vw, 4.75rem)",
@@ -151,7 +148,7 @@ function AboutPage() {
               <em style={{ color: VESA_GOLD }}>your story.</em>
             </h2>
             <p
-              className="mx-auto mt-7 max-w-xl"
+              className="about-closing-copy mx-auto mt-7 max-w-xl"
               style={{
                 color: VESA_BODY,
                 fontFamily: vesaSerif,

@@ -248,29 +248,31 @@
 
 /*
  * The About page owns its background outright: the shared layout scrim fades to opaque
- * black, so this field paints over it. The house candle photograph sits behind a dark
- * wash heavy enough to keep the copy legible over the busiest part of the image.
+ * black, so this field paints over it. Every layer is viewport-anchored, so the candle
+ * scene holds still as one backdrop and the content scrolls across it. The scrim above
+ * the photo is the price of that — it has to hold contrast wherever a section lands.
  */
 .about-atmosphere {
-  position: absolute;
-  /* Reaches up behind the layout header so the field starts at the top of the page. */
-  top: -7.5rem;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  /* Fixed to the viewport rather than background-attachment: fixed, which iOS Safari
+     ignores. Sits inside <main>'s stacking context, so the header and footer stay above. */
+  position: fixed;
+  inset: 0;
   pointer-events: none;
   background:
-    /* The hero ends around 23% of the page; past it the wash goes near-opaque so the
-       candle's bright body never sits behind the reading sections. */
     linear-gradient(
       180deg,
-      rgba(8, 7, 10, 0.32) 0%,
-      rgba(8, 7, 10, 0.46) 14%,
-      rgba(8, 7, 10, 0.78) 26%,
-      rgba(8, 7, 10, 0.94) 36%,
-      rgba(8, 7, 10, 0.97) 100%
+      rgba(8, 7, 10, 0.46) 0%,
+      rgba(8, 7, 10, 0.53) 50%,
+      rgba(8, 7, 10, 0.6) 100%
     ),
-    url("./assets/vesa-hero.jpg") center 28% / cover no-repeat;
+    radial-gradient(
+      ellipse 120% 95% at 62% 46%,
+      rgba(112, 82, 48, 0.22) 0%,
+      rgba(34, 25, 19, 0.44) 52%,
+      rgba(8, 7, 10, 0.7) 100%
+    ),
+    url("./assets/vesa-hero.jpg") center center / cover;
+  background-repeat: no-repeat;
   background-color: #08070a;
 }
 
@@ -294,6 +296,22 @@
     transparent 45%,
     rgba(6, 5, 8, 0.55) 100%
   );
+}
+
+/*
+ * The backdrop is a lit photograph rather than flat black, so type carries its own
+ * shadow: a tight one for edge definition and a wide halo that darkens just the pixels
+ * behind the glyphs. Cheaper than dimming the whole scene to suit the busiest section.
+ */
+.about-kicker,
+.about-intro,
+.about-heading,
+.about-copy,
+.about-closing-title,
+.about-closing-copy {
+  text-shadow:
+    0 1px 2px rgba(6, 5, 8, 0.6),
+    0 2px 20px rgba(6, 5, 8, 0.75);
 }
 
 .about-kicker {
@@ -329,40 +347,52 @@
   font-weight: 300;
 }
 
+/* Label and copy share a row so the marker sits alongside the paragraph, not under it. */
+.about-intro-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  margin-top: 3.5rem;
+}
+
 .about-intro {
   position: relative;
   z-index: 1;
-  max-width: 36rem;
-  margin-top: 3.5rem;
+  max-width: 38rem;
   margin-left: auto;
   padding-left: 2rem;
   border-left: 1px solid rgba(201, 165, 90, 0.42);
-  color: rgba(236, 226, 201, 0.82);
+  color: rgba(242, 234, 214, 0.94);
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.25rem, 2.3vw, 1.65rem);
+  font-size: clamp(1.4rem, 2.6vw, 1.85rem);
   font-weight: 300;
-  letter-spacing: 0.015em;
-  line-height: 1.65;
+  letter-spacing: 0.01em;
+  line-height: 1.75;
 }
 
 .about-scroll-note {
-  position: absolute;
-  bottom: 1rem;
-  left: 0;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 1rem;
-  color: rgba(201, 165, 90, 0.5);
+  color: rgba(232, 210, 150, 0.92);
   font-family: "Inter", sans-serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.4em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.38em;
   text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow:
+    0 1px 2px rgba(6, 5, 8, 0.7),
+    0 2px 16px rgba(6, 5, 8, 0.8);
 }
 
 .about-scroll-note span {
   width: 3.5rem;
   height: 1px;
-  background: linear-gradient(90deg, #c9a55a, transparent);
+  background: linear-gradient(90deg, #d8b97f, transparent);
 }
 
 .about-manifesto {
@@ -402,11 +432,11 @@
 
 .about-pillar {
   position: relative;
-  min-height: 20rem;
-  padding: 2.25rem 2rem;
+  padding: 1.75rem 1.75rem 1.85rem;
   overflow: hidden;
   border: 1px solid rgba(201, 165, 90, 0.2);
-  background: linear-gradient(145deg, rgba(47, 37, 25, 0.66), rgba(10, 9, 11, 0.78));
+  /* Near-opaque so the lit backdrop reads behind the panel, not through it. */
+  background: linear-gradient(145deg, rgba(44, 35, 24, 0.94), rgba(10, 9, 11, 0.96));
   box-shadow:
     inset 1px 1px 0 rgba(246, 230, 195, 0.1),
     0 24px 50px -30px rgba(0, 0, 0, 0.95);
@@ -426,27 +456,20 @@
   transform: translateY(-8px);
 }
 
-.about-pillar-number {
-  color: rgba(201, 165, 90, 0.5);
-  font-family: "Inter", sans-serif;
-  font-size: 0.58rem;
-  letter-spacing: 0.4em;
-}
-
 .about-pillar h3 {
-  margin-top: 5rem;
   color: #ece2c9;
   font-family: "Cormorant Garamond", serif;
-  font-size: 2rem;
+  font-size: 1.85rem;
   font-weight: 400;
+  line-height: 1.15;
 }
 
 .about-pillar p {
-  margin-top: 1.25rem;
+  margin-top: 0.85rem;
   color: rgba(232, 220, 198, 0.68);
   font-family: "Cormorant Garamond", serif;
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .about-founder {
@@ -456,7 +479,7 @@
   border: 1px solid rgba(201, 165, 90, 0.28);
   background:
     radial-gradient(circle at 90% 20%, rgba(201, 165, 90, 0.12), transparent 45%),
-    linear-gradient(135deg, rgba(40, 31, 22, 0.82), rgba(9, 8, 10, 0.92));
+    linear-gradient(135deg, rgba(38, 30, 21, 0.96), rgba(9, 8, 10, 0.98));
   box-shadow:
     inset 0 1px 0 rgba(246, 230, 195, 0.11),
     0 32px 70px -36px #000;
@@ -537,8 +560,16 @@
     font-size: 4.5rem;
   }
 
-  .about-intro {
+  .about-intro-row {
     margin-top: 3rem;
+  }
+
+  .about-intro {
     padding-left: 1.25rem;
+  }
+
+  /* No room for the marker beside the copy at this width. */
+  .about-scroll-note {
+    display: none;
   }
 }
