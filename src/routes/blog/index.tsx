@@ -88,8 +88,7 @@ function BlogPage() {
               color: VESA_BODY,
             }}
           >
-            Quiet reflections on presence, self-worth, and the light we carry
-            within.
+            Quiet reflections on presence, self-worth, and the light we carry within.
           </p>
 
           <VesaGoldRule />
@@ -107,132 +106,125 @@ function BlogPage() {
                 params={{ slug: post.slug }}
                 className="block px-6 pb-20 pt-8 transition-opacity hover:opacity-90 md:px-10 md:pb-20 md:pt-10"
               >
-              {[
-                { top: -4, left: -4 },
-                { top: -4, right: -4 },
-                { bottom: -4, left: -4 },
-                { bottom: -4, right: -4 },
-              ].map((pos, i) => (
-                <span
-                  key={i}
-                  aria-hidden
-                  className="absolute h-[8px] w-[8px] rotate-45"
-                  style={{
-                    ...pos,
-                    border: `1px solid ${VESA_GOLD_SOFT}`,
-                    background: "#08070a",
-                  }}
-                />
-              ))}
-
-              <p
-                className="uppercase"
-                style={{
-                  fontFamily: vesaSans,
-                  fontSize: "0.7rem",
-                  letterSpacing: "0.45em",
-                  color: VESA_GOLD,
-                  paddingLeft: "0.45em",
-                }}
-              >
-                {post.eyebrow}
-              </p>
-
-              <h2
-                className="mt-4 overflow-visible pb-1"
-                style={{
-                  fontFamily: vesaSerif,
-                  fontWeight: 400,
-                  fontSize: "clamp(1.75rem, 3.5vw, 2.35rem)",
-                  lineHeight: 1.3,
-                  letterSpacing: "0.02em",
-                  color: VESA_CREAM,
-                }}
-              >
-                {post.title}
-              </h2>
-
-              <div className="mt-6">
-                <p
-                  className="overflow-visible pb-1"
-                  style={{
-                    fontFamily: vesaSerif,
-                    fontWeight: 400,
-                    fontStyle: "italic",
-                    fontSize: "clamp(1.25rem, 2.4vw, 1.55rem)",
-                    lineHeight: 1.4,
-                    letterSpacing: "0.01em",
-                    color: VESA_CREAM,
-                  }}
-                >
-                  {post.subtitle}
-                </p>
-                <div className="mt-3 flex items-center gap-3">
+                {[
+                  { top: -4, left: -4 },
+                  { top: -4, right: -4 },
+                  { bottom: -4, left: -4 },
+                  { bottom: -4, right: -4 },
+                ].map((pos, i) => (
                   <span
+                    key={i}
                     aria-hidden
-                    style={{ color: VESA_GOLD, fontSize: "0.4rem" }}
-                  >
-                    ◆
-                  </span>
-                  <span
-                    className="h-px flex-1"
+                    className="absolute h-[8px] w-[8px] rotate-45"
                     style={{
-                      background: `linear-gradient(90deg, ${VESA_GOLD}, transparent)`,
-                      maxWidth: "4.5rem",
-                      opacity: 0.7,
+                      ...pos,
+                      border: `1px solid ${VESA_GOLD_SOFT}`,
+                      background: "#08070a",
                     }}
                   />
-                </div>
-              </div>
-
-              <div className="mt-6 space-y-3">
-                {post.excerptLines.slice(0, 3).map((line, i) => (
-                  <p
-                    key={i}
-                    style={{
-                      fontFamily: vesaSerif,
-                      fontWeight: 300,
-                      fontSize: "clamp(1.25rem, 2vw, 1.4rem)",
-                      lineHeight: 1.75,
-                      letterSpacing: "0.02em",
-                      color: VESA_BODY,
-                    }}
-                  >
-                    {line}
-                  </p>
                 ))}
-              </div>
 
-              <p
-                className="mt-2 flex flex-wrap items-baseline gap-x-3"
-                style={{
-                  fontFamily: vesaSerif,
-                  fontWeight: 300,
-                  fontSize: "1.45rem",
-                  letterSpacing: "0.15em",
-                  color: VESA_GOLD_SOFT,
-                }}
-              >
-                <span>…</span>
-                <span
+                <p
                   className="uppercase"
                   style={{
                     fontFamily: vesaSans,
-                    fontSize: "0.75rem",
-                    letterSpacing: "0.35em",
+                    fontSize: "0.7rem",
+                    letterSpacing: "0.45em",
                     color: VESA_GOLD,
-                    paddingLeft: "0.35em",
+                    paddingLeft: "0.45em",
                   }}
                 >
-                  Read more
-                </span>
-              </p>
+                  {post.eyebrow}
+                </p>
+
+                <h2
+                  className="mt-4 overflow-visible pb-1"
+                  style={{
+                    fontFamily: vesaSerif,
+                    fontWeight: 400,
+                    fontSize: "clamp(1.75rem, 3.5vw, 2.35rem)",
+                    lineHeight: 1.3,
+                    letterSpacing: "0.02em",
+                    color: VESA_CREAM,
+                  }}
+                >
+                  {post.title}
+                </h2>
+
+                <div className="mt-6">
+                  <p
+                    className="overflow-visible pb-1"
+                    style={{
+                      fontFamily: vesaSerif,
+                      fontWeight: 400,
+                      fontStyle: "italic",
+                      fontSize: "clamp(1.25rem, 2.4vw, 1.55rem)",
+                      lineHeight: 1.4,
+                      letterSpacing: "0.01em",
+                      color: VESA_CREAM,
+                    }}
+                  >
+                    {post.subtitle}
+                  </p>
+                  <div className="mt-3 flex items-center gap-3">
+                    <span aria-hidden style={{ color: VESA_GOLD, fontSize: "0.4rem" }}>
+                      ◆
+                    </span>
+                    <span
+                      className="h-px flex-1"
+                      style={{
+                        background: `linear-gradient(90deg, ${VESA_GOLD}, transparent)`,
+                        maxWidth: "4.5rem",
+                        opacity: 0.7,
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-6 space-y-3">
+                  {post.excerptLines.slice(0, 3).map((line, i) => (
+                    <p
+                      key={i}
+                      style={{
+                        fontFamily: vesaSerif,
+                        fontWeight: 300,
+                        fontSize: "clamp(1.25rem, 2vw, 1.4rem)",
+                        lineHeight: 1.75,
+                        letterSpacing: "0.02em",
+                        color: VESA_BODY,
+                      }}
+                    >
+                      {line}
+                    </p>
+                  ))}
+                </div>
+
+                <p
+                  className="mt-2 flex flex-wrap items-baseline gap-x-3"
+                  style={{
+                    fontFamily: vesaSerif,
+                    fontWeight: 300,
+                    fontSize: "1.45rem",
+                    letterSpacing: "0.15em",
+                    color: VESA_GOLD_SOFT,
+                  }}
+                >
+                  <span>…</span>
+                  <span
+                    className="uppercase"
+                    style={{
+                      fontFamily: vesaSans,
+                      fontSize: "0.75rem",
+                      letterSpacing: "0.35em",
+                      color: VESA_GOLD,
+                      paddingLeft: "0.35em",
+                    }}
+                  >
+                    Read more
+                  </span>
+                </p>
               </Link>
-              <BlogShareMenu
-                slug={post.slug}
-                title={post.title}
-                shareTeaser={post.shareTeaser}
-              />
+              <BlogShareMenu slug={post.slug} title={post.title} shareTeaser={post.shareTeaser} />
             </article>
           ))}
         </section>

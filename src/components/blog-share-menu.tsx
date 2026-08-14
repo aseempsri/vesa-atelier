@@ -53,7 +53,10 @@ export function BlogShareMenu({ slug, title, shareTeaser }: BlogShareMenuProps) 
     "cursor-pointer gap-3 rounded-none px-3 py-2.5 text-sm focus:bg-[#c9a55a]/10 focus:text-[#ece2c9]";
 
   return (
-    <div className="absolute bottom-5 right-5 z-10 md:bottom-7 md:right-8" onClick={stopCardNavigation}>
+    <div
+      className="absolute bottom-5 right-5 z-10 md:bottom-7 md:right-8"
+      onClick={stopCardNavigation}
+    >
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <button
@@ -112,8 +115,7 @@ export function BlogShareMenu({ slug, title, shareTeaser }: BlogShareMenuProps) 
               )
             }
           >
-            <Twitter aria-hidden />
-            X / Twitter
+            <Twitter aria-hidden />X / Twitter
           </DropdownMenuItem>
           <DropdownMenuItem className={itemClass} onSelect={copyLink}>
             {copied ? <Check aria-hidden style={{ color: VESA_GOLD }} /> : <Copy aria-hidden />}
