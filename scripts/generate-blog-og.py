@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "public" / "og" / "blog"
+OUTPUT = ROOT / "public" / "og" / "blog" / "share"
 BACKGROUND = ROOT / "public" / "og-image.jpg"
 LOGO = ROOT / "src" / "assets" / "vesa-logo.png"
 SERIF = "/System/Library/Fonts/Supplemental/Didot.ttc"
