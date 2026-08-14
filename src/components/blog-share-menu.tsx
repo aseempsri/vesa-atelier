@@ -14,13 +14,11 @@ import { absoluteUrl } from "@/lib/seo";
 type BlogShareMenuProps = {
   slug: string;
   title: string;
-  shareTeaser: string;
 };
 
-export function BlogShareMenu({ slug, title, shareTeaser }: BlogShareMenuProps) {
+export function BlogShareMenu({ slug, title }: BlogShareMenuProps) {
   const [copied, setCopied] = useState(false);
   const shareUrl = absoluteUrl(`/blog/${slug}`);
-  const shareText = `${shareTeaser}\n\n${title}`;
 
   const stopCardNavigation = (event: MouseEvent) => {
     event.preventDefault();
@@ -88,9 +86,7 @@ export function BlogShareMenu({ slug, title, shareTeaser }: BlogShareMenuProps) 
           <DropdownMenuItem
             className={itemClass}
             onSelect={() =>
-              openShareWindow(
-                `https://wa.me/?text=${encodeURIComponent(`${shareText}\n${shareUrl}`)}`,
-              )
+              openShareWindow(`https://wa.me/?text=${encodeURIComponent(shareUrl)}`)
             }
           >
             <MessageCircle aria-hidden style={{ color: "#25D366" }} />
@@ -111,7 +107,7 @@ export function BlogShareMenu({ slug, title, shareTeaser }: BlogShareMenuProps) 
             className={itemClass}
             onSelect={() =>
               openShareWindow(
-                `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`,
+                `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}`,
               )
             }
           >

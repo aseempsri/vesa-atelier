@@ -224,7 +224,7 @@ function BlogPage() {
                   </span>
                 </p>
               </Link>
-              <BlogShareMenu slug={post.slug} title={post.title} shareTeaser={post.shareTeaser} />
+              <BlogShareMenu slug={post.slug} title={post.title} />
             </article>
           ))}
         </section>
