@@ -12,12 +12,12 @@ const slugs = [...postsSrc.matchAll(/^\s*slug:\s*"([^"]+)"/gm)].map((m) => m[1])
 
 const staticPages = [
   { loc: `${SITE_URL}/`, priority: "1.0", changefreq: "weekly" },
-  { loc: `${SITE_URL}/about`, priority: "0.8", changefreq: "monthly" },
-  { loc: `${SITE_URL}/blog`, priority: "0.9", changefreq: "weekly" },
+  { loc: `${SITE_URL}/about/`, priority: "0.8", changefreq: "monthly" },
+  { loc: `${SITE_URL}/blog/`, priority: "0.9", changefreq: "weekly" },
 ];
 
 const postPages = slugs.map((slug) => ({
-  loc: `${SITE_URL}/blog/${slug}`,
+  loc: `${SITE_URL}/blog/${slug}/`,
   priority: "0.8",
   changefreq: "monthly",
 }));

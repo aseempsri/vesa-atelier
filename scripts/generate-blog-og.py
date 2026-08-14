@@ -172,7 +172,8 @@ def generate(slug: str, title: str, teaser: str, glow_at: tuple[int, int]) -> No
     draw.text((1005, 555), "VESA.CO.IN", font=font(SANS, 15), fill=(201, 165, 90, 190))
 
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    card.convert("RGB").save(OUTPUT / f"{slug}.jpg", quality=91, optimize=True, progressive=True)
+    # Baseline (non-progressive) JPEG: WhatsApp's preview generator skips progressive files.
+    card.convert("RGB").save(OUTPUT / f"{slug}.jpg", quality=88, optimize=True, progressive=False)
 
 
 if __name__ == "__main__":

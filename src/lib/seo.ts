@@ -5,11 +5,14 @@ export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 export const SITE_DESCRIPTION =
   "VESA Atelier — a house of hand-poured candles crafted for calm, elegance, and meaningful moments. Reflections and the first collection at vesa.co.in.";
 
+// Pages are served with a trailing slash; asset paths are served verbatim. Matching the served
+// form keeps canonical, og:url, and shared links free of a 301 hop that breaks link previews.
 export function absoluteUrl(path = "/"): string {
   if (path.startsWith("http")) return path;
   const normalized = path.startsWith("/") ? path : `/${path}`;
-  if (normalized === "/") return SITE_URL;
-  return `${SITE_URL}${normalized.replace(/\/$/, "")}`;
+  if (normalized === "/") return `${SITE_URL}/`;
+  if (/\.[a-z0-9]+$/i.test(normalized)) return `${SITE_URL}${normalized}`;
+  return `${SITE_URL}${normalized.replace(/\/$/, "")}/`;
 }
 
 type PageSeoInput = {
@@ -59,6 +62,8 @@ export function buildPageHead({
     { property: "og:description", content: description },
     { property: "og:url", content: url },
     { property: "og:image", content: image },
+    { property: "og:image:secure_url", content: image },
+    { property: "og:image:type", content: "image/jpeg" },
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
     { property: "og:image:alt", content: imageAlt },
