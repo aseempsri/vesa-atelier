@@ -7,7 +7,6 @@ import {
   VESA_BODY,
   VESA_CREAM,
   VESA_GOLD,
-  VESA_GOLD_FAINT,
   VESA_GOLD_SOFT,
   VESA_WORDMARK_GRADIENT,
   vesaSans,
@@ -96,15 +95,11 @@ function BlogPage() {
 
         <section className="space-y-10">
           {posts.map((post) => (
-            <article
-              key={post.slug}
-              className="relative"
-              style={{ border: `1px solid ${VESA_GOLD_FAINT}` }}
-            >
+            <article key={post.slug} className="vesa-card">
               <Link
                 to="/blog/$slug"
                 params={{ slug: post.slug }}
-                className="block px-6 pb-20 pt-8 transition-opacity hover:opacity-90 md:px-10 md:pb-20 md:pt-10"
+                className="relative z-[1] block px-6 pb-20 pt-8 md:px-10 md:pb-20 md:pt-10"
               >
                 {[
                   { top: -4, left: -4 },

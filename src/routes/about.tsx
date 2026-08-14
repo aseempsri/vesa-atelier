@@ -1,10 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 import { VesaGoldRule, VesaLayout } from "@/components/vesa-layout";
 import {
   VESA_BODY,
   VESA_CREAM,
   VESA_GOLD,
-  VESA_GOLD_SOFT,
+  VESA_GOLD_FAINT,
   vesaSans,
   vesaSerif,
 } from "@/lib/vesa-brand";
@@ -31,101 +32,143 @@ export const Route = createFileRoute("/about")({
     }),
 });
 
-const paragraphs = [
-  "At VESA Atelier, we believe that the smallest moments often become the most meaningful ones — the quiet evenings, the warm conversations, the soft glow that turns a space into a feeling.",
-  "Founded by Sandhya Srivastava, VESA Atelier was born from a deep love for elegant interiors, calming fragrances, and the beauty of handcrafted artistry. What began as a personal passion slowly transformed into a dream of creating products that bring warmth, comfort, and sophistication into everyday living.",
-  "Every candle at VESA Atelier is thoughtfully handcrafted with care, blending luxurious fragrances with timeless aesthetics. Inspired by modern minimalism and traditional warmth, our creations are designed not just as candles, but as experiences — pieces that elevate your home, soothe your senses, and create moments worth remembering.",
-  "From rich sandalwood notes to soft floral blends, every fragrance is carefully chosen to evoke emotion, calmness, and connection. Our collections are created for people who appreciate beauty in simplicity and find joy in meaningful details.",
-  "More than a brand, VESA Atelier is a reflection of intentional living — where luxury feels personal, and every product carries a touch of soul.",
-  "Whether it's a quiet self-care evening, a thoughtful gift, or a beautifully styled home corner, we hope our creations become a part of your story.",
-  "Thank you for being here and for supporting a dream built with passion, warmth, and light.",
+const pillars = [
+  {
+    number: "01",
+    title: "Handcrafted",
+    text: "Every candle is thoughtfully made with care, balancing modern minimalism with traditional warmth.",
+  },
+  {
+    number: "02",
+    title: "Evocative",
+    text: "From rich sandalwood to soft florals, each fragrance is chosen to evoke emotion, calmness, and connection.",
+  },
+  {
+    number: "03",
+    title: "Intentional",
+    text: "Not simply candles, but pieces that elevate a home, soothe the senses, and make a moment memorable.",
+  },
 ];
 
 function AboutPage() {
   return (
     <VesaLayout activeNav="about">
-      <article className="mx-auto max-w-2xl px-6 pb-16 pt-4 md:px-8 md:pb-24 md:pt-8 lg:max-w-3xl">
-        <p
-          className="uppercase"
-          style={{
-            fontFamily: vesaSans,
-            fontSize: "0.6rem",
-            letterSpacing: "0.65em",
-            color: VESA_GOLD_SOFT,
-            paddingLeft: "0.65em",
-          }}
-        >
-          Our story
-        </p>
+      <div className="relative">
+        <div aria-hidden className="about-atmosphere" />
 
-        <h1
-          className="mt-5"
-          style={{
-            fontFamily: vesaSerif,
-            fontWeight: 300,
-            fontSize: "clamp(2.5rem, 6vw, 3.75rem)",
-            lineHeight: 1.1,
-            letterSpacing: "0.02em",
-            background:
-              "linear-gradient(180deg, #f6e6c3 0%, #d8b97f 30%, #b48947 65%, #6e4a23 100%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-            filter: "drop-shadow(0 4px 24px rgba(201, 165, 90, 0.2))",
-          }}
-        >
-          About VESA Atelier
-        </h1>
+        <article className="relative z-[1] mx-auto max-w-5xl overflow-hidden px-6 pb-20 pt-4 md:px-10 md:pb-28 md:pt-10">
+          <header className="relative min-h-[34rem] py-8 md:min-h-[38rem] md:py-14">
+            <p className="about-kicker">The house of VESA · Our story</p>
+            <h1 className="about-title">
+              Made for the
+              <br />
+              <em>quiet moments.</em>
+            </h1>
+            <p className="about-intro">
+              We believe the smallest moments often become the most meaningful—the quiet evenings,
+              warm conversations, and soft glow that turns a space into a feeling.
+            </p>
 
-        <VesaGoldRule />
+            <div className="about-scroll-note" aria-hidden>
+              <span />
+              Our philosophy
+            </div>
+          </header>
 
-        <div className="space-y-7">
-          {paragraphs.map((text, i) => (
-            <p
-              key={i}
+          <VesaGoldRule />
+
+          <section className="about-manifesto">
+            <p className="about-section-number">01</p>
+            <div>
+              <p className="about-kicker">Born from a feeling</p>
+              <h2 className="about-heading">A personal passion, shaped into light.</h2>
+              <p className="about-copy">
+                Founded by Sandhya Srivastava, VESA Atelier grew from a deep love for elegant
+                interiors, calming fragrances, and handcrafted artistry. What began personally
+                became a dream of bringing warmth, comfort, and quiet sophistication into everyday
+                living.
+              </p>
+            </div>
+          </section>
+
+          <section className="py-20 md:py-28">
+            <div className="mb-10 flex items-end justify-between gap-6 md:mb-14">
+              <div>
+                <p className="about-kicker">Our approach</p>
+                <h2 className="about-heading mt-4">Crafted with intention.</h2>
+              </div>
+              <span
+                className="hidden h-px max-w-52 flex-1 md:block"
+                style={{ background: VESA_GOLD_FAINT }}
+              />
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-3">
+              {pillars.map((pillar) => (
+                <div key={pillar.number} className="about-pillar">
+                  <span className="about-pillar-number">{pillar.number}</span>
+                  <h3>{pillar.title}</h3>
+                  <p>{pillar.text}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="about-founder">
+            <div className="about-founder-mark" aria-hidden>
+              S
+            </div>
+            <div className="relative z-[1]">
+              <p className="about-kicker">The founder</p>
+              <blockquote>
+                “Luxury feels most beautiful when it feels <em>personal.</em>”
+              </blockquote>
+              <p className="about-copy max-w-2xl">
+                More than a brand, VESA Atelier is a reflection of intentional living—created for
+                those who appreciate beauty in simplicity and find joy in meaningful details.
+              </p>
+              <p className="about-signature">Sandhya Srivastava</p>
+              <p className="about-founder-label">Founder · VESA Atelier</p>
+            </div>
+          </section>
+
+          <section className="py-24 text-center md:py-32">
+            <p className="about-kicker">From our hands to your home</p>
+            <h2
+              className="mx-auto mt-5 max-w-3xl"
               style={{
                 fontFamily: vesaSerif,
+                fontSize: "clamp(2.25rem, 6vw, 4.75rem)",
                 fontWeight: 300,
-                fontSize: "clamp(1.05rem, 1.5vw, 1.2rem)",
-                lineHeight: 1.85,
-                letterSpacing: "0.02em",
-                color: VESA_BODY,
+                lineHeight: 1.08,
+                color: VESA_CREAM,
               }}
             >
-              {text}
+              May our creations
+              <br />
+              become a part of
+              <br />
+              <em style={{ color: VESA_GOLD }}>your story.</em>
+            </h2>
+            <p
+              className="mx-auto mt-7 max-w-xl"
+              style={{
+                color: VESA_BODY,
+                fontFamily: vesaSerif,
+                fontSize: "1.15rem",
+                lineHeight: 1.8,
+              }}
+            >
+              For self-care evenings, thoughtful gifts, and beautifully styled corners. Thank you
+              for supporting a dream built with passion, warmth, and light.
             </p>
-          ))}
-        </div>
-
-        <VesaGoldRule />
-
-        <div className="text-center">
-          <p
-            style={{
-              fontFamily: vesaSerif,
-              fontWeight: 400,
-              fontSize: "clamp(1.35rem, 2.5vw, 1.75rem)",
-              fontStyle: "italic",
-              letterSpacing: "0.04em",
-              color: VESA_CREAM,
-            }}
-          >
-            Welcome to VESA Atelier.
-          </p>
-          <p
-            className="mt-6 uppercase"
-            style={{
-              fontFamily: vesaSans,
-              fontSize: "0.6rem",
-              letterSpacing: "0.55em",
-              color: VESA_GOLD,
-              paddingLeft: "0.55em",
-            }}
-          >
-            Founded by Sandhya Srivastava
-          </p>
-        </div>
-      </article>
+            <Link to="/" className="about-cta">
+              Enter the atelier
+              <ArrowUpRight size={15} strokeWidth={1.4} />
+            </Link>
+          </section>
+        </article>
+      </div>
     </VesaLayout>
   );
 }

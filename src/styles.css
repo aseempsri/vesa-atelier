@@ -71,10 +71,14 @@
   --gold-soft: oklch(0.86 0.09 82);
   --gold-deep: oklch(0.55 0.11 65);
   --ember: oklch(0.72 0.18 45);
-  --onyx: oklch(0.10 0.008 60);
+  --onyx: oklch(0.1 0.008 60);
   --cream: oklch(0.93 0.025 80);
   --gradient-gold: linear-gradient(135deg, oklch(0.86 0.09 82), oklch(0.62 0.12 60));
-  --gradient-radial-warm: radial-gradient(ellipse at center, oklch(0.30 0.05 55 / 0.8), oklch(0.10 0.008 60) 70%);
+  --gradient-radial-warm: radial-gradient(
+    ellipse at center,
+    oklch(0.3 0.05 55 / 0.8),
+    oklch(0.1 0.008 60) 70%
+  );
   --shadow-glow: 0 0 80px -10px oklch(0.78 0.18 55 / 0.55);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
@@ -163,5 +167,378 @@
   50% {
     opacity: 1;
     filter: drop-shadow(0 0 32px rgba(201, 165, 90, 0.55)) brightness(1.15);
+  }
+}
+
+/*
+ * Blog cards read as raised plaques: lit from above, with a contact shadow below and a
+ * gold rim along the top edge. Hovering lifts the card toward the reader.
+ */
+.vesa-card {
+  position: relative;
+  background: linear-gradient(
+    158deg,
+    rgba(58, 47, 31, 0.95) 0%,
+    rgba(31, 25, 20, 0.96) 38%,
+    rgba(14, 12, 13, 0.97) 100%
+  );
+  border: 1px solid rgba(201, 165, 90, 0.38);
+  box-shadow:
+    inset 1px 1px 0 rgba(246, 230, 195, 0.16),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.8),
+    inset 0 0 70px rgba(0, 0, 0, 0.4),
+    0 3px 4px rgba(0, 0, 0, 0.6),
+    0 20px 40px -14px rgba(0, 0, 0, 0.9),
+    0 50px 90px -36px rgba(0, 0, 0, 1);
+  transform: perspective(1400px);
+  transition:
+    transform 560ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 560ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    border-color 560ms ease;
+}
+
+.vesa-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 165, 90, 0.7), transparent);
+  pointer-events: none;
+}
+
+.vesa-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(120% 80% at 50% 0%, rgba(201, 165, 90, 0.14), transparent 62%);
+  opacity: 0;
+  transition: opacity 560ms ease;
+  pointer-events: none;
+}
+
+.vesa-card:hover,
+.vesa-card:focus-within {
+  transform: perspective(1400px) translateY(-10px) rotateX(1.4deg) scale(1.011);
+  border-color: rgba(201, 165, 90, 0.66);
+  box-shadow:
+    inset 1px 1px 0 rgba(246, 230, 195, 0.24),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.85),
+    inset 0 0 70px rgba(0, 0, 0, 0.32),
+    0 4px 6px rgba(0, 0, 0, 0.65),
+    0 34px 62px -18px rgba(0, 0, 0, 0.95),
+    0 80px 130px -42px rgba(0, 0, 0, 1),
+    0 0 54px -10px rgba(201, 165, 90, 0.38);
+}
+
+.vesa-card:hover::after,
+.vesa-card:focus-within::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vesa-card,
+  .vesa-card:hover,
+  .vesa-card:focus-within {
+    transform: none;
+    transition:
+      box-shadow 200ms ease,
+      border-color 200ms ease;
+  }
+}
+
+/*
+ * The About page owns its background outright: the shared layout scrim fades to opaque
+ * black, so this field paints over it. The house candle photograph sits behind a dark
+ * wash heavy enough to keep the copy legible over the busiest part of the image.
+ */
+.about-atmosphere {
+  position: absolute;
+  /* Reaches up behind the layout header so the field starts at the top of the page. */
+  top: -7.5rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background:
+    /* The hero ends around 23% of the page; past it the wash goes near-opaque so the
+       candle's bright body never sits behind the reading sections. */
+    linear-gradient(
+      180deg,
+      rgba(8, 7, 10, 0.32) 0%,
+      rgba(8, 7, 10, 0.46) 14%,
+      rgba(8, 7, 10, 0.78) 26%,
+      rgba(8, 7, 10, 0.94) 36%,
+      rgba(8, 7, 10, 0.97) 100%
+    ),
+    url("./assets/vesa-hero.jpg") center 28% / cover no-repeat;
+  background-color: #08070a;
+}
+
+/* Film grain keeps the wide gradients from banding on dark panels. */
+.about-atmosphere::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
+  mix-blend-mode: overlay;
+  opacity: 0.05;
+}
+
+/* Softly darkens the outer edges so the reading column stays the brightest thing. */
+.about-atmosphere::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 78% 60% at 50% 38%,
+    transparent 45%,
+    rgba(6, 5, 8, 0.55) 100%
+  );
+}
+
+.about-kicker {
+  padding-left: 0.55em;
+  color: rgba(201, 165, 90, 0.72);
+  font-family: "Inter", sans-serif;
+  font-size: 0.61rem;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+}
+
+.about-title {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin-top: 2rem;
+  /* The tight line-height pushes descenders outside the background box, and
+     background-clip: text only paints inside it — without this they render blank. */
+  padding-bottom: 0.2em;
+  background: linear-gradient(180deg, #f6e6c3 0%, #d8b97f 38%, #9b7138 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 10px 34px rgba(201, 165, 90, 0.18));
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(4rem, 10vw, 7.75rem);
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: 0.82;
+}
+
+.about-title em {
+  font-weight: 300;
+}
+
+.about-intro {
+  position: relative;
+  z-index: 1;
+  max-width: 36rem;
+  margin-top: 3.5rem;
+  margin-left: auto;
+  padding-left: 2rem;
+  border-left: 1px solid rgba(201, 165, 90, 0.42);
+  color: rgba(236, 226, 201, 0.82);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.25rem, 2.3vw, 1.65rem);
+  font-weight: 300;
+  letter-spacing: 0.015em;
+  line-height: 1.65;
+}
+
+.about-scroll-note {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(201, 165, 90, 0.5);
+  font-family: "Inter", sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+
+.about-scroll-note span {
+  width: 3.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, #c9a55a, transparent);
+}
+
+.about-manifesto {
+  display: grid;
+  grid-template-columns: minmax(5rem, 0.35fr) 1fr;
+  gap: clamp(2rem, 7vw, 7rem);
+  padding: clamp(5rem, 10vw, 8rem) 0;
+}
+
+.about-section-number {
+  color: rgba(201, 165, 90, 0.16);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(5rem, 12vw, 9rem);
+  font-weight: 300;
+  line-height: 0.75;
+}
+
+.about-heading {
+  max-width: 42rem;
+  margin-top: 1rem;
+  color: #ece2c9;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.15rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.08;
+}
+
+.about-copy {
+  margin-top: 2rem;
+  color: rgba(232, 220, 198, 0.76);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.08rem, 1.7vw, 1.3rem);
+  font-weight: 300;
+  letter-spacing: 0.015em;
+  line-height: 1.85;
+}
+
+.about-pillar {
+  position: relative;
+  min-height: 20rem;
+  padding: 2.25rem 2rem;
+  overflow: hidden;
+  border: 1px solid rgba(201, 165, 90, 0.2);
+  background: linear-gradient(145deg, rgba(47, 37, 25, 0.66), rgba(10, 9, 11, 0.78));
+  box-shadow:
+    inset 1px 1px 0 rgba(246, 230, 195, 0.1),
+    0 24px 50px -30px rgba(0, 0, 0, 0.95);
+  transition:
+    transform 450ms ease,
+    border-color 450ms ease,
+    box-shadow 450ms ease;
+}
+
+.about-pillar:hover {
+  z-index: 1;
+  border-color: rgba(201, 165, 90, 0.5);
+  box-shadow:
+    inset 1px 1px 0 rgba(246, 230, 195, 0.16),
+    0 30px 60px -26px rgba(0, 0, 0, 1),
+    0 0 40px -18px rgba(201, 165, 90, 0.5);
+  transform: translateY(-8px);
+}
+
+.about-pillar-number {
+  color: rgba(201, 165, 90, 0.5);
+  font-family: "Inter", sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.4em;
+}
+
+.about-pillar h3 {
+  margin-top: 5rem;
+  color: #ece2c9;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.about-pillar p {
+  margin-top: 1.25rem;
+  color: rgba(232, 220, 198, 0.68);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.about-founder {
+  position: relative;
+  padding: clamp(3rem, 8vw, 6rem);
+  overflow: hidden;
+  border: 1px solid rgba(201, 165, 90, 0.28);
+  background:
+    radial-gradient(circle at 90% 20%, rgba(201, 165, 90, 0.12), transparent 45%),
+    linear-gradient(135deg, rgba(40, 31, 22, 0.82), rgba(9, 8, 10, 0.92));
+  box-shadow:
+    inset 0 1px 0 rgba(246, 230, 195, 0.11),
+    0 32px 70px -36px #000;
+}
+
+.about-founder blockquote {
+  max-width: 44rem;
+  margin-top: 2rem;
+  color: #ece2c9;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 5.8vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.08;
+}
+
+.about-founder blockquote em {
+  color: #c9a55a;
+}
+
+.about-founder-mark {
+  position: absolute;
+  right: -0.04em;
+  bottom: -0.32em;
+  color: rgba(201, 165, 90, 0.055);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(18rem, 44vw, 34rem);
+  font-style: italic;
+  line-height: 0.8;
+}
+
+.about-signature {
+  margin-top: 2.5rem;
+  color: #c9a55a;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  font-style: italic;
+}
+
+.about-founder-label {
+  margin-top: 0.25rem;
+  color: rgba(201, 165, 90, 0.5);
+  font-family: "Inter", sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.about-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(201, 165, 90, 0.42);
+  color: #c9a55a;
+  font-family: "Inter", sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  transition:
+    color 300ms ease,
+    background 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.about-cta:hover {
+  background: rgba(201, 165, 90, 0.1);
+  color: #ece2c9;
+  box-shadow: 0 0 36px -12px rgba(201, 165, 90, 0.45);
+}
+
+@media (max-width: 640px) {
+  .about-manifesto {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section-number {
+    font-size: 4.5rem;
+  }
+
+  .about-intro {
+    margin-top: 3rem;
+    padding-left: 1.25rem;
   }
 }
