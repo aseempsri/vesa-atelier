@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { BlogScrollToTop } from "@/components/blog-scroll-to-top";
+import { BlogShareMenu } from "@/components/blog-share-menu";
 import { VesaGoldRule, VesaLayout } from "@/components/vesa-layout";
 import { getAllPosts } from "@/lib/blog/posts";
 import {
@@ -96,13 +97,16 @@ function BlogPage() {
 
         <section className="space-y-10">
           {posts.map((post) => (
-            <Link
+            <article
               key={post.slug}
-              to="/blog/$slug"
-              params={{ slug: post.slug }}
-              className="relative block px-6 py-8 transition-opacity hover:opacity-90 md:px-10 md:py-10"
+              className="relative"
               style={{ border: `1px solid ${VESA_GOLD_FAINT}` }}
             >
+              <Link
+                to="/blog/$slug"
+                params={{ slug: post.slug }}
+                className="block px-6 pb-20 pt-8 transition-opacity hover:opacity-90 md:px-10 md:pb-20 md:pt-10"
+              >
               {[
                 { top: -4, left: -4 },
                 { top: -4, right: -4 },
@@ -223,7 +227,13 @@ function BlogPage() {
                   Read more
                 </span>
               </p>
-            </Link>
+              </Link>
+              <BlogShareMenu
+                slug={post.slug}
+                title={post.title}
+                shareTeaser={post.shareTeaser}
+              />
+            </article>
           ))}
         </section>
       </div>

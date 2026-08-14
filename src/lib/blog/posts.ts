@@ -13,6 +13,8 @@ export type BlogPost = {
   subtitle: string;
   eyebrow: string;
   description: string;
+  shareTeaser: string;
+  shareImage: string;
   publishedAt: string;
   updatedAt?: string;
   keywords?: string[];
@@ -29,6 +31,8 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On validation, the approval trap, and learning to offer yourself the kindness you freely give others.",
+    shareTeaser: "What if the approval you keep waiting for is the one only you can give?",
+    shareImage: "/og/blog/self-validation.jpg?v=2",
     publishedAt: "2026-07-20",
     keywords: [
       "self validation",
@@ -356,6 +360,8 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On overthinking, the search for certainty, and learning to notice your thoughts without being trapped by them.",
+    shareTeaser: "What is your mind really searching for when it replays the same moment?",
+    shareImage: "/og/blog/overthinking.jpg?v=2",
     publishedAt: "2026-07-22",
     keywords: ["overthinking", "anxiety", "self trust", "mental clarity"],
     excerptLines: [
@@ -753,6 +759,8 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On the fear of saying no, the cost of always saying yes, and learning that healthy boundaries are an act of self-respect.",
+    shareTeaser: "How much of yourself disappears each time you say yes when you mean no?",
+    shareImage: "/og/blog/saying-no.jpg?v=2",
     publishedAt: "2026-07-24",
     keywords: ["boundaries", "saying no", "people pleasing", "self respect"],
     excerptLines: [
@@ -1146,6 +1154,8 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On comparison, the illusion of highlight reels, and learning to measure growth against who you were yesterday.",
+    shareTeaser: "What if feeling behind has more to do with where you are looking than where you are?",
+    shareImage: "/og/blog/comparison.jpg?v=2",
     publishedAt: "2026-07-26",
     keywords: [
       "comparison",
@@ -1605,6 +1615,8 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On the inner critic, self-compassion, and learning to respond to fear with curiosity instead of judgment.",
+    shareTeaser: "Whose voice is your inner critic using—and does it deserve the final word?",
+    shareImage: "/og/blog/inner-critic.jpg?v=2",
     publishedAt: "2026-07-27",
     keywords: [
       "inner critic",
@@ -2033,6 +2045,8 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On unnecessary guilt, people-pleasing, and learning to tell the difference between responsibility and the discomfort of setting a boundary.",
+    shareTeaser: "Could the guilt you feel be discomfort—not proof that you did something wrong?",
+    shareImage: "/og/blog/unnecessary-guilt.jpg?v=2",
     publishedAt: "2026-07-28",
     keywords: [
       "unnecessary guilt",
@@ -2441,6 +2455,8 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On self-awareness, emotional autopilot, and learning to meet yourself with curiosity instead of judgment.",
+    shareTeaser: "What might change if you became curious about your reactions instead of judging them?",
+    shareImage: "/og/blog/self-awareness.jpg?v=2",
     publishedAt: "2026-07-28",
     keywords: [
       "self awareness",
@@ -2896,6 +2912,8 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On solitude, silence, and learning to feel at peace in your own company without fear of what quiet might reveal.",
+    shareTeaser: "What are you afraid the silence might reveal when everything finally becomes still?",
+    shareImage: "/og/blog/fear-of-being-alone.jpg?v=2",
     publishedAt: "2026-07-28",
     keywords: [
       "fear of being alone",
@@ -3360,6 +3378,8 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On repeated patterns, emotional autopilot, and learning to break familiar cycles with awareness instead of shame.",
+    shareTeaser: "What if the pattern keeps returning because it is asking to be understood, not punished?",
+    shareImage: "/og/blog/repeating-mistakes.jpg?v=2",
     publishedAt: "2026-07-28",
     keywords: [
       "repeating mistakes",
@@ -3850,6 +3870,8 @@ const posts: BlogPost[] = [
     eyebrow: "Reflections",
     description:
       "On rebuilding self-trust, quiet promises, and learning to listen to your own voice again after doubt has taken hold.",
+    shareTeaser: "When did you stop trusting your own voice—and what would it take to hear it again?",
+    shareImage: "/og/blog/trust-yourself.jpg?v=2",
     publishedAt: "2026-07-28",
     keywords: [
       "self trust",

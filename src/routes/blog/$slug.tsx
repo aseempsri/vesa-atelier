@@ -13,6 +13,7 @@ import {
   vesaSerif,
 } from "@/lib/vesa-brand";
 import {
+  absoluteUrl,
   blogPostingJsonLd,
   breadcrumbJsonLd,
   buildPageHead,
@@ -38,9 +39,10 @@ export const Route = createFileRoute("/blog/$slug")({
     }
     return buildPageHead({
       title: post.title,
-      description: post.description,
+      description: post.shareTeaser,
       path: `/blog/${post.slug}`,
       type: "article",
+      image: absoluteUrl(post.shareImage),
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
       keywords: post.keywords,
