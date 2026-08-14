@@ -14,6 +14,10 @@ LOGO = ROOT / "src" / "assets" / "vesa-logo.png"
 SERIF = "/System/Library/Fonts/Supplemental/Didot.ttc"
 SANS = "/System/Library/Fonts/Supplemental/Arial.ttf"
 
+# Social platforms cache previews per image URL, so bump this whenever the card design changes
+# and update shareImage in src/lib/blog/posts.ts to match.
+REVISION = 2
+
 POSTS = [
     (
         "self-validation",
@@ -119,42 +123,37 @@ def generate(slug: str, title: str, teaser: str, glow_at: tuple[int, int]) -> No
     body = (232, 220, 198, 210)
 
     draw.rectangle((28, 28, 1172, 602), outline=(201, 165, 90, 92), width=1)
-    draw.text((72, 75), "VESA JOURNAL", font=font(SANS, 17), fill=gold)
-    draw.line((72, 105, 172, 105), fill=gold, width=1)
 
-    brand_panel = Image.new("RGBA", card.size, (0, 0, 0, 0))
-    brand_draw = ImageDraw.Draw(brand_panel)
-    brand_draw.rounded_rectangle(
-        (865, 55, 1135, 535),
-        radius=8,
-        fill=(8, 7, 10, 188),
-        outline=(201, 165, 90, 75),
-        width=1,
+    brand_cx = 995
+
+    scrim = Image.new("RGBA", card.size, (0, 0, 0, 0))
+    ImageDraw.Draw(scrim).ellipse(
+        (brand_cx - 250, 110, brand_cx + 250, 500), fill=(8, 7, 10, 208)
     )
-    card = Image.alpha_composite(card, brand_panel)
+    card = Image.alpha_composite(card, scrim.filter(ImageFilter.GaussianBlur(60)))
     draw = ImageDraw.Draw(card)
 
     logo = Image.open(LOGO).convert("RGBA")
-    logo.thumbnail((176, 176), Image.Resampling.LANCZOS)
-    logo.putalpha(225)
-    card.alpha_composite(logo, (912, 92))
+    logo.thumbnail((168, 168), Image.Resampling.LANCZOS)
+    # The crest ships gold-on-black, so derive alpha from luminance to drop the black backdrop.
+    r, g, b, _ = logo.split()
+    luminance = Image.merge("RGB", (r, g, b)).convert("L")
+    logo.putalpha(luminance.point(lambda v: min(255, int(v * 1.6))))
+    card.alpha_composite(logo, (brand_cx - logo.width // 2, 168))
 
-    brand_font = font(SERIF, 66)
-    atelier_font = font(SANS, 22)
-    draw.text((907, 290), "VESA", font=brand_font, fill=cream)
-    draw.line((900, 377, 947, 377), fill=(201, 165, 90, 175), width=1)
-    draw.line((1065, 377, 1112, 377), fill=(201, 165, 90, 175), width=1)
-    draw.text((958, 365), "ATELIER", font=atelier_font, fill=gold)
-    draw.text((925, 437), "CRAFTED ELEGANCE", font=font(SANS, 13), fill=(201, 165, 90, 175))
+    draw.text((brand_cx, 372), "VESA", font=font(SERIF, 76), fill=cream, anchor="mm")
+    draw.text((brand_cx, 434), "ATELIER", font=font(SANS, 21), fill=gold, anchor="mm")
+    draw.line((brand_cx - 108, 434, brand_cx - 62, 434), fill=(201, 165, 90, 165), width=1)
+    draw.line((brand_cx + 62, 434, brand_cx + 108, 434), fill=(201, 165, 90, 165), width=1)
 
-    title_lines = fit_lines(title, 26, 3)
+    title_lines = fit_lines(title, 25, 3)
     title_font = font(SERIF, 52)
-    y = 142
+    y = 168
     for line in title_lines:
         draw.text((72, y), line, font=title_font, fill=cream)
         y += 62
 
-    divider_y = max(y + 4, 340)
+    divider_y = max(y + 22, 356)
     draw.polygon(
         ((72, divider_y + 5), (77, divider_y), (82, divider_y + 5), (77, divider_y + 10)),
         fill=gold,
@@ -162,18 +161,17 @@ def generate(slug: str, title: str, teaser: str, glow_at: tuple[int, int]) -> No
     draw.line((94, divider_y + 5, 228, divider_y + 5), fill=(201, 165, 90, 150), width=1)
 
     teaser_font = font(SERIF, 29, index=1)
-    teaser_lines = fit_lines(teaser, 45, 2)
+    teaser_lines = fit_lines(teaser, 44, 2)
     teaser_y = divider_y + 34
     for line in teaser_lines:
         draw.text((72, teaser_y), line, font=teaser_font, fill=body)
         teaser_y += 38
 
-    draw.text((72, 555), "A QUIET REFLECTION", font=font(SANS, 15), fill=(201, 165, 90, 190))
-    draw.text((1005, 555), "VESA.CO.IN", font=font(SANS, 15), fill=(201, 165, 90, 190))
-
     OUTPUT.mkdir(parents=True, exist_ok=True)
     # Baseline (non-progressive) JPEG: WhatsApp's preview generator skips progressive files.
-    card.convert("RGB").save(OUTPUT / f"{slug}.jpg", quality=88, optimize=True, progressive=False)
+    card.convert("RGB").save(
+        OUTPUT / f"{slug}-{REVISION}.jpg", quality=88, optimize=True, progressive=False
+    )
 
 
 if __name__ == "__main__":
