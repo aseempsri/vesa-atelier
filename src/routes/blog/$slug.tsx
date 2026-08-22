@@ -38,7 +38,7 @@ export const Route = createFileRoute("/blog/$slug")({
     }
     return buildPageHead({
       title: post.title,
-      description: post.shareTeaser,
+      description: post.description,
       path: `/blog/${post.slug}`,
       type: "article",
       publishedTime: post.publishedAt,

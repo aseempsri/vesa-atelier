@@ -4,22 +4,28 @@ import heroImage from "@/assets/vesa-hero.jpg";
 import marbleTexture from "@/assets/vesa-marble.jpg";
 import { VesaLogo } from "@/components/vesa-logo";
 import { VESA_WORDMARK_GRADIENT } from "@/lib/vesa-brand";
-import { buildPageHead } from "@/lib/seo";
+import { buildPageHead, SITE_DESCRIPTION, webPageJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () =>
     buildPageHead({
       title: "A House of Hand-Poured Light",
-      description:
-        "VESA Atelier — a house of hand-poured candles. The first collection arrives soon at vesa.co.in.",
+      description: SITE_DESCRIPTION,
       path: "/",
       keywords: [
         "VESA Atelier",
         "hand-poured candles",
         "luxury candles India",
         "Bombay candles",
+        "artisan candles",
+        "home fragrance India",
       ],
+      jsonLd: webPageJsonLd({
+        title: "A House of Hand-Poured Light",
+        description: SITE_DESCRIPTION,
+        path: "/",
+      }),
     }),
 });
 
@@ -73,36 +79,18 @@ function Index() {
 
   useEffect(() => {
     const t = setTimeout(() => setMounted(true), 80);
-
-    // Hard-lock document scroll on the landing page (iOS Safari included)
-    const html = document.documentElement;
-    const body = document.body;
-    const prev = {
-      htmlOverflow: html.style.overflow,
-      bodyOverflow: body.style.overflow,
-      bodyOverscroll: body.style.overscrollBehavior,
-    };
-    html.style.overflow = "hidden";
-    body.style.overflow = "hidden";
-    body.style.overscrollBehavior = "none";
-
     const onScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", onScroll, { passive: true });
-
     return () => {
       clearTimeout(t);
       window.removeEventListener("scroll", onScroll);
-      html.style.overflow = prev.htmlOverflow;
-      body.style.overflow = prev.bodyOverflow;
-      body.style.overscrollBehavior = prev.bodyOverscroll;
     };
   }, []);
 
   return (
-    <main
-      className="fixed inset-0 z-0 w-full overflow-hidden overscroll-none"
-      style={{ backgroundColor: "#08070a", height: "100svh", maxHeight: "100svh" }}
-    >
+    <main className="relative w-full" style={{ backgroundColor: "#08070a" }}>
+      {/* ── Hero ── */}
+      <div className="relative h-svh max-h-svh w-full overflow-hidden">
       {/* ── Marble base ── */}
       <div
         aria-hidden
@@ -373,7 +361,7 @@ function Index() {
             </p>
           </div>
 
-          {/* Desktop stacked status — Coming Soon above domain */}
+          {/* Desktop status — domain */}
           <div
             className="mt-14 hidden flex-col items-start gap-3 md:flex lg:mt-16"
             style={{
@@ -395,33 +383,20 @@ function Index() {
                 className="uppercase"
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "0.65rem",
-                  letterSpacing: "0.55em",
-                  color: CREAM,
-                  paddingLeft: "0.55em",
+                  fontWeight: 300,
+                  fontSize: "0.6rem",
+                  letterSpacing: "0.5em",
+                  color: GOLD_SOFT,
+                  paddingLeft: "0.5em",
                 }}
               >
-                Coming Soon
+                vesa.co.in
               </span>
             </div>
-            <span
-              className="uppercase"
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontWeight: 300,
-                fontSize: "0.6rem",
-                letterSpacing: "0.5em",
-                color: GOLD_SOFT,
-                paddingLeft: "0.5em",
-              }}
-            >
-              vesa.co.in
-            </span>
           </div>
         </div>
 
-        {/* Mobile status — Coming Soon above domain */}
+        {/* Mobile status — domain */}
         <div
           className="flex shrink-0 flex-col items-center gap-2.5 pt-1 md:hidden"
           style={{
@@ -429,19 +404,6 @@ function Index() {
             transition: "opacity 2200ms ease-out 1900ms",
           }}
         >
-          <span
-            className="uppercase"
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              fontWeight: 400,
-              fontSize: "0.65rem",
-              letterSpacing: "0.5em",
-              color: CREAM,
-              paddingLeft: "0.5em",
-            }}
-          >
-            Coming Soon
-          </span>
           <span
             className="uppercase"
             style={{
@@ -455,6 +417,90 @@ function Index() {
           >
             vesa.co.in
           </span>
+        </div>
+      </section>
+      </div>
+
+      {/* ── Soft Flame ── */}
+      <section
+        className="relative z-20 flex flex-col items-center px-8 py-20 md:px-20 md:py-28"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(8,7,10,1) 0%, rgba(12,10,8,1) 50%, rgba(8,7,10,1) 100%)",
+        }}
+      >
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: `url(${marbleTexture})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <div className="relative z-10 mx-auto max-w-xl text-center">
+          <p
+            className="uppercase"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "0.55rem",
+              letterSpacing: "0.55em",
+              color: GOLD_SOFT,
+              paddingLeft: "0.55em",
+            }}
+          >
+            Soft Flame
+          </p>
+          <div className="my-6 flex items-center justify-center gap-3">
+            <span
+              className="h-px w-10"
+              style={{ background: `linear-gradient(90deg, transparent, ${GOLD})` }}
+            />
+            <span style={{ color: GOLD, fontSize: "0.4rem" }}>◆</span>
+            <span
+              className="h-px w-10"
+              style={{ background: `linear-gradient(270deg, transparent, ${GOLD})` }}
+            />
+          </div>
+          <p
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontStyle: "italic",
+              fontWeight: 300,
+              fontSize: "clamp(1.2rem, 2.4vw, 1.55rem)",
+              lineHeight: 1.85,
+              letterSpacing: "0.03em",
+              color: "rgba(232, 220, 198, 0.88)",
+            }}
+          >
+            A quiet wick, a golden thread,
+            <br />
+            draws night into a softer red.
+            <br />
+            No thunder speaks, no lanterns shout—
+            <br />
+            just one small fire that keeps the dark out.
+          </p>
+          <p
+            className="mt-8"
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontStyle: "italic",
+              fontWeight: 300,
+              fontSize: "clamp(1.2rem, 2.4vw, 1.55rem)",
+              lineHeight: 1.85,
+              letterSpacing: "0.03em",
+              color: "rgba(232, 220, 198, 0.88)",
+            }}
+          >
+            It leans, it listens, barely bright,
+            <br />
+            and turns the room to quiet light.
+            <br />
+            In wax and warmth, the hours stay
+            <br />
+            until the dawn takes night away.
+          </p>
         </div>
       </section>
 

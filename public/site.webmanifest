@@ -1,0 +1,22 @@
+{
+  "name": "VESA Atelier",
+  "short_name": "VESA",
+  "description": "A house of hand-poured candles crafted for calm, elegance, and meaningful moments.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08070a",
+  "theme_color": "#08070a",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

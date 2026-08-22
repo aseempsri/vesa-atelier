@@ -9,8 +9,19 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { googleAnalyticsHeadScripts } from "@/lib/analytics";
 import {
+  DEFAULT_OG_IMAGE,
+  OG_IMAGE_HEIGHT,
+  OG_IMAGE_TYPE,
+  OG_IMAGE_WIDTH,
+  RSS_FEED_URL,
+  SITE_AUTHOR,
   SITE_DESCRIPTION,
+  SITE_GEO_PLACENAME,
+  SITE_GEO_REGION,
+  SITE_LANGUAGE,
+  SITE_LOCALE,
   SITE_NAME,
   SITE_URL,
   organizationJsonLd,
@@ -81,32 +92,70 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: SITE_NAME },
       { name: "description", content: SITE_DESCRIPTION },
-      { name: "author", content: "Sandhya Srivastava" },
+      { name: "author", content: SITE_AUTHOR },
+      { name: "application-name", content: SITE_NAME },
+      { name: "apple-mobile-web-app-title", content: SITE_NAME },
+      { name: "language", content: SITE_LANGUAGE },
+      { httpEquiv: "content-language", content: SITE_LANGUAGE },
+      { name: "geo.region", content: SITE_GEO_REGION },
+      { name: "geo.placename", content: SITE_GEO_PLACENAME },
       { name: "theme-color", content: "#08070a" },
+      { name: "color-scheme", content: "dark" },
+      { name: "format-detection", content: "telephone=no" },
+      {
+        name: "robots",
+        content:
+          "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
+      {
+        name: "googlebot",
+        content:
+          "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
       { property: "og:site_name", content: SITE_NAME },
-      { property: "og:locale", content: "en_IN" },
+      { property: "og:locale", content: SITE_LOCALE },
       { property: "og:type", content: "website" },
       { property: "og:title", content: SITE_NAME },
       { property: "og:description", content: SITE_DESCRIPTION },
       { property: "og:url", content: SITE_URL },
-      { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
+      { property: "og:image", content: DEFAULT_OG_IMAGE },
+      { property: "og:image:secure_url", content: DEFAULT_OG_IMAGE },
+      { property: "og:image:type", content: OG_IMAGE_TYPE },
+      { property: "og:image:width", content: OG_IMAGE_WIDTH },
+      { property: "og:image:height", content: OG_IMAGE_HEIGHT },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: SITE_NAME },
       { name: "twitter:description", content: SITE_DESCRIPTION },
-      { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
+      { name: "twitter:image", content: DEFAULT_OG_IMAGE },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "canonical", href: SITE_URL },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
       { rel: "sitemap", type: "application/xml", href: "/sitemap.xml" },
+      {
+        rel: "alternate",
+        type: "application/rss+xml",
+        title: `${SITE_NAME} Journal`,
+        href: RSS_FEED_URL,
+      },
+      { rel: "alternate", hreflang: SITE_LANGUAGE, href: SITE_URL },
+      { rel: "alternate", hreflang: "x-default", href: SITE_URL },
+      { rel: "dns-prefetch", href: "https://www.googletagmanager.com" },
+      {
+        rel: "preconnect",
+        href: "https://www.googletagmanager.com",
+        crossOrigin: "anonymous",
+      },
     ],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify([organizationJsonLd(), websiteJsonLd()]),
       },
+      ...googleAnalyticsHeadScripts(),
     ],
   }),
   shellComponent: RootShell,
@@ -117,7 +166,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
         <HeadContent />
       </head>
