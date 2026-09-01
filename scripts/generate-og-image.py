@@ -15,7 +15,7 @@ LOCKUP = ROOT / "src" / "assets" / "vesa-lockup.png"
 
 # Social platforms cache previews per image URL — bump when the card design changes
 # and update DEFAULT_OG_IMAGE in src/lib/seo.ts to match.
-REVISION = 6
+REVISION = 7
 OUTPUT = ROOT / "public" / "og" / f"vesa-atelier-{REVISION}.jpg"
 
 CANVAS = (1200, 630)
@@ -24,14 +24,10 @@ GOLD = (201, 165, 90)
 
 def prepare_lockup(max_height: int) -> Image.Image:
     lockup = Image.open(LOCKUP).convert("RGBA")
-    r, g, b, a = lockup.split()
+    r, g, b, _ = lockup.split()
     luminance = Image.merge("RGB", (r, g, b)).convert("L")
-    # Drop the black backdrop while keeping the gold lockup crisp.
-    alpha = Image.composite(
-        a,
-        luminance.point(lambda v: min(255, max(0, int((v - 18) * 2.2)))),
-        luminance.point(lambda v: 255 if v < 24 else 0),
-    )
+    # The source PNG is fully opaque with a black backdrop — derive alpha from brightness.
+    alpha = luminance.point(lambda v: min(255, max(0, int((v - 42) * 3.6))))
     lockup.putalpha(alpha)
 
     scale = max_height / lockup.height
@@ -50,7 +46,7 @@ def build() -> None:
 
     vignette = Image.new("RGBA", card.size, (0, 0, 0, 0))
     draw = ImageDraw.Draw(vignette)
-    draw.rectangle((0, 0, int(target_w * 0.54), target_h), fill=(8, 7, 10, 88))
+    draw.rectangle((0, 0, int(target_w * 0.54), target_h), fill=(8, 7, 10, 36))
     card = Image.alpha_composite(card, vignette.filter(ImageFilter.GaussianBlur(48)))
 
     lockup = prepare_lockup(int(target_h * 0.78))
