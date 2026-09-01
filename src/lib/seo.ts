@@ -5,9 +5,9 @@ export const SITE_LANGUAGE = "en-IN";
 export const SITE_GEO_REGION = "IN-MH";
 export const SITE_GEO_PLACENAME = "Bombay";
 export const SITE_AUTHOR = "Sandhya Srivastava";
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
-export const OG_IMAGE_WIDTH = "1920";
-export const OG_IMAGE_HEIGHT = "1080";
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og/vesa-atelier-5.jpg`;
+export const OG_IMAGE_WIDTH = "1200";
+export const OG_IMAGE_HEIGHT = "630";
 export const OG_IMAGE_TYPE = "image/jpeg";
 export const SITE_DESCRIPTION =
   "VESA Atelier — a house of hand-poured candles crafted for calm, elegance, and meaningful moments. Reflections and the first collection at vesa.co.in.";

@@ -10,6 +10,7 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "seo": "node scripts/generate-seo.mjs",
+    "og-image": "python3 scripts/generate-og-image.py",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
