@@ -432,6 +432,19 @@ function Index() {
               paddingLeft: "0.45em",
             }}
           >
+            coming soon
+          </span>
+          <span
+            className="uppercase"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 300,
+              fontSize: "0.58rem",
+              letterSpacing: "0.45em",
+              color: GOLD_SOFT,
+              paddingLeft: "0.45em",
+            }}
+          >
             vesa.co.in
           </span>
         </div>
