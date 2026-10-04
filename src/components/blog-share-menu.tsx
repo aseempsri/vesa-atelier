@@ -14,9 +14,10 @@ import { absoluteUrl } from "@/lib/seo";
 type BlogShareMenuProps = {
   slug: string;
   title: string;
+  className?: string;
 };
 
-export function BlogShareMenu({ slug, title }: BlogShareMenuProps) {
+export function BlogShareMenu({ slug, title, className }: BlogShareMenuProps) {
   const [copied, setCopied] = useState(false);
   const shareUrl = absoluteUrl(`/blog/${slug}`);
 
@@ -51,15 +52,12 @@ export function BlogShareMenu({ slug, title }: BlogShareMenuProps) {
     "cursor-pointer gap-3 rounded-none px-3 py-2.5 text-sm focus:bg-[#c9a55a]/10 focus:text-[#ece2c9]";
 
   return (
-    <div
-      className="absolute bottom-5 right-5 z-10 md:bottom-7 md:right-8"
-      onClick={stopCardNavigation}
-    >
+    <div className={className} onClick={stopCardNavigation}>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-full transition-all hover:scale-105 hover:bg-[#c9a55a]/10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#c9a55a]"
+            className="flex h-9 w-9 items-center justify-center rounded-full transition-all hover:scale-105 hover:bg-[#c9a55a]/10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#c9a55a]"
             style={{
               color: VESA_GOLD,
               border: `1px solid ${VESA_GOLD_FAINT}`,
@@ -68,7 +66,7 @@ export function BlogShareMenu({ slug, title }: BlogShareMenuProps) {
             aria-label={`Share ${title}`}
             title="Share this reflection"
           >
-            <Share2 size={17} strokeWidth={1.6} />
+            <Share2 size={16} strokeWidth={1.6} />
           </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
