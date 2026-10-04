@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type MouseEvent } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { Check, Copy, Facebook, MessageCircle, Share2, Twitter } from "lucide-react";
 import {
   DropdownMenu,
@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { VESA_BG, VESA_CREAM, VESA_GOLD, VESA_GOLD_FAINT, vesaSans } from "@/lib/vesa-brand";
+import { VESA_BG, VESA_CREAM, VESA_GOLD, VESA_GOLD_SOFT, vesaSans } from "@/lib/vesa-brand";
 import { absoluteUrl } from "@/lib/seo";
 
 type BlogShareMenuProps = {
@@ -19,7 +19,12 @@ type BlogShareMenuProps = {
 
 export function BlogShareMenu({ slug, title, className }: BlogShareMenuProps) {
   const [copied, setCopied] = useState(false);
+  const [canNativeShare, setCanNativeShare] = useState(false);
   const shareUrl = absoluteUrl(`/blog/${slug}`);
+
+  useEffect(() => {
+    setCanNativeShare(typeof navigator.share === "function");
+  }, []);
 
   const stopCardNavigation = (event: MouseEvent) => {
     event.preventDefault();
@@ -27,7 +32,22 @@ export function BlogShareMenu({ slug, title, className }: BlogShareMenuProps) {
   };
 
   const openShareWindow = (url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer,width=720,height=620");
+    const popup = window.open(url, "_blank", "noopener,noreferrer");
+    if (!popup) {
+      window.location.assign(url);
+    }
+  };
+
+  const shareNative = async () => {
+    try {
+      await navigator.share({
+        title,
+        text: title,
+        url: shareUrl,
+      });
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") return;
+    }
   };
 
   const copyLink = async () => {
@@ -57,30 +77,51 @@ export function BlogShareMenu({ slug, title, className }: BlogShareMenuProps) {
         <DropdownMenuTrigger asChild>
           <button
             type="button"
-            className="flex h-9 w-9 items-center justify-center rounded-full transition-all hover:scale-105 hover:bg-[#c9a55a]/10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#c9a55a]"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full transition-all hover:bg-[#c9a55a]/10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#c9a55a]"
             style={{
               color: VESA_GOLD,
-              border: `1px solid ${VESA_GOLD_FAINT}`,
-              background: "rgba(8, 7, 10, 0.88)",
+              border: `1px solid ${VESA_GOLD_SOFT}`,
+              background: "rgba(8, 7, 10, 0.92)",
+              fontFamily: vesaSans,
+              fontSize: "0.62rem",
+              letterSpacing: "0.28em",
+              textTransform: "uppercase",
+              paddingLeft: "0.95rem",
+              paddingRight: "0.85rem",
             }}
             aria-label={`Share ${title}`}
             title="Share this reflection"
           >
-            <Share2 size={16} strokeWidth={1.6} />
+            <Share2 size={16} strokeWidth={1.6} aria-hidden className="shrink-0" />
+            <span className="inline">Share</span>
           </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="end"
+          side="top"
           sideOffset={8}
-          className="min-w-48 rounded-none p-1.5"
+          collisionPadding={16}
+          className="z-[200] min-w-52 rounded-none p-1.5"
           style={{
             fontFamily: vesaSans,
             color: VESA_CREAM,
             background: VESA_BG,
-            border: `1px solid ${VESA_GOLD_FAINT}`,
+            border: `1px solid ${VESA_GOLD_SOFT}`,
           }}
           onClick={(event) => event.stopPropagation()}
+          onPointerDown={(event) => event.stopPropagation()}
         >
+          {canNativeShare ? (
+            <DropdownMenuItem
+              className={itemClass}
+              onSelect={() => {
+                void shareNative();
+              }}
+            >
+              <Share2 aria-hidden style={{ color: VESA_GOLD }} />
+              Device share
+            </DropdownMenuItem>
+          ) : null}
           <DropdownMenuItem
             className={itemClass}
             onSelect={() =>
@@ -109,7 +150,8 @@ export function BlogShareMenu({ slug, title, className }: BlogShareMenuProps) {
               )
             }
           >
-            <Twitter aria-hidden />X / Twitter
+            <Twitter aria-hidden />
+            X / Twitter
           </DropdownMenuItem>
           <DropdownMenuItem className={itemClass} onSelect={copyLink}>
             {copied ? <Check aria-hidden style={{ color: VESA_GOLD }} /> : <Copy aria-hidden />}

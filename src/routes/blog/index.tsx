@@ -226,11 +226,11 @@ function BlogPage() {
 
               </Link>
 
-              <div className="mt-2 flex items-center justify-between gap-4 px-6 pb-8 md:px-10 md:pb-10">
+              <div className="mt-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-3 px-6 pb-8 md:px-10 md:pb-10">
                 <Link
                   to="/blog/$slug"
                   params={{ slug: post.slug }}
-                  className="flex flex-wrap items-baseline gap-x-3 transition-opacity hover:opacity-80"
+                  className="flex min-w-0 flex-wrap items-baseline gap-x-3 transition-opacity hover:opacity-80"
                   style={{
                     fontFamily: vesaSerif,
                     fontWeight: 300,
@@ -256,7 +256,7 @@ function BlogPage() {
                 <BlogShareMenu
                   slug={post.slug}
                   title={post.title}
-                  className="relative z-10 shrink-0"
+                  className="relative z-20 ml-auto shrink-0"
                 />
               </div>
             </article>

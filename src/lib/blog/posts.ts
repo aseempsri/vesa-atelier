@@ -4303,6 +4303,622 @@ const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "responding-instead-of-reacting",
+    title: "Responding Instead of Reacting: A Skill That Changes Everything",
+    subtitle: "Have You Ever Wished You Could Take Back Five Seconds?",
+    eyebrow: "Reflections",
+    description:
+      "Between what you feel and what you do, there is a small space. Learning to use it can change more than you imagine.",
+    publishedAt: "2026-10-04",
+    keywords: [
+      "responding vs reacting",
+      "emotional intelligence",
+      "emotional regulation",
+      "pause before reacting",
+      "mindful communication",
+    ],
+    excerptLines: [
+      "It happens quickly.",
+      "Someone says something that touches a nerve.",
+      "You feel the irritation rise.",
+    ],
+    closingThought:
+      "Honour what you feel—but give yourself enough space to decide what those feelings become.",
+    sections: [
+      {
+        blocks: [
+          { type: "paragraph", text: "It happens quickly." },
+          {
+            type: "paragraph",
+            text: "Someone says something that touches a nerve.",
+          },
+          { type: "paragraph", text: "You feel the irritation rise." },
+          {
+            type: "paragraph",
+            text: "Before you’ve fully understood what you’re feeling, the words are already out.",
+          },
+          { type: "paragraph", text: "Maybe you raise your voice." },
+          { type: "paragraph", text: "Send the message." },
+          { type: "paragraph", text: "Make the sarcastic comment." },
+          { type: "paragraph", text: "Walk away." },
+          {
+            type: "paragraph",
+            text: "Or say something you don’t completely mean.",
+          },
+          { type: "paragraph", text: "Then the moment passes." },
+          { type: "paragraph", text: "The emotion settles." },
+          {
+            type: "paragraph",
+            text: "And suddenly, the response that felt completely justified five minutes ago looks very different.",
+          },
+          { type: "paragraph", text: "“Why did I say that?”" },
+          { type: "paragraph", text: "“I could have handled that better.”" },
+          { type: "paragraph", text: "“I wish I’d just waited.”" },
+          {
+            type: "paragraph",
+            text: "Sometimes we don’t need to take back an entire conversation.",
+          },
+          {
+            type: "paragraph",
+            text: "We just wish we could take back five seconds.",
+          },
+          {
+            type: "paragraph",
+            text: "Because five seconds earlier, we still had a choice.",
+          },
+        ],
+      },
+      {
+        heading: "Reacting and Responding Aren’t the Same Thing",
+        blocks: [
+          { type: "paragraph", text: "A reaction is fast." },
+          {
+            type: "paragraph",
+            text: "Something happens, an emotion appears, and we act from it.",
+          },
+          {
+            type: "paragraph",
+            text: "A response creates a little more space.",
+          },
+          { type: "paragraph", text: "Something happens." },
+          {
+            type: "paragraph",
+            text: "You notice what you’re feeling.",
+          },
+          {
+            type: "paragraph",
+            text: "You give yourself a moment.",
+          },
+          {
+            type: "paragraph",
+            text: "Then you decide what you want to do.",
+          },
+          {
+            type: "paragraph",
+            text: "The emotion hasn’t disappeared.",
+          },
+          { type: "paragraph", text: "You may still be angry." },
+          { type: "paragraph", text: "Still hurt." },
+          { type: "paragraph", text: "Still disappointed." },
+          {
+            type: "paragraph",
+            text: "But now the emotion is giving you information rather than giving you instructions.",
+          },
+          {
+            type: "paragraph",
+            text: "That’s an important difference.",
+          },
+          {
+            type: "paragraph",
+            text: "Reacting says: “This is what I feel, so this is what I’ll do.”",
+          },
+          {
+            type: "paragraph",
+            text: "Responding says: “This is what I feel. Now, how do I want to handle it?”",
+          },
+          {
+            type: "paragraph",
+            text: "That small shift is emotional intelligence in practice.",
+          },
+        ],
+      },
+      {
+        heading: "Why Do We React So Quickly?",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Imagine accidentally touching a hot pan.",
+          },
+          {
+            type: "paragraph",
+            text: "You don’t calmly think:",
+          },
+          {
+            type: "paragraph",
+            text: "“This surface appears unusually warm. Perhaps I should remove my hand.”",
+          },
+          { type: "paragraph", text: "You pull away." },
+          { type: "paragraph", text: "Immediately." },
+          {
+            type: "paragraph",
+            text: "Your brain is designed to react quickly when it senses danger.",
+          },
+          {
+            type: "paragraph",
+            text: "That’s incredibly useful when the danger is physical.",
+          },
+          {
+            type: "paragraph",
+            text: "But our emotional alarm system can also respond to things that feel threatening.",
+          },
+          { type: "paragraph", text: "Criticism." },
+          { type: "paragraph", text: "Rejection." },
+          { type: "paragraph", text: "Disrespect." },
+          { type: "paragraph", text: "Embarrassment." },
+          { type: "paragraph", text: "Feeling ignored." },
+          { type: "paragraph", text: "Feeling misunderstood." },
+          {
+            type: "paragraph",
+            text: "Something happens in the present, but your brain may connect it with experiences and fears collected over many years.",
+          },
+          {
+            type: "paragraph",
+            text: "That’s why a seemingly small comment can sometimes create a surprisingly big reaction.",
+          },
+          {
+            type: "paragraph",
+            text: "The comment may have lasted three seconds.",
+          },
+          {
+            type: "paragraph",
+            text: "The feeling behind it may be much older.",
+          },
+        ],
+      },
+      {
+        heading: "Sometimes Anger Isn’t the First Emotion",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Imagine someone important to you forgets something you’d been looking forward to.",
+          },
+          {
+            type: "paragraph",
+            text: "Your first visible reaction might be anger.",
+          },
+          {
+            type: "paragraph",
+            text: "“You never remember anything that’s important to me.”",
+          },
+          {
+            type: "paragraph",
+            text: "But if you paused long enough to look underneath the anger, perhaps you’d find something else.",
+          },
+          { type: "paragraph", text: "Hurt." },
+          {
+            type: "paragraph",
+            text: "“I wanted this to matter to you.”",
+          },
+          { type: "paragraph", text: "Or disappointment." },
+          {
+            type: "paragraph",
+            text: "“I was really looking forward to this.”",
+          },
+          { type: "paragraph", text: "Or even fear." },
+          {
+            type: "paragraph",
+            text: "“Maybe I’m not as important to you as I thought.”",
+          },
+          {
+            type: "paragraph",
+            text: "Anger often arrives wearing armour.",
+          },
+          {
+            type: "paragraph",
+            text: "It protects emotions that feel more vulnerable to express.",
+          },
+          {
+            type: "paragraph",
+            text: "Responding rather than reacting gives us enough time to ask:",
+          },
+          {
+            type: "paragraph",
+            text: "“What am I actually feeling underneath this?”",
+          },
+          {
+            type: "paragraph",
+            text: "And sometimes that question completely changes the conversation.",
+          },
+        ],
+      },
+      {
+        heading: "The Pause Is Where Your Power Lives",
+        blocks: [
+          { type: "paragraph", text: "Think of a traffic light." },
+          {
+            type: "paragraph",
+            text: "Red doesn’t mean the journey is over.",
+          },
+          {
+            type: "paragraph",
+            text: "It simply asks you to stop for a moment before continuing.",
+          },
+          {
+            type: "paragraph",
+            text: "We need emotional red lights too.",
+          },
+          {
+            type: "paragraph",
+            text: "Not twenty-minute meditation sessions in the middle of an argument.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes just a few seconds.",
+          },
+          { type: "paragraph", text: "A breath." },
+          { type: "paragraph", text: "A sip of water." },
+          { type: "paragraph", text: "A sentence like:" },
+          { type: "paragraph", text: "“Give me a moment.”" },
+          {
+            type: "paragraph",
+            text: "That pause may seem insignificant.",
+          },
+          {
+            type: "paragraph",
+            text: "But it interrupts emotional autopilot.",
+          },
+          {
+            type: "paragraph",
+            text: "And once autopilot is interrupted, you have something incredibly valuable:",
+          },
+          { type: "paragraph", text: "Choice." },
+          { type: "paragraph", text: "You can still speak." },
+          { type: "paragraph", text: "You can still disagree." },
+          { type: "paragraph", text: "You can still say no." },
+          { type: "paragraph", text: "You can still walk away." },
+          {
+            type: "paragraph",
+            text: "But now you’re choosing your action rather than simply being carried by your emotion.",
+          },
+        ],
+      },
+      {
+        heading: "Responding Doesn’t Mean Staying Quiet",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "This distinction matters.",
+          },
+          {
+            type: "paragraph",
+            text: "Emotional intelligence does not mean becoming endlessly calm, agreeable, or silent.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes the right response is firm.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes you need to say:",
+          },
+          { type: "paragraph", text: "“That wasn’t okay.”" },
+          {
+            type: "paragraph",
+            text: "Sometimes you need to disagree.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes you need to leave a conversation.",
+          },
+          {
+            type: "paragraph",
+            text: "Sometimes you need to protect a boundary.",
+          },
+          {
+            type: "paragraph",
+            text: "The goal isn’t to eliminate emotion.",
+          },
+          {
+            type: "paragraph",
+            text: "Emotion gives us valuable information.",
+          },
+          {
+            type: "paragraph",
+            text: "Anger may tell us a boundary has been crossed.",
+          },
+          {
+            type: "paragraph",
+            text: "Sadness may tell us something matters deeply.",
+          },
+          {
+            type: "paragraph",
+            text: "Fear may tell us we don’t feel safe.",
+          },
+          {
+            type: "paragraph",
+            text: "Responding simply means deciding how to express that information in a way that reflects who you want to be.",
+          },
+        ],
+      },
+      {
+        heading: "The Words We Use Matter",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Imagine someone says:",
+          },
+          { type: "paragraph", text: "“You never listen to me.”" },
+          {
+            type: "paragraph",
+            text: "Your instinct might be:",
+          },
+          {
+            type: "paragraph",
+            text: "“What are you talking about? You’re the one who never listens!”",
+          },
+          {
+            type: "paragraph",
+            text: "Now the conversation has become a competition.",
+          },
+          { type: "paragraph", text: "Who’s worse?" },
+          { type: "paragraph", text: "Who’s right?" },
+          { type: "paragraph", text: "Who started it?" },
+          {
+            type: "paragraph",
+            text: "But imagine taking one breath and saying:",
+          },
+          {
+            type: "paragraph",
+            text: "“It sounds like you’re feeling unheard. Tell me what I missed.”",
+          },
+          {
+            type: "paragraph",
+            text: "The problem hasn’t magically disappeared.",
+          },
+          {
+            type: "paragraph",
+            text: "But the direction of the conversation has changed.",
+          },
+          {
+            type: "paragraph",
+            text: "That’s the quiet power of responding.",
+          },
+          {
+            type: "paragraph",
+            text: "You stop trying to win the moment and start trying to understand it.",
+          },
+        ],
+      },
+      {
+        heading: "What About When You Don’t Respond Well?",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "You won’t always get this right.",
+          },
+          { type: "paragraph", text: "Neither will I." },
+          { type: "paragraph", text: "No one does." },
+          {
+            type: "paragraph",
+            text: "There will still be moments when you react.",
+          },
+          {
+            type: "paragraph",
+            text: "Moments when you’re exhausted.",
+          },
+          { type: "paragraph", text: "Overwhelmed." },
+          { type: "paragraph", text: "Stressed." },
+          {
+            type: "paragraph",
+            text: "Caught completely off guard.",
+          },
+          {
+            type: "paragraph",
+            text: "Emotional intelligence isn’t reaching a point where nothing ever triggers you.",
+          },
+          { type: "paragraph", text: "It’s noticing sooner." },
+          {
+            type: "paragraph",
+            text: "Maybe once you realised what happened three days later.",
+          },
+          {
+            type: "paragraph",
+            text: "Then three hours later.",
+          },
+          {
+            type: "paragraph",
+            text: "Eventually, twenty minutes later.",
+          },
+          {
+            type: "paragraph",
+            text: "Then perhaps one day, you’ll notice while it’s happening.",
+          },
+          { type: "paragraph", text: "That’s growth." },
+          {
+            type: "paragraph",
+            text: "Don’t measure emotional maturity by whether you ever react badly.",
+          },
+          {
+            type: "paragraph",
+            text: "Measure it by how quickly you’re able to recognise, repair, and learn from what happened.",
+          },
+        ],
+      },
+      {
+        heading: "One Small Step You Can Try Today",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The next time you feel a strong emotional reaction rising, remember three words:",
+          },
+          { type: "paragraph", text: "Pause. Name. Choose." },
+          { type: "paragraph", text: "Pause." },
+          {
+            type: "paragraph",
+            text: "Don’t immediately speak, text, or make a decision.",
+          },
+          { type: "paragraph", text: "Take one slow breath." },
+          { type: "paragraph", text: "Name." },
+          { type: "paragraph", text: "Ask yourself:" },
+          {
+            type: "paragraph",
+            text: "“What am I actually feeling?”",
+          },
+          { type: "paragraph", text: "Not simply “bad.”" },
+          { type: "paragraph", text: "Angry?" },
+          { type: "paragraph", text: "Embarrassed?" },
+          { type: "paragraph", text: "Rejected?" },
+          { type: "paragraph", text: "Disappointed?" },
+          { type: "paragraph", text: "Unappreciated?" },
+          { type: "paragraph", text: "Afraid?" },
+          { type: "paragraph", text: "Choose." },
+          { type: "paragraph", text: "Ask:" },
+          {
+            type: "paragraph",
+            text: "“What response will I still feel comfortable with tomorrow?”",
+          },
+          { type: "paragraph", text: "Then respond." },
+          {
+            type: "paragraph",
+            text: "It may take only a few seconds.",
+          },
+          {
+            type: "paragraph",
+            text: "But those few seconds can change an entire conversation.",
+          },
+        ],
+      },
+      {
+        heading: "Take a Moment",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Think about your own reactions.",
+          },
+          {
+            type: "list",
+            items: [
+              "What situations trigger you most quickly?",
+              "What emotion usually sits underneath your reaction?",
+              "What do you tend to do when you’re overwhelmed—argue, withdraw, defend, blame, or shut down?",
+              "What would your response look like if you gave yourself ten seconds before acting?",
+              "Is there a recent situation you would handle differently today?",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Don’t use these questions to criticise yourself.",
+          },
+          {
+            type: "paragraph",
+            text: "Use them to understand yourself.",
+          },
+          {
+            type: "paragraph",
+            text: "Because awareness gives us something regret cannot:",
+          },
+          {
+            type: "paragraph",
+            text: "A chance to choose differently next time.",
+          },
+        ],
+      },
+      {
+        heading: "A Thought to Carry With You",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "You cannot control every comment someone makes.",
+          },
+          {
+            type: "paragraph",
+            text: "You cannot control every disappointment.",
+          },
+          {
+            type: "paragraph",
+            text: "You cannot control whether people misunderstand you.",
+          },
+          {
+            type: "paragraph",
+            text: "And you certainly cannot control every emotion that appears inside you.",
+          },
+          {
+            type: "paragraph",
+            text: "But you can slowly learn to control what happens next.",
+          },
+          {
+            type: "paragraph",
+            text: "There is a small space between feeling something and acting on it.",
+          },
+          {
+            type: "paragraph",
+            text: "At first, that space may feel almost invisible.",
+          },
+          {
+            type: "paragraph",
+            text: "But every time you pause, it grows.",
+          },
+          {
+            type: "paragraph",
+            text: "And inside that space lives patience.",
+          },
+          { type: "paragraph", text: "Perspective." },
+          { type: "paragraph", text: "Wisdom." },
+          { type: "paragraph", text: "Choice." },
+          {
+            type: "paragraph",
+            text: "And perhaps most importantly, the person you’re trying to become.",
+          },
+        ],
+      },
+      {
+        heading: "Before You Leave…",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The next time something triggers you, don’t demand that you immediately become calm.",
+          },
+          {
+            type: "paragraph",
+            text: "Simply give yourself a moment.",
+          },
+          {
+            type: "paragraph",
+            text: "One breath before the reply.",
+          },
+          {
+            type: "paragraph",
+            text: "One pause before the message.",
+          },
+          {
+            type: "paragraph",
+            text: "One question before the assumption.",
+          },
+          {
+            type: "paragraph",
+            text: "Because responding instead of reacting isn’t about becoming emotionless.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s about learning that you can feel something deeply without allowing that feeling to decide everything you do next.",
+          },
+          {
+            type: "paragraph",
+            text: "And sometimes, the difference between a conversation you regret and one you’re proud of isn’t extraordinary emotional control.",
+          },
+          {
+            type: "paragraph",
+            text: "It’s simply a pause.",
+          },
+          {
+            type: "paragraph",
+            text: "Until our next conversation, honour what you feel—but give yourself enough space to decide what those feelings become.",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export function getAllPosts(): BlogPost[] {

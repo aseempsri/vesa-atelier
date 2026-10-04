@@ -1,6 +1,7 @@
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { BlogScrollToTop } from "@/components/blog-scroll-to-top";
+import { BlogShareMenu } from "@/components/blog-share-menu";
 import { VesaGoldRule, VesaLayout } from "@/components/vesa-layout";
 import { getPostBySlug, type BlogBlock, type BlogSection } from "@/lib/blog/posts";
 import {
@@ -250,19 +251,26 @@ function BlogPostPage() {
           >
             {post.closingThought}
           </p>
-          <Link
-            to="/blog"
-            className="mt-8 inline-block uppercase transition-opacity hover:opacity-80"
-            style={{
-              fontFamily: vesaSans,
-              fontSize: "0.75rem",
-              letterSpacing: "0.35em",
-              color: VESA_GOLD,
-              paddingLeft: "0.35em",
-            }}
-          >
-            More reflections
-          </Link>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              to="/blog"
+              className="inline-block uppercase transition-opacity hover:opacity-80"
+              style={{
+                fontFamily: vesaSans,
+                fontSize: "0.75rem",
+                letterSpacing: "0.35em",
+                color: VESA_GOLD,
+                paddingLeft: "0.35em",
+              }}
+            >
+              More reflections
+            </Link>
+            <BlogShareMenu
+              slug={post.slug}
+              title={post.title}
+              className="relative z-20 shrink-0"
+            />
+          </div>
         </div>
       </article>
       <BlogScrollToTop />
