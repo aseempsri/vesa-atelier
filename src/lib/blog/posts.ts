@@ -5742,7 +5742,14 @@ const posts: BlogPost[] = [
 ];
 
 export function getAllPosts(): BlogPost[] {
-  return posts;
+  return posts
+    .map((post, index) => ({ post, index }))
+    .sort((a, b) => {
+      const byDate = b.post.publishedAt.localeCompare(a.post.publishedAt);
+      if (byDate !== 0) return byDate;
+      return b.index - a.index;
+    })
+    .map(({ post }) => post);
 }
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
