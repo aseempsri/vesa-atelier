@@ -4933,7 +4933,7 @@ const posts: BlogPost[] = [
     subtitle: "You don’t need to silence your emotions to communicate with clarity.",
     eyebrow: "Reflections",
     description:
-      "On staying calm during difficult conversations, listening for what’s underneath the words, and choosing how you show up even when emotions run high.",
+      "Learn how to stay calm during difficult conversations with practical ways to pause, listen, express your feelings, and set respectful boundaries.",
     publishedAt: "2026-10-07",
     keywords: [
       "difficult conversations",
