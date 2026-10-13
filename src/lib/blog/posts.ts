@@ -4943,6 +4943,14 @@ const posts: BlogPost[] = [
       "You can be soft-spoken and strong, emotional and thoughtful, uncomfortable and still completely in control of how you choose to respond.",
     sections: [
       {
+        blocks: [
+          {
+            type: "paragraph",
+            text: "To stay calm during difficult conversations, decide what you want to say, pause before responding, and listen carefully. If you feel overwhelmed, ask for a break. You can express your feelings and set boundaries while remaining respectful.",
+          },
+        ],
+      },
+      {
         heading: "Some Conversations Feel Difficult Before They Even Begin",
         blocks: [
           {
