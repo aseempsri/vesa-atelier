@@ -9,11 +9,11 @@ const SITE_NAME = "VESA Atelier";
 const TODAY = new Date().toISOString().slice(0, 10);
 
 const postsSrc = readFileSync(join(ROOT, "src/lib/blog/posts.ts"), "utf8");
-const slugs = [...postsSrc.matchAll(/^\s*slug:\s*"([^"]+)"/gm)].map((m) => m[1]);
+const slugs = [...postsSrc.matchAll(/^ {4}slug:\s*"([^"]+)"/gm)].map((m) => m[1]);
 
 const postMeta = [
   ...postsSrc.matchAll(
-    /slug:\s*"([^"]+)"[\s\S]*?title:\s*"([^"]+)"[\s\S]*?description:\s*"([^"]+)"[\s\S]*?publishedAt:\s*"([^"]+)"/g,
+    /^ {4}slug:\s*"([^"]+)"[\s\S]*?^ {4}title:\s*"([^"]+)"[\s\S]*?^ {4}description:\s*"([^"]+)"[\s\S]*?^ {4}publishedAt:\s*"([^"]+)"/gm,
   ),
 ].map((match) => ({
   slug: match[1],

@@ -3,7 +3,12 @@ import { useEffect, useState } from "react";
 import { BlogScrollToTop } from "@/components/blog-scroll-to-top";
 import { BlogShareMenu } from "@/components/blog-share-menu";
 import { VesaGoldRule, VesaLayout } from "@/components/vesa-layout";
-import { getPostBySlug, type BlogBlock, type BlogSection } from "@/lib/blog/posts";
+import {
+  getPostBySlug,
+  type BlogBlock,
+  type BlogInline,
+  type BlogSection,
+} from "@/lib/blog/posts";
 import {
   VESA_BODY,
   VESA_CREAM,
@@ -78,6 +83,29 @@ const subheaderStyle = {
   color: VESA_CREAM,
 };
 
+function BlogInlineView({ part }: { part: BlogInline }) {
+  if (typeof part === "string") {
+    return part;
+  }
+
+  return (
+    <Link
+      to="/blog/$slug"
+      params={{ slug: part.slug }}
+      className="transition-opacity hover:opacity-80"
+      style={{
+        color: VESA_GOLD,
+        textDecoration: "underline",
+        textDecorationColor: VESA_GOLD,
+        textUnderlineOffset: "0.22em",
+        textDecorationThickness: "1px",
+      }}
+    >
+      {part.text}
+    </Link>
+  );
+}
+
 function BlogBlockView({ block }: { block: BlogBlock }) {
   if (block.type === "list") {
     return (
@@ -102,7 +130,14 @@ function BlogBlockView({ block }: { block: BlogBlock }) {
     );
   }
 
-  return <p style={bodyStyle}>{block.text}</p>;
+  const content =
+    typeof block.text === "string"
+      ? block.text
+      : block.text.map((part, i) => (
+          <BlogInlineView key={i} part={part} />
+        ));
+
+  return <p style={bodyStyle}>{content}</p>;
 }
 
 function BlogHeadingAccent({ children }: { children: React.ReactNode }) {

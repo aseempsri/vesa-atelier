@@ -1,5 +1,13 @@
+export type BlogInlineLink = {
+  type: "link";
+  text: string;
+  slug: string;
+};
+
+export type BlogInline = string | BlogInlineLink;
+
 export type BlogBlock =
-  | { type: "paragraph"; text: string }
+  | { type: "paragraph"; text: string | BlogInline[] }
   | { type: "list"; items: string[] };
 
 export type BlogSection = {
@@ -5417,6 +5425,18 @@ const posts: BlogPost[] = [
           {
             type: "paragraph",
             text: "Sometimes the person who pauses has the greatest control in the room—not over the other person, but over themselves.",
+          },
+          {
+            type: "paragraph",
+            text: [
+              "You can explore this further in our reflection on ",
+              {
+                type: "link",
+                text: "responding instead of reacting",
+                slug: "responding-instead-of-reacting",
+              },
+              ".",
+            ],
           },
         ],
       },
