@@ -23,7 +23,6 @@ import {
   SITE_LANGUAGE,
   SITE_LOCALE,
   SITE_NAME,
-  SITE_URL,
   organizationJsonLd,
   websiteJsonLd,
 } from "@/lib/seo";
@@ -117,7 +116,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:title", content: SITE_NAME },
       { property: "og:description", content: SITE_DESCRIPTION },
-      { property: "og:url", content: SITE_URL },
       { property: "og:image", content: DEFAULT_OG_IMAGE },
       { property: "og:image:secure_url", content: DEFAULT_OG_IMAGE },
       { property: "og:image:type", content: OG_IMAGE_TYPE },
@@ -130,7 +128,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "canonical", href: SITE_URL },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       { rel: "manifest", href: "/site.webmanifest" },
@@ -141,8 +138,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         title: `${SITE_NAME} Journal`,
         href: RSS_FEED_URL,
       },
-      { rel: "alternate", hreflang: SITE_LANGUAGE, href: SITE_URL },
-      { rel: "alternate", hreflang: "x-default", href: SITE_URL },
       { rel: "dns-prefetch", href: "https://www.googletagmanager.com" },
       {
         rel: "preconnect",
