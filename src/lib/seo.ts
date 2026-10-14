@@ -16,8 +16,14 @@ export const RSS_FEED_URL = `${SITE_URL}/feed.xml`;
 export function absoluteUrl(path = "/"): string {
   if (path.startsWith("http")) return path;
   const normalized = path.startsWith("/") ? path : `/${path}`;
-  if (normalized === "/") return SITE_URL;
-  return `${SITE_URL}${normalized.replace(/\/$/, "")}`;
+  const lastSegment = normalized.split("/").filter(Boolean).pop() ?? "";
+  const isFile = lastSegment.includes(".");
+  // GitHub Pages serves prerendered routes as directory index.html files
+  // (`/about/index.html`, `/blog/<slug>/index.html`), so HTML page URLs use a
+  // trailing slash. Files such as /feed.xml stay without one.
+  if (normalized === "/") return `${SITE_URL}/`;
+  const trimmed = normalized.replace(/\/$/, "");
+  return isFile ? `${SITE_URL}${trimmed}` : `${SITE_URL}${trimmed}/`;
 }
 
 type PageSeoInput = {
@@ -128,7 +134,7 @@ export function organizationJsonLd() {
     "@type": "Organization",
     "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
-    url: SITE_URL,
+    url: absoluteUrl("/"),
     logo: {
       "@type": "ImageObject",
       url: `${SITE_URL}/favicon.png`,
@@ -155,7 +161,7 @@ export function websiteJsonLd() {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     name: SITE_NAME,
-    url: SITE_URL,
+    url: absoluteUrl("/"),
     description: SITE_DESCRIPTION,
     publisher: {
       "@id": `${SITE_URL}/#organization`,

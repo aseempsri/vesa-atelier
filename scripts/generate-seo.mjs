@@ -8,6 +8,12 @@ const SITE_URL = "https://vesa.co.in";
 const SITE_NAME = "VESA Atelier";
 const TODAY = new Date().toISOString().slice(0, 10);
 
+function pageUrl(path) {
+  if (path === "/") return `${SITE_URL}/`;
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  return `${SITE_URL}${normalized.replace(/\/$/, "")}/`;
+}
+
 const postsSrc = readFileSync(join(ROOT, "src/lib/blog/posts.ts"), "utf8");
 const slugs = [...postsSrc.matchAll(/^ {4}slug:\s*"([^"]+)"/gm)].map((m) => m[1]);
 
@@ -23,13 +29,13 @@ const postMeta = [
 }));
 
 const staticPages = [
-  { loc: `${SITE_URL}/`, priority: "1.0", changefreq: "weekly" },
-  { loc: `${SITE_URL}/about`, priority: "0.8", changefreq: "monthly" },
-  { loc: `${SITE_URL}/blog`, priority: "0.9", changefreq: "weekly" },
+  { loc: pageUrl("/"), priority: "1.0", changefreq: "weekly" },
+  { loc: pageUrl("/about"), priority: "0.8", changefreq: "monthly" },
+  { loc: pageUrl("/blog"), priority: "0.9", changefreq: "weekly" },
 ];
 
 const postPages = slugs.map((slug) => ({
-  loc: `${SITE_URL}/blog/${slug}`,
+  loc: pageUrl(`/blog/${slug}`),
   priority: "0.8",
   changefreq: "monthly",
 }));
@@ -80,8 +86,8 @@ const feedItems = postMeta
   .map(
     (post) => `    <item>
       <title>${escapeXml(post.title)}</title>
-      <link>${SITE_URL}/blog/${post.slug}</link>
-      <guid isPermaLink="true">${SITE_URL}/blog/${post.slug}</guid>
+      <link>${pageUrl(`/blog/${post.slug}`)}</link>
+      <guid isPermaLink="true">${pageUrl(`/blog/${post.slug}`)}</guid>
       <description>${escapeXml(post.description)}</description>
       <pubDate>${toRssDate(post.publishedAt)}</pubDate>
     </item>`,
@@ -92,7 +98,7 @@ const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>${SITE_NAME} Journal</title>
-    <link>${SITE_URL}/blog</link>
+    <link>${pageUrl("/blog")}</link>
     <description>Reflections from VESA Atelier on calm, self-worth, and intentional living.</description>
     <language>en-in</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
