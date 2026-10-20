@@ -115,7 +115,11 @@ export function buildPageHead({
         {
           type: "application/ld+json",
           children: JSON.stringify(
-            Array.isArray(jsonLd) ? (jsonLd.length === 1 ? jsonLd[0] : jsonLd) : jsonLd,
+            Array.isArray(jsonLd)
+              ? jsonLd.length === 1
+                ? jsonLd[0]
+                : jsonLd
+              : jsonLd,
           ),
         },
       ]
@@ -246,7 +250,9 @@ export function blogPostingJsonLd(post: {
   };
 }
 
-export function breadcrumbJsonLd(items: Array<{ name: string; path: string }>) {
+export function breadcrumbJsonLd(
+  items: Array<{ name: string; path: string }>,
+) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -264,7 +270,8 @@ export function blogJsonLd() {
     "@context": "https://schema.org",
     "@type": "Blog",
     name: `${SITE_NAME} Journal`,
-    description: "Reflections from VESA Atelier on calm, self-worth, and intentional living.",
+    description:
+      "Reflections from VESA Atelier on calm, self-worth, and intentional living.",
     url: absoluteUrl("/blog"),
     publisher: {
       "@id": `${SITE_URL}/#organization`,
@@ -273,7 +280,9 @@ export function blogJsonLd() {
   };
 }
 
-export function itemListJsonLd(items: Array<{ name: string; path: string }>) {
+export function itemListJsonLd(
+  items: Array<{ name: string; path: string }>,
+) {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -283,53 +292,5 @@ export function itemListJsonLd(items: Array<{ name: string; path: string }>) {
       name: item.name,
       url: absoluteUrl(item.path),
     })),
-  };
-}
-
-const PRODUCT_AVAILABILITY_SCHEMA = {
-  in_stock: "https://schema.org/InStock",
-  preorder: "https://schema.org/PreOrder",
-  sold_out: "https://schema.org/OutOfStock",
-} as const;
-
-export function productJsonLd(product: {
-  slug: string;
-  name: string;
-  description: string;
-  priceInr: number;
-  images: string[];
-  availability: keyof typeof PRODUCT_AVAILABILITY_SCHEMA;
-  category?: string;
-  buyUrl?: string;
-}) {
-  const url = absoluteUrl(`/shop/${product.slug}`);
-  const images = product.images.length
-    ? product.images.map((image) => absoluteUrl(image))
-    : [DEFAULT_OG_IMAGE];
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: product.name,
-    description: product.description,
-    image: images,
-    url,
-    mainEntityOfPage: url,
-    brand: {
-      "@type": "Brand",
-      name: SITE_NAME,
-    },
-    category: product.category,
-    offers: {
-      "@type": "Offer",
-      url: product.buyUrl && /^https?:/i.test(product.buyUrl) ? product.buyUrl : url,
-      priceCurrency: "INR",
-      price: product.priceInr.toFixed(2),
-      availability: PRODUCT_AVAILABILITY_SCHEMA[product.availability],
-      itemCondition: "https://schema.org/NewCondition",
-      seller: {
-        "@id": `${SITE_URL}/#organization`,
-      },
-    },
   };
 }

@@ -12,18 +12,9 @@ import {
   vesaSerif,
 } from "@/lib/vesa-brand";
 
-const NAV_ITEMS = [
-  { to: "/", label: "Home", id: "home" },
-  { to: "/about", label: "About", id: "about" },
-  { to: "/blog", label: "Blog", id: "blog" },
-  { to: "/shop", label: "Shop", id: "shop" },
-] as const;
-
-type VesaNavId = (typeof NAV_ITEMS)[number]["id"];
-
 type VesaLayoutProps = {
   children: React.ReactNode;
-  activeNav?: VesaNavId;
+  activeNav?: "home" | "about" | "blog";
 };
 
 export function VesaLayout({ children, activeNav }: VesaLayoutProps) {
@@ -60,23 +51,46 @@ export function VesaLayout({ children, activeNav }: VesaLayoutProps) {
           <VesaLogo className="h-10 w-10 md:h-11 md:w-11" alt="VESA Atelier" />
         </Link>
 
-        <nav className="flex flex-wrap items-center justify-end gap-4 md:gap-8">
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.id}
-              to={item.to}
-              className="uppercase transition-colors"
-              style={{
-                fontFamily: vesaSans,
-                fontSize: "0.6rem",
-                letterSpacing: "0.4em",
-                color: activeNav === item.id ? VESA_CREAM : VESA_GOLD_SOFT,
-                paddingLeft: "0.4em",
-              }}
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav className="flex items-center gap-6 md:gap-8">
+          <Link
+            to="/"
+            className="uppercase transition-colors"
+            style={{
+              fontFamily: vesaSans,
+              fontSize: "0.6rem",
+              letterSpacing: "0.4em",
+              color: activeNav === "home" ? VESA_CREAM : VESA_GOLD_SOFT,
+              paddingLeft: "0.4em",
+            }}
+          >
+            Home
+          </Link>
+          <Link
+            to="/about"
+            className="uppercase transition-colors"
+            style={{
+              fontFamily: vesaSans,
+              fontSize: "0.6rem",
+              letterSpacing: "0.4em",
+              color: activeNav === "about" ? VESA_CREAM : VESA_GOLD_SOFT,
+              paddingLeft: "0.4em",
+            }}
+          >
+            About
+          </Link>
+          <Link
+            to="/blog"
+            className="uppercase transition-colors"
+            style={{
+              fontFamily: vesaSans,
+              fontSize: "0.6rem",
+              letterSpacing: "0.4em",
+              color: activeNav === "blog" ? VESA_CREAM : VESA_GOLD_SOFT,
+              paddingLeft: "0.4em",
+            }}
+          >
+            Blog
+          </Link>
         </nav>
       </header>
 
@@ -86,24 +100,6 @@ export function VesaLayout({ children, activeNav }: VesaLayoutProps) {
         className="relative z-20 border-t px-6 py-10 md:px-12"
         style={{ borderColor: VESA_GOLD_FAINT }}
       >
-        <nav className="mb-6 flex flex-wrap items-center justify-center gap-4 md:gap-8">
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.id}
-              to={item.to}
-              className="uppercase transition-colors"
-              style={{
-                fontFamily: vesaSans,
-                fontSize: "0.55rem",
-                letterSpacing: "0.4em",
-                color: activeNav === item.id ? VESA_CREAM : VESA_GOLD_SOFT,
-                paddingLeft: "0.4em",
-              }}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
         <p
           className="text-center uppercase"
           style={{
@@ -134,15 +130,9 @@ export function VesaLayout({ children, activeNav }: VesaLayoutProps) {
 export function VesaGoldRule() {
   return (
     <div className="my-10 flex items-center gap-4 md:my-12">
-      <span
-        className="h-px flex-1"
-        style={{ background: `linear-gradient(90deg, transparent, ${VESA_GOLD})` }}
-      />
+      <span className="h-px flex-1" style={{ background: `linear-gradient(90deg, transparent, ${VESA_GOLD})` }} />
       <span style={{ color: VESA_GOLD, fontSize: "0.45rem" }}>◆</span>
-      <span
-        className="h-px flex-1"
-        style={{ background: `linear-gradient(270deg, transparent, ${VESA_GOLD})` }}
-      />
+      <span className="h-px flex-1" style={{ background: `linear-gradient(270deg, transparent, ${VESA_GOLD})` }} />
     </div>
   );
 }

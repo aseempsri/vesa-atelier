@@ -28,14 +28,10 @@ const postMeta = [
   publishedAt: match[4],
 }));
 
-const productsSrc = readFileSync(join(ROOT, "src/lib/shop/products.ts"), "utf8");
-const productSlugs = [...productsSrc.matchAll(/^ {4}slug:\s*"([^"]+)"/gm)].map((m) => m[1]);
-
 const staticPages = [
   { loc: pageUrl("/"), priority: "1.0", changefreq: "weekly" },
   { loc: pageUrl("/about"), priority: "0.8", changefreq: "monthly" },
   { loc: pageUrl("/blog"), priority: "0.9", changefreq: "weekly" },
-  { loc: pageUrl("/shop"), priority: "0.9", changefreq: "weekly" },
 ];
 
 const postPages = slugs.map((slug) => ({
@@ -44,13 +40,7 @@ const postPages = slugs.map((slug) => ({
   changefreq: "monthly",
 }));
 
-const productPages = productSlugs.map((slug) => ({
-  loc: pageUrl(`/shop/${slug}`),
-  priority: "0.8",
-  changefreq: "monthly",
-}));
-
-const urls = [...staticPages, ...postPages, ...productPages]
+const urls = [...staticPages, ...postPages]
   .map(
     (page) => `  <url>
     <loc>${page.loc}</loc>
@@ -120,6 +110,4 @@ ${feedItems}
 
 writeFileSync(join(ROOT, "public/feed.xml"), feed);
 
-console.log(
-  `SEO files written (${slugs.length} blog posts, ${productSlugs.length} shop products, RSS feed).`,
-);
+console.log(`SEO files written (${slugs.length} blog posts, RSS feed).`);

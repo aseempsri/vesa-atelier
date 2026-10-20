@@ -46,7 +46,7 @@ function Embers() {
         drift: (Math.random() - 0.5) * 80,
         opacity: 0.25 + Math.random() * 0.55,
       })),
-    [],
+    []
   );
 
   return (
@@ -236,18 +236,6 @@ function Index() {
           >
             Blog
           </Link>
-          <Link
-            to="/shop"
-            className="text-[0.6rem] uppercase transition-opacity hover:opacity-80"
-            style={{
-              letterSpacing: "0.4em",
-              color: GOLD_SOFT,
-              fontFamily: "'Inter', sans-serif",
-              paddingLeft: "0.4em",
-            }}
-          >
-            Shop
-          </Link>
         </div>
       </header>
 
@@ -384,7 +372,9 @@ function Index() {
               }}
             >
               A house of hand-poured candles —
-              <br className="md:hidden" /> composed in shadow, finished in light.
+              <br className="md:hidden" />
+              {" "}
+              composed in shadow, finished in light.
             </p>
           </div>
 
