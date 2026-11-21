@@ -1,0 +1,134 @@
+import { Link, createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { VesaGoldRule, VesaLayout } from "@/components/vesa-layout";
+import { shopApi } from "@/lib/shop/api-client";
+import { formatInrFromPaise } from "@/lib/shop/money";
+import { shopAnalytics } from "@/lib/shop/analytics-events";
+import type { PublicOrderView } from "@/lib/shop/types";
+import { buildPageHead } from "@/lib/seo";
+import {
+  vesaSans,
+  vesaSerif,
+  VESA_BODY,
+  VESA_CREAM,
+  VESA_GOLD,
+  VESA_GOLD_SOFT,
+} from "@/lib/vesa-brand";
+
+export const Route = createFileRoute("/order-confirmation/$orderReference")({
+  component: OrderConfirmationPage,
+  head: ({ params }) =>
+    buildPageHead({
+      title: "Order confirmation",
+      description: "Your VESA Atelier order confirmation.",
+      path: `/order-confirmation/${params.orderReference}`,
+      noIndex: true,
+    }),
+});
+
+function OrderConfirmationPage() {
+  const { orderReference } = Route.useParams();
+  const [order, setOrder] = useState<PublicOrderView | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        if (!shopApi.isConfigured()) {
+          setError("Order API is not configured.");
+          return;
+        }
+        const view = await shopApi.getOrder(orderReference);
+        if (cancelled) return;
+        setOrder(view);
+        shopAnalytics.purchase({
+          publicReference: view.publicReference,
+          totalInPaise: view.totalInPaise,
+          paymentStatus: view.paymentStatus,
+        });
+      } catch {
+        if (!cancelled) setError("We could not load this order.");
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [orderReference]);
+
+  const isPaid = order?.paymentStatus === "paid";
+
+  return (
+    <VesaLayout>
+      <div className="mx-auto max-w-2xl px-6 pb-16 pt-8 md:px-8 md:pb-24">
+        <p
+          className="uppercase"
+          style={{
+            fontFamily: vesaSans,
+            fontSize: "0.75rem",
+            letterSpacing: "0.55em",
+            color: VESA_GOLD_SOFT,
+          }}
+        >
+          Confirmation
+        </p>
+        <h1
+          className="mt-3 text-4xl"
+          style={{ fontFamily: vesaSerif, color: VESA_CREAM, fontWeight: 300 }}
+        >
+          {isPaid ? "Thank you for your order" : "Order received"}
+        </h1>
+        <VesaGoldRule />
+
+        {error ? (
+          <p style={{ fontFamily: vesaSerif, color: "#e8b4b4" }}>{error}</p>
+        ) : !order ? (
+          <p style={{ fontFamily: vesaSerif, color: VESA_BODY }}>Loading…</p>
+        ) : (
+          <div className="space-y-6">
+            <p style={{ fontFamily: vesaSerif, color: VESA_BODY, fontSize: "1.15rem" }}>
+              {isPaid
+                ? "Payment was verified successfully. We will begin preparing your order."
+                : "Your order was created. Payment confirmation is still in progress."}
+            </p>
+            <p style={{ fontFamily: vesaSans, color: VESA_CREAM }}>
+              Reference: <span style={{ letterSpacing: "0.08em" }}>{order.publicReference}</span>
+            </p>
+            <p style={{ fontFamily: vesaSans, color: VESA_BODY }}>
+              Total: {formatInrFromPaise(order.totalInPaise)}
+            </p>
+            <ul className="space-y-2">
+              {order.items.map((item, index) => (
+                <li
+                  key={`${item.productNameSnapshot}-${index}`}
+                  style={{ fontFamily: vesaSerif, color: VESA_BODY }}
+                >
+                  {item.productNameSnapshot}
+                  {item.variantNameSnapshot ? ` · ${item.variantNameSnapshot}` : ""} ×{" "}
+                  {item.quantity}
+                </li>
+              ))}
+            </ul>
+            <p style={{ fontFamily: vesaSerif, color: VESA_BODY }}>
+              A confirmation may be sent to the email provided at checkout. Keep your order
+              reference for support.
+            </p>
+          </div>
+        )}
+
+        <Link
+          to="/shop"
+          className="mt-10 inline-flex uppercase"
+          style={{
+            fontFamily: vesaSans,
+            fontSize: "0.55rem",
+            letterSpacing: "0.35em",
+            color: VESA_GOLD,
+          }}
+        >
+          Continue browsing
+        </Link>
+      </div>
+    </VesaLayout>
+  );
+}

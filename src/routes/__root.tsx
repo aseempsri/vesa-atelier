@@ -9,6 +9,8 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { CartDrawer } from "@/components/shop/cart-drawer";
+import { CartProvider } from "@/components/shop/cart-provider";
 import { googleAnalyticsHeadScripts } from "@/lib/analytics";
 import {
   DEFAULT_OG_IMAGE,
@@ -103,13 +105,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "format-detection", content: "telephone=no" },
       {
         name: "robots",
-        content:
-          "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
       },
       {
         name: "googlebot",
-        content:
-          "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
       },
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:locale", content: SITE_LOCALE },
@@ -178,7 +178,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <CartProvider>
+        <Outlet />
+        <CartDrawer />
+      </CartProvider>
     </QueryClientProvider>
   );
 }

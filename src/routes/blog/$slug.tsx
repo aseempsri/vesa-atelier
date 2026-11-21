@@ -266,7 +266,7 @@ function BlogPostPage() {
         </div>
 
         <div className="mt-10 space-y-14 md:mt-12 md:space-y-16">
-          {post.sections.map((section, i) => (
+          {post.sections.map((section: BlogSection, i: number) => (
             <BlogSectionView key={i} section={section} />
           ))}
         </div>

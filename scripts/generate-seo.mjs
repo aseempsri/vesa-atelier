@@ -28,10 +28,26 @@ const postMeta = [
   publishedAt: match[4],
 }));
 
+/** Owner catalogue only — never sitemap sample products or comment examples. */
+let shopProductSlugs = [];
+try {
+  const ownerProductsSrc = readFileSync(join(ROOT, "src/lib/shop/owner-products.ts"), "utf8");
+  const arrayMatch = ownerProductsSrc.match(
+    /export const OWNER_PRODUCTS[^=]*=\s*\[([\s\S]*?)\];/,
+  );
+  const arrayBody = arrayMatch?.[1] ?? "";
+  shopProductSlugs = [...arrayBody.matchAll(/^\s*slug:\s*"([^"]+)"/gm)]
+    .map((m) => m[1])
+    .filter((slug) => slug && !/[….]/.test(slug));
+} catch {
+  shopProductSlugs = [];
+}
+
 const staticPages = [
   { loc: pageUrl("/"), priority: "1.0", changefreq: "weekly" },
   { loc: pageUrl("/about"), priority: "0.8", changefreq: "monthly" },
   { loc: pageUrl("/blog"), priority: "0.9", changefreq: "weekly" },
+  { loc: pageUrl("/shop"), priority: "0.85", changefreq: "weekly" },
 ];
 
 const postPages = slugs.map((slug) => ({
@@ -40,7 +56,13 @@ const postPages = slugs.map((slug) => ({
   changefreq: "monthly",
 }));
 
-const urls = [...staticPages, ...postPages]
+const shopPages = shopProductSlugs.map((slug) => ({
+  loc: pageUrl(`/shop/${slug}`),
+  priority: "0.7",
+  changefreq: "weekly",
+}));
+
+const urls = [...staticPages, ...postPages, ...shopPages]
   .map(
     (page) => `  <url>
     <loc>${page.loc}</loc>
@@ -110,4 +132,6 @@ ${feedItems}
 
 writeFileSync(join(ROOT, "public/feed.xml"), feed);
 
-console.log(`SEO files written (${slugs.length} blog posts, RSS feed).`);
+console.log(
+  `SEO files written (${slugs.length} blog posts, ${shopProductSlugs.length} shop products, RSS feed).`,
+);

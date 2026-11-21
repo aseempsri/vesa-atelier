@@ -12,7 +12,13 @@
     "seo": "node scripts/generate-seo.mjs",
     "og-image": "python3 scripts/generate-og-image.py",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "api:dev": "npm run dev --prefix api",
+    "api:test": "npm run test --prefix api",
+    "api:types": "npm run typecheck --prefix api"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",
@@ -89,6 +95,7 @@
     "prettier": "^3.7.3",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
-    "vite": "^7.3.1"
+    "vite": "^7.3.1",
+    "vitest": "^3.2.4"
   }
 }

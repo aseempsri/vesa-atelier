@@ -1,0 +1,22 @@
+{
+  "name": "vesa-storefront-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev -c wrangler.toml",
+    "deploy": "echo 'Do not deploy from CI/agent — owner runs: wrangler deploy -c wrangler.toml' && exit 1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:migrate:local": "wrangler d1 migrations apply vesa-storefront --local -c wrangler.toml",
+    "db:migrate:remote": "wrangler d1 migrations apply vesa-storefront --remote -c wrangler.toml"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250317.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4",
+    "wrangler": "^4.14.0"
+  },
+  "overrides": {
+    "@cloudflare/workers-types": "^4.20250317.0"
+  }
+}

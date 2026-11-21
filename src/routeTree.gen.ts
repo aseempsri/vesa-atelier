@@ -9,11 +9,27 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as CartRouteImport } from './routes/cart'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ShopIndexRouteImport } from './routes/shop/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as ShopSlugRouteImport } from './routes/shop/$slug'
+import { Route as OrderPendingOrderReferenceRouteImport } from './routes/order-pending.$orderReference'
+import { Route as OrderConfirmationOrderReferenceRouteImport } from './routes/order-confirmation.$orderReference'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -24,11 +40,33 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShopIndexRoute = ShopIndexRouteImport.update({
+  id: '/shop/',
+  path: '/shop/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShopSlugRoute = ShopSlugRouteImport.update({
+  id: '/shop/$slug',
+  path: '/shop/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrderPendingOrderReferenceRoute =
+  OrderPendingOrderReferenceRouteImport.update({
+    id: '/order-pending/$orderReference',
+    path: '/order-pending/$orderReference',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const OrderConfirmationOrderReferenceRoute =
+  OrderConfirmationOrderReferenceRouteImport.update({
+    id: '/order-confirmation/$orderReference',
+    path: '/order-confirmation/$orderReference',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
@@ -38,39 +76,108 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/order-confirmation/$orderReference': typeof OrderConfirmationOrderReferenceRoute
+  '/order-pending/$orderReference': typeof OrderPendingOrderReferenceRoute
+  '/shop/$slug': typeof ShopSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/shop/': typeof ShopIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/order-confirmation/$orderReference': typeof OrderConfirmationOrderReferenceRoute
+  '/order-pending/$orderReference': typeof OrderPendingOrderReferenceRoute
+  '/shop/$slug': typeof ShopSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/shop': typeof ShopIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/order-confirmation/$orderReference': typeof OrderConfirmationOrderReferenceRoute
+  '/order-pending/$orderReference': typeof OrderPendingOrderReferenceRoute
+  '/shop/$slug': typeof ShopSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/shop/': typeof ShopIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/blog/$slug' | '/blog/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/cart'
+    | '/checkout'
+    | '/blog/$slug'
+    | '/order-confirmation/$orderReference'
+    | '/order-pending/$orderReference'
+    | '/shop/$slug'
+    | '/blog/'
+    | '/shop/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/blog/$slug' | '/blog'
-  id: '__root__' | '/' | '/about' | '/blog/$slug' | '/blog/'
+  to:
+    | '/'
+    | '/about'
+    | '/cart'
+    | '/checkout'
+    | '/blog/$slug'
+    | '/order-confirmation/$orderReference'
+    | '/order-pending/$orderReference'
+    | '/shop/$slug'
+    | '/blog'
+    | '/shop'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/cart'
+    | '/checkout'
+    | '/blog/$slug'
+    | '/order-confirmation/$orderReference'
+    | '/order-pending/$orderReference'
+    | '/shop/$slug'
+    | '/blog/'
+    | '/shop/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CartRoute: typeof CartRoute
+  CheckoutRoute: typeof CheckoutRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  OrderConfirmationOrderReferenceRoute: typeof OrderConfirmationOrderReferenceRoute
+  OrderPendingOrderReferenceRoute: typeof OrderPendingOrderReferenceRoute
+  ShopSlugRoute: typeof ShopSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  ShopIndexRoute: typeof ShopIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -85,11 +192,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shop/': {
+      id: '/shop/'
+      path: '/shop'
+      fullPath: '/shop/'
+      preLoaderRoute: typeof ShopIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/': {
       id: '/blog/'
       path: '/blog'
       fullPath: '/blog/'
       preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop/$slug': {
+      id: '/shop/$slug'
+      path: '/shop/$slug'
+      fullPath: '/shop/$slug'
+      preLoaderRoute: typeof ShopSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/order-pending/$orderReference': {
+      id: '/order-pending/$orderReference'
+      path: '/order-pending/$orderReference'
+      fullPath: '/order-pending/$orderReference'
+      preLoaderRoute: typeof OrderPendingOrderReferenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/order-confirmation/$orderReference': {
+      id: '/order-confirmation/$orderReference'
+      path: '/order-confirmation/$orderReference'
+      fullPath: '/order-confirmation/$orderReference'
+      preLoaderRoute: typeof OrderConfirmationOrderReferenceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
@@ -105,8 +240,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CartRoute: CartRoute,
+  CheckoutRoute: CheckoutRoute,
   BlogSlugRoute: BlogSlugRoute,
+  OrderConfirmationOrderReferenceRoute: OrderConfirmationOrderReferenceRoute,
+  OrderPendingOrderReferenceRoute: OrderPendingOrderReferenceRoute,
+  ShopSlugRoute: ShopSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
+  ShopIndexRoute: ShopIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

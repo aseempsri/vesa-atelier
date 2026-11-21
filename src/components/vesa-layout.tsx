@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { VesaLogo } from "@/components/vesa-logo";
+import { CartIcon } from "@/components/shop/cart-icon";
 import marbleTexture from "@/assets/vesa-marble.jpg";
+import { STORE_ENABLED } from "@/lib/shop/config";
 import {
   VESA_BG,
   VESA_BODY,
@@ -12,12 +14,24 @@ import {
   vesaSerif,
 } from "@/lib/vesa-brand";
 
+const BASE_NAV = [
+  { to: "/", label: "Home", id: "home" as const },
+  { to: "/about", label: "About", id: "about" as const },
+  { to: "/blog", label: "Blog", id: "blog" as const },
+];
+
+const STORE_NAV = { to: "/shop", label: "Shop", id: "shop" as const };
+
+type VesaNavId = "home" | "about" | "blog" | "shop" | "cart" | "checkout";
+
 type VesaLayoutProps = {
   children: React.ReactNode;
-  activeNav?: "home" | "about" | "blog";
+  activeNav?: VesaNavId;
 };
 
 export function VesaLayout({ children, activeNav }: VesaLayoutProps) {
+  const navItems = STORE_ENABLED ? [...BASE_NAV, STORE_NAV] : BASE_NAV;
+
   return (
     <div className="relative min-h-screen w-full" style={{ backgroundColor: VESA_BG }}>
       <div
@@ -51,46 +65,24 @@ export function VesaLayout({ children, activeNav }: VesaLayoutProps) {
           <VesaLogo className="h-10 w-10 md:h-11 md:w-11" alt="VESA Atelier" />
         </Link>
 
-        <nav className="flex items-center gap-6 md:gap-8">
-          <Link
-            to="/"
-            className="uppercase transition-colors"
-            style={{
-              fontFamily: vesaSans,
-              fontSize: "0.6rem",
-              letterSpacing: "0.4em",
-              color: activeNav === "home" ? VESA_CREAM : VESA_GOLD_SOFT,
-              paddingLeft: "0.4em",
-            }}
-          >
-            Home
-          </Link>
-          <Link
-            to="/about"
-            className="uppercase transition-colors"
-            style={{
-              fontFamily: vesaSans,
-              fontSize: "0.6rem",
-              letterSpacing: "0.4em",
-              color: activeNav === "about" ? VESA_CREAM : VESA_GOLD_SOFT,
-              paddingLeft: "0.4em",
-            }}
-          >
-            About
-          </Link>
-          <Link
-            to="/blog"
-            className="uppercase transition-colors"
-            style={{
-              fontFamily: vesaSans,
-              fontSize: "0.6rem",
-              letterSpacing: "0.4em",
-              color: activeNav === "blog" ? VESA_CREAM : VESA_GOLD_SOFT,
-              paddingLeft: "0.4em",
-            }}
-          >
-            Blog
-          </Link>
+        <nav className="flex flex-wrap items-center justify-end gap-4 md:gap-8">
+          {navItems.map((item) => (
+            <Link
+              key={item.id}
+              to={item.to}
+              className="uppercase transition-colors"
+              style={{
+                fontFamily: vesaSans,
+                fontSize: "0.6rem",
+                letterSpacing: "0.4em",
+                color: activeNav === item.id ? VESA_CREAM : VESA_GOLD_SOFT,
+                paddingLeft: "0.4em",
+              }}
+            >
+              {item.label}
+            </Link>
+          ))}
+          {STORE_ENABLED ? <CartIcon /> : null}
         </nav>
       </header>
 
@@ -100,6 +92,26 @@ export function VesaLayout({ children, activeNav }: VesaLayoutProps) {
         className="relative z-20 border-t px-6 py-10 md:px-12"
         style={{ borderColor: VESA_GOLD_FAINT }}
       >
+        {STORE_ENABLED ? (
+          <nav className="mb-6 flex flex-wrap items-center justify-center gap-4 md:gap-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.id}
+                to={item.to}
+                className="uppercase transition-colors"
+                style={{
+                  fontFamily: vesaSans,
+                  fontSize: "0.55rem",
+                  letterSpacing: "0.4em",
+                  color: activeNav === item.id ? VESA_CREAM : VESA_GOLD_SOFT,
+                  paddingLeft: "0.4em",
+                }}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        ) : null}
         <p
           className="text-center uppercase"
           style={{
@@ -122,6 +134,19 @@ export function VesaLayout({ children, activeNav }: VesaLayoutProps) {
         >
           Crafted for calm. Designed for elegance.
         </p>
+        {STORE_ENABLED ? (
+          <p
+            className="mt-4 text-center"
+            style={{
+              fontFamily: vesaSans,
+              fontSize: "0.55rem",
+              letterSpacing: "0.2em",
+              color: VESA_GOLD_SOFT,
+            }}
+          >
+            Online payment only · Shipping details confirmed at checkout
+          </p>
+        ) : null}
       </footer>
     </div>
   );
@@ -130,9 +155,15 @@ export function VesaLayout({ children, activeNav }: VesaLayoutProps) {
 export function VesaGoldRule() {
   return (
     <div className="my-10 flex items-center gap-4 md:my-12">
-      <span className="h-px flex-1" style={{ background: `linear-gradient(90deg, transparent, ${VESA_GOLD})` }} />
+      <span
+        className="h-px flex-1"
+        style={{ background: `linear-gradient(90deg, transparent, ${VESA_GOLD})` }}
+      />
       <span style={{ color: VESA_GOLD, fontSize: "0.45rem" }}>◆</span>
-      <span className="h-px flex-1" style={{ background: `linear-gradient(270deg, transparent, ${VESA_GOLD})` }} />
+      <span
+        className="h-px flex-1"
+        style={{ background: `linear-gradient(270deg, transparent, ${VESA_GOLD})` }}
+      />
     </div>
   );
 }

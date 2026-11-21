@@ -2,7 +2,9 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import heroImage from "@/assets/vesa-hero.jpg";
 import marbleTexture from "@/assets/vesa-marble.jpg";
+import { CartIcon } from "@/components/shop/cart-icon";
 import { VesaLogo } from "@/components/vesa-logo";
+import { STORE_ENABLED } from "@/lib/shop/config";
 import { VESA_WORDMARK_GRADIENT } from "@/lib/vesa-brand";
 import { buildPageHead, SITE_DESCRIPTION, webPageJsonLd } from "@/lib/seo";
 
@@ -46,7 +48,7 @@ function Embers() {
         drift: (Math.random() - 0.5) * 80,
         opacity: 0.25 + Math.random() * 0.55,
       })),
-    []
+    [],
   );
 
   return (
@@ -236,6 +238,21 @@ function Index() {
           >
             Blog
           </Link>
+          {STORE_ENABLED ? (
+            <Link
+              to="/shop"
+              className="text-[0.6rem] uppercase transition-opacity hover:opacity-80"
+              style={{
+                letterSpacing: "0.4em",
+                color: GOLD_SOFT,
+                fontFamily: "'Inter', sans-serif",
+                paddingLeft: "0.4em",
+              }}
+            >
+              Shop
+            </Link>
+          ) : null}
+          {STORE_ENABLED ? <CartIcon /> : null}
         </div>
       </header>
 

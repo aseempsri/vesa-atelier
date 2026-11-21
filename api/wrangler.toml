@@ -1,0 +1,43 @@
+# VESA Atelier storefront API — Cloudflare Worker + D1
+# Deploy separately from the GitHub Pages static site. Do not deploy from this agent.
+#
+# Owner setup:
+#   1. Create a Cloudflare account and install wrangler (`npm i -g wrangler` or use npx).
+#   2. From /api: `npx wrangler login`
+#   3. Create D1: `npx wrangler d1 create vesa-storefront`
+#   4. Paste the database_id below, then run migrations:
+#        npx wrangler d1 migrations apply vesa-storefront --local
+#        npx wrangler d1 migrations apply vesa-storefront --remote
+#   5. Set secrets (never commit):
+#        npx wrangler secret put RAZORPAY_KEY_ID
+#        npx wrangler secret put RAZORPAY_KEY_SECRET
+#        npx wrangler secret put RAZORPAY_WEBHOOK_SECRET
+#   6. Set vars in this file or dashboard: CORS_ORIGIN, INCLUDE_SAMPLE_CATALOGUE, etc.
+#   7. Deploy: `npx wrangler deploy` (owner only — not done by the agent)
+#   8. Point the static site at the Worker via VITE_API_BASE_URL.
+
+name = "vesa-storefront-api"
+main = "src/index.ts"
+compatibility_date = "2025-09-24"
+compatibility_flags = ["nodejs_compat"]
+
+# Replace with the D1 database_id from `wrangler d1 create vesa-storefront`
+[[d1_databases]]
+binding = "DB"
+database_name = "vesa-storefront"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[vars]
+CORS_ORIGIN = "http://localhost:5173"
+# Production: set to https://vesa.co.in
+INCLUDE_SAMPLE_CATALOGUE = "true"
+ALLOW_SAMPLE_ORDERS = "true"
+# Production: both false
+RATE_LIMIT_WINDOW_MS = "60000"
+RATE_LIMIT_MAX = "30"
+
+# Secrets (set via `wrangler secret put`, not here):
+# RAZORPAY_KEY_ID
+# RAZORPAY_KEY_SECRET
+# RAZORPAY_WEBHOOK_SECRET
